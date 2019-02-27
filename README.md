@@ -1,4 +1,9 @@
 
+# Linux App Service Frenquently Asked Questions
+
+* [Web App for Containers Authenticate with Azure Container Registry using a Service Principal](https://github.com/Azure/app-service-linux-docs/blob/master/service_principal_auth_acr.md)
+
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
