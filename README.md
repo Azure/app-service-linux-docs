@@ -2,7 +2,7 @@
 # Linux App Service Frenquently Asked Questions
 
 * [Web App for Containers Authenticate with Azure Container Registry using a Service Principal](https://github.com/Azure/app-service-linux-docs/blob/master/service_principal_auth_acr.md)
-* [App Service Docker-Compose Web App Handles Conatiner Dependencies](https://github.com/Azure/app-service-linux-docs/blob/master/docker_compose_depends_on.md)
+* [App Service Docker-Compose Web App Handles Container Dependencies](https://github.com/Azure/app-service-linux-docs/blob/master/docker_compose_depends_on.md)
 
 
 # Contributing
