@@ -4,7 +4,7 @@
 * [Web App for Containers Authenticate with Azure Container Registry using a Service Principal](https://github.com/Azure/app-service-linux-docs/blob/master/service_principal_auth_acr.md)
 * [App Service Docker-Compose Web App Handles Container Dependencies](https://github.com/Azure/app-service-linux-docs/blob/master/docker_compose_depends_on.md)
 * [Store MySQL password in KeyVault and Reference it from Linux Web App](https://github.com/Azure/app-service-linux-docs/blob/master/keyvault_reference_in_linux_app_service.md)
-* [How does Multi-container Web App Determine Which Container to Expose to Public](https://github.com/Azure/app-service-linux-docs/blob/master/how_multicontainer_webapp_determine_web_container.md)
+* [How Does Multi-container Web App Determine Which Container to Expose to Public](https://github.com/Azure/app-service-linux-docs/blob/master/how_multicontainer_webapp_determine_web_container.md)
 
 # Contributing
 
