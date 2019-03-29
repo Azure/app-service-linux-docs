@@ -1,6 +1,7 @@
 <em>This is the updated version to the [original blog post](https://azure.microsoft.com/en-us/blog/10-ways-to-speed-up-your-wordpress-site-on-azure-websites/) by Sunitha Muthukrishna.</em>  
 
-##Best Practices for Hosting WordPress Site on Azure App Service
+## Best Practices for Hosting WordPress Site on Azure App Service
+
 There are several forms of WordPress running on App Service, but we recommend [WordPress on Linux](https://aka.ms/linux-wordpress) from the Azure Marketplace as your start point. Because these Marketplace offerings are optimized for App Service, they are designed to be easy-to-install and come with the up-to-date software packages, and also with support from App Service team. Today, thousands of customers are running their WordPress sites on our Marketplace offerings.
 
 While the Marketplace image comes with a fresh install of WordPress, customers can replace the code on the Web App and bring their own WordPress codebase (for example during [migrations](https://blogs.msdn.microsoft.com/azureossds/2017/04/28/wordpress-migration-easy-as-a-b-c-1-2-3/) from on-premise or other platforms). Simply connect to the Web App using FTPS and replace the contents of the /home/site/wwwroot directory. Make sure to update the wp-config.php file with the correct database connection string, looking at the [wp-config.php file](https://github.com/Azure/app-service-quickstart-docker-images/blob/master/wordpress-alpine-php/0.51/wp-config.php) that came with the Marketplace image as example.  For cases in which additional PHP extensions are needed for plugins or themes, we recommend customers to customize the [Marketplace Docker image](https://github.com/Azure/app-service-quickstart-docker-images/tree/master/wordpress-alpine-php/0.51), add what’s needed, and run it on Web App for Containers, then migrate their site so that they don’t have to start from scratch.
@@ -15,8 +16,8 @@ It seems obvious. When running your WordPress site on Azure App Service, make su
 
 2. Use right MySQL database solution for your web app needs 
 Investigate with one of these solutions is right for your database. Investigate and test out your application with these solutions to see the best fit which gives better performance.
-* [Azure Database for MySQL](https://azure.microsoft.com/en-us/services/mysql/) (default option). Azure MySQL is the managed service for MySQL server on Azure, it supports SKU options to meet various performance, scale and price needs. Please choose the SKU according to your business needs. 
-* [MySQL in-app](https://blogs.msdn.microsoft.com/appserviceteam/2016/08/18/announcing-mysql-in-app-preview-for-web-apps/) (Windows only) which provides you a MySQL instance running on the same instance with your app and shares resources from the App Service plan. Note that apps using MySQL In App are not intended for production environments, and they will not scale beyond a single instance. 
+	* [Azure Database for MySQL](https://azure.microsoft.com/en-us/services/mysql/) (default option). Azure MySQL is the managed service for MySQL server on Azure, it supports SKU options to meet various performance, scale and price needs. Please choose the SKU according to your business needs. 
+	* [MySQL in-app](https://blogs.msdn.microsoft.com/appserviceteam/2016/08/18/announcing-mysql-in-app-preview-for-web-apps/) (Windows only) which provides you a MySQL instance running on the same instance with your app and shares resources from the App Service plan. Note that apps using MySQL In App are not intended for production environments, and they will not scale beyond a single instance. 
 
 3. Optimize your database
 WordPress auto-saves everything but the disadvantage with this is that your database gets filled with a lot of post revisions, trackbacks, pingback, comments and trash items quickly which needs to be cleaned up manually on a regular basis. With the database plan you are using with your Website there will be limitation to the storage size allocated to your database and you may hit this limit as well if the database is not cleaned up regularly. [WP-Optimize](http://wordpress.org/plugins/wp-optimize/) is a great plugin which allows you to routinely clean up your database making the database more efficient and filled only with what needs to be kept. It saves you a lot of time without doing manual queries to optimize and clean up your database.
@@ -25,23 +26,23 @@ WordPress auto-saves everything but the disadvantage with this is that your data
 If you start seeing a surge of user traffic hitting your site, you should consider adding some form of caching for your site to handle the spike of traffic. 
 
 **WordPress on Windows**
-* [IIS output caching](https://www.iis.net/learn/manage/managing-performance-settings/walkthrough-iis-output-caching) :It’s easy to configure and setup. It significantly improves site throughput but may prevent confirmation messages from showing up when submitting comments. To learn more about IIS output caching, click here.
-* [WP Super cache](https://wordpress.org/plugins/wp-super-cache/) :It significantly improves site throughput and correctly handles comments submissions and other visitors’ actions. It slightly more complex to setup and configure than compared to IIS output caching. To learn more about Super cache configuration on IIS click here.
-* [App Service Dynamic Cache](https:/github.com/projectkudu/kudu/wiki/Configurable-settings#turning-on-the-dynamic-cache-feature): turn on the Dynamic cache to improve performance. 
-* [Wincache](https://www.php.net/manual/en/book.wincache.php): Create a .user.ini under wwwroot of your web application to add additional PHP settings.  Enable wincache settings in a .user.ini [wincache.fcenabled](http://php.net/manual/en/wincache.configuration.php#ini.wincache.fcenabled) = 1 and [wincache.reroute_enabled](http://php.net/manual/en/wincache.configuration.php#ini.wincache.reroute_enabled) = 1
-* [Redis cache](https://azure.microsoft.com/en-us/services/cache/): Azure redis cache can also be integrated with WordPress with the help of WP redis plugin to get better performance. 
+	* [IIS output caching](https://www.iis.net/learn/manage/managing-performance-settings/walkthrough-iis-output-caching) :It’s easy to configure and setup. It significantly improves site throughput but may prevent confirmation messages from showing up when submitting comments. To learn more about IIS output caching, click here.
+	* [WP Super cache](https://wordpress.org/plugins/wp-super-cache/) :It significantly improves site throughput and correctly handles comments submissions and other visitors’ actions. It slightly more complex to setup and configure than compared to IIS output caching. To learn more about Super cache configuration on IIS click here.
+	* [App Service Dynamic Cache](https:/github.com/projectkudu/kudu/wiki/Configurable-settings#turning-on-the-dynamic-cache-feature): turn on the Dynamic cache to improve performance. 
+	* [Wincache](https://www.php.net/manual/en/book.wincache.php): Create a .user.ini under wwwroot of your web application to add additional PHP settings.  Enable wincache settings in a .user.ini [wincache.fcenabled](http://php.net/manual/en/wincache.configuration.php#ini.wincache.fcenabled) = 1 and [wincache.reroute_enabled](http://php.net/manual/en/wincache.configuration.php#ini.wincache.reroute_enabled) = 1
+	* [Redis cache](https://azure.microsoft.com/en-us/services/cache/): Azure redis cache can also be integrated with WordPress with the help of WP redis plugin to get better performance. 
 
 **WordPress on Linux**
-[Redis Object Cache](https://wordpress.org/plugins/redis-cache/): the redis cache plugin is installed by default, you can activate the plugin and connect it to database to improve the performance. 
+	* [Redis Object Cache](https://wordpress.org/plugins/redis-cache/): the redis cache plugin is installed by default, you can activate the plugin and connect it to database to improve the performance. 
 
 5. [Always-on](https://docs.microsoft.com/en-us/azure/app-service/web-sites-configure)
 For low traffic web site,  you can enable AlwaysOn to keep your web app always loaded.
 
 6. Compress Images
 If your WordPress site heavy with images, then images can take up most of bandwidth for your site. A couple of things you can do in this case:
-* Store all your media content in an Azure Storage Blob: Use [Azure Storage Plugin](https://wordpress.org/plugins/windows-azure-storage/) which allows your website to store any new content to Azure storage instead of uploads directly of your WordPress site. If your site is media content heavy, it can significantly help to use an Azure CDN with the Azure Storage to reduce bandwidth.  
-* For Linux site, you can also mount [additional storage accounts](https://blogs.msdn.microsoft.com/appserviceteam/2018/09/24/announcing-bring-your-own-storage-to-app-service/) to the container which runs your WordPress site, you can use the additional storage for content and media files.
-* Compress the images: [WP Smush.it](http://wordpress.org/plugins/wp-smushit/) is a great plugin that automatically compresses images as you upload them to the media library. There is no data loss during compression and you won’t see any difference in the quality of images. If you have thousands of images are saved in your media library, you can run them all through the plugin, compressing them to a manageable size.
+	* Store all your media content in an Azure Storage Blob: Use [Azure Storage Plugin](https://wordpress.org/plugins/windows-azure-storage/) which allows your website to store any new content to Azure storage instead of uploads directly of your WordPress site. If your site is media content heavy, it can significantly help to use an Azure CDN with the Azure Storage to reduce bandwidth.  
+	* For Linux site, you can also mount [additional storage accounts](https://blogs.msdn.microsoft.com/appserviceteam/2018/09/24/announcing-bring-your-own-storage-to-app-service/) to the container which runs your WordPress site, you can use the additional storage for content and media files.
+	* Compress the images: [WP Smush.it](http://wordpress.org/plugins/wp-smushit/) is a great plugin that automatically compresses images as you upload them to the media library. There is no data loss during compression and you won’t see any difference in the quality of images. If you have thousands of images are saved in your media library, you can run them all through the plugin, compressing them to a manageable size.
 
 7. Reduce HTTP requests
 Every website make multiple dependent requests either to JS, CSS files or third party services or libraries. Putting all JavaScript into one JavaScript file and all CSS in one CSS file is considerably more efficient and reducing the dependent requests wherever possible can help. For CSS/JS scripts you can run a minify plugin like [Better WordPress Minify](https://wordpress.org/plugins/bwp-minify/) which will combine all of your style sheets and JavaScript files into one hence reducing the number of requests that the browser needs to make. If your site uses third party libraries, it’s better to copy them locally them to make a call to the service that offers the library to reduce bandwidth.
@@ -58,8 +59,8 @@ We have seen at least two plugins being slow on the App Service platform includi
 
 11. Turn off Pingbacks and Trackbacks if you don't use it
 WordPress uses Pingbacks and trackbacks methods to alert other blogs that your posts link to.
-* A pingback is a type of comment that’s created when you link to another blog post where pingbacks are enabled.
-* Trackbacks are a way to notify legacy blog systems that you’ve linked to them.
+	* A pingback is a type of comment that’s created when you link to another blog post where pingbacks are enabled.
+	* Trackbacks are a way to notify legacy blog systems that you’ve linked to them.
 They can be a drain the page speed and are usually better turned off if you don’t really need them. To learn more about Pingbacks and Trackbacks, [click here](https://make.wordpress.org/support/user-manual/building-your-wordpress-community/trackbacks-and-pingbacks/).
 
 12. Specify Image dimension
