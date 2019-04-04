@@ -5,6 +5,8 @@
 * [App Service Docker-Compose Web App Handles Container Dependencies](https://github.com/Azure/app-service-linux-docs/blob/master/docker_compose_depends_on.md)
 * [Store MySQL password in KeyVault and Reference it from Linux Web App](https://github.com/Azure/app-service-linux-docs/blob/master/keyvault_reference_in_linux_app_service.md)
 * [How Does Multi-container Web App Determine Which Container to Expose to Public](https://github.com/Azure/app-service-linux-docs/blob/master/how_multicontainer_webapp_determine_web_container.md)
+* [Mount an Azure Files or Azure Blob Account to Multi-container Web App](https://github.com/Azure/app-service-linux-docs/blob/master/use_byos_for_multicontainer_web_app.md)
+* [Best Practices for Hosting WordPress Site on Azure App Service](https://github.com/Azure/app-service-linux-docs/blob/master/wordpress_performance_best_practices.md)
 
 # Contributing
 
