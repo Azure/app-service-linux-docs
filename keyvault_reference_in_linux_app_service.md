@@ -1,4 +1,6 @@
-# Store Credentials as Application Settings
+# Use KeyVault Reference in Linux App Service
+
+## Store Credentials as Application Settings
 Many Linux web app connects to a database server such as Azure MySQL etc. To avoid committing the password to source code, we recommend customers to store the credentials as “application settings”. At web app startup time, the application settings get passed as -e(s) to the Docker container which hosts the web app. At runtime, the web app can programmably retrieve the application settings as Linux environment variables. Here is some sample PHP code which retrieves the MySQL connection information and constructs a connection string:
 ```
 // MySQL database configuration
@@ -16,7 +18,7 @@ die("Connection failed: " . $conn->connect_error);
 } 
 ```
 
-# KeyVault Reference
+## KeyVault Reference
 The issue with this approach is that application settings are visible on Azure portal under on the “Application settings” section, even though we encrypt the key/value pairs during transmission and when stored in our internal database. We made improvements on UX to mask out the value of application settings but customer can still see the values when unmask it.
 
 With Managed Identities feature enabled for Linux App Service, customer can now store the credentials in a KeyVault and make reference to the KeyVault in application settings instead of using plain text. Here is how to configure it:
