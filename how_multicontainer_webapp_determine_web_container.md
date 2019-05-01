@@ -1,3 +1,5 @@
+## How does Multi-container Web App Determine Which Container is the "Web Container"
+
 As Linux App Service only exposes a single (web) container to the world through the public endpoint, for Multi-container Web App, we use the following specific logic to determine which container is the "web" container:
 1. If your YAML file has only one container in it, we'll use that container as the web container
 2. If you have set the WEBSITES_WEB_CONTAINER_NAME app setting, we will use that as the web container
