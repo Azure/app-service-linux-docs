@@ -15,7 +15,7 @@ For example on February 01, 2020 any application running on `PHP 7.0`  or `PHP 7
 | Version |  Support Status  |  End of Official Support | End of Extended Support | OS Support |
 |---------| ---------------- |:------------------------:|:-----------------------:| ---------- |
 | PHP 7.0 | Extended Support |    December 03, 2018     |    February 01, 2020    | Windows & Linux |
-| PHP 7.1 | Official Support |    December 03, 2019     |    February 01, 2020    | Windows & Linux |
-| PHP 7.2 | Official Support |    October 30, 2020      |    February 01, 2021    | Windows & Linux |
+| PHP 7.1 | Official Support |    December 01, 2019     |    February 01, 2020    | Windows & Linux |
+| PHP 7.2 | Official Support |    November 30, 2020     |    February 01, 2021    | Windows & Linux |
 
 [PHP Official Support timeline](https://www.php.net/supported-versions.php)
