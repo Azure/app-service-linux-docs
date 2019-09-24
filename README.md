@@ -11,7 +11,8 @@
 
 ## Runtime Support
 
-* [PHP](./php_support.md)
+* [PHP](./Runtime_Support/php_support.md)
+* [Python](./Runtime_Support/python_support.md)
 
 ## Contributing
 
