@@ -21,7 +21,7 @@ Node detection looks for the existence of the `package.json` or `sever.js` or `i
 
 ## ASP .NET and .NET Core detection logic
 
-ASP.NET and .NET Core detection is done by looking for the existence of `*.csproj` in the current working directory.
+ASP .NET and .NET Core detection is done by looking for the existence of `*.csproj` in the current working directory.
 
 ## Manual runtime definition
 
