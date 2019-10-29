@@ -1,13 +1,13 @@
 # Automatic Runtime Detection with `az webapp up`
 
-The [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) includes a set of commands to manage Web App resources ([learn more](https://docs.microsoft.com/cli/azure/webapp?view=azure-cli-latest)). Included in this set of commands `az webapp Up` bundles functionality to **create** a Web App and **deploy code** from a local workspace. The command is required to run from the folder where the code is present. Current support includes apps targeting:
+The [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) includes a set of commands to manage Web App resources ([learn more](https://docs.microsoft.com/cli/azure/webapp?view=azure-cli-latest)). Included in this set of commands `az webapp up` bundles functionality to **create** a Web App and **deploy code** from a local workspace. The command is required to run from the folder where the code is present. Current support includes apps targeting:
 
 - ASP .NET
 - .NET Core
 - Node
 - Python
 
-As part of the execution of `az webapp Up` command it performs a **best effort** detection to match your code (in your local directory) with a supported runtime in your Web App.
+As part of the execution of `az webapp up` command it performs a **best effort** detection to match your code (in your local directory) with a supported runtime in your Web App.
 
 The runtime detections logic uses the hints outlined below. Any code that doesn’t match this logic is blocked to avoid compatibility issues.
 
