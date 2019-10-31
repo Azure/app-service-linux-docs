@@ -12,7 +12,7 @@ If you want to opt-in the read only behavior for read only Azure Blob mounts, yo
 WEBSITE_DISABLE_BYOS_BLOB_READ_WRITE = <mount-name-01>,<mount-name-02>,...,<mount-name-N>
 ```
 
-The value for this app setting should be a coma delimited list of mount names you want to make read only.
+The value for this app setting should be a comma delimited list of mount names you want to make read only.
 
 ## Example
 
