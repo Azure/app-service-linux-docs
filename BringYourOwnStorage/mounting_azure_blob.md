@@ -36,4 +36,4 @@ WEBSITE_DISABLE_BYOS_BLOB_READ_WRITE = media, logs
 - [Mounted Storage](https://docs.microsoft.com/azure/app-service/containers/how-to-serve-content-from-azure-storage)
 - [Azure App Service](https://docs.microsoft.com/azure/app-service/)
 
-[Path_Mappings]: \media\mounting_azure_blob.png
+[Path_Mappings]: ./media/mounting_azure_blob.png
