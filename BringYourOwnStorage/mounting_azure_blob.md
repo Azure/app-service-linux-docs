@@ -18,7 +18,7 @@ The value for this app setting should be a coma delimited list of mount names yo
 
 ![Path Mappings][Path_Mappings]
 
-If you have 2 containers mounted to your app and you only want to make the **media** container read-only you can add an app setting with the following Key /Value:
+If you have 2 containers mounted to your app and you only want to make the **media** container read-only. Add an app setting with the following Key / Value:
 
 ``` bash
 WEBSITE_DISABLE_BYOS_BLOB_READ_WRITE = media
