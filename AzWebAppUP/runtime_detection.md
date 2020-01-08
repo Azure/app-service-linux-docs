@@ -23,6 +23,10 @@ Node detection looks for the existence of the `package.json` or `sever.js` or `i
 
 ASP .NET and .NET Core detection is done by looking for the existence of `*.csproj` in the current working directory.
 
+## HTML
+
+Static content needs to use the explicit `--html` flag to indicate that static content is being deployed. Validation is done by looking for `*.html` or `*.htm` or `*.shtml` files in the current working directory
+
 ## Manual runtime definition
 
 The runtime is a property of the web app used to host your code. If you want to set the runtime manually you can use the [az webapp create](https://docs.microsoft.com/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) command.
