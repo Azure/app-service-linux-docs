@@ -6,5 +6,7 @@ During Preview you will need to modify your application in order to integrate wi
 ~~~
 app.listen(process.env.PORT); 
 ~~~
+[ASPNETCORE_URLS](https://docs.microsoft.com/aspnet/core/fundamentals/host/web-host?view=aspnetcore-3.1#server-urls) is the recommended way to configure ASP.NET Core docker image and here is the [DockerFile](https://github.com/dotnet/dotnet-docker/blob/7c18c117d9bd2d35e30cdb4a1548ac14b9f0f037/3.0/aspnetcore-runtime/nanoserver-1809/amd64/Dockerfile) example.
+
 Note: we’re making continuous improvement to this VNet integration Preview feature for Linux web app, we will roll out feature improvements in the next few months.
 
