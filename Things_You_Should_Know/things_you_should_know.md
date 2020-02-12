@@ -27,7 +27,7 @@ Azure App Service has a [Feedback forum](http://aka.ms/webapps-uservoice), here 
 - ✅   **CODE**
 - ⛔   **CONTAINER**
 
-If you're deploying using Web Deploy, set WEBSITES_WEBDEPLOY_USE_SCM to false.
+If you're deploying using Web Deploy, set `WEBSITES_WEBDEPLOY_USE_SCM` to false.
 
 You can use Visual Studio to deploy to App Service using Web Deploy. However, when you do, you want to make sure that the endpoint for deployment isn't the Kudu container. To configure that, add an app setting to your app with a name of WEBSITES_WEBDEPLOY_USE_SCM and set the value to false.
 
