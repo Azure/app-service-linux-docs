@@ -15,6 +15,8 @@
 * [Node](./Runtime_Support/node_support.md)
 * [PHP](./Runtime_Support/php_support.md)
 * [Python](./Runtime_Support/python_support.md)
+* [Ruby](./Runtime_Support/ruby_support.md)
+
 
 ## Contributing
 
