@@ -255,7 +255,7 @@ There are several ways to access Docker logs:
 - Docker logs appear on the Container Settings page in the portal. (These are truncated, but you can download them by clicking on the Download Logs button.)
 - You can find the Docker log in the /LogFiles directory. You can access this via the Kudu (Advanced Tools) Bash console or by using an FTP client to access it.
 - You can use our API to download the current logs. (see [You can discover and download the latest Docker logs using Kudu](#You-can-discover-and-download-the-latest-Docker-logs-using-Kudu))
-   - The naming convention for the Docker log is YYYY_MM_DD_RDxxxxxxxxxxxx_docker.log.
+   - The naming convention for the Docker log is `YYYY_MM_DD_RDxxxxxxxxxxxx_docker.log`
 
 > **Note** 
 >
