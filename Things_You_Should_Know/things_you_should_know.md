@@ -85,23 +85,24 @@ Note: If you don't specify a tag, Docker will look for an image with a tag calle
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-You can use an app setting called **WEBSITES_ENABLE_APP_SERVICE_STORAGE** to control whether or not the `/home` directory of your app is mapped to App Service built in storage.
+You can use an app setting called `WEBSITES_ENABLE_APP_SERVICE_STORAGE` to control whether or not the `/home` directory of your app is mapped to **App Service** built in storage.
 
 Storage persistence can be a useful feature if you need to share information across instances (for scale up / scale out scenarios), or if you need information to persist across application restarts. However there are a few caveats to keep in mind:
 
-If '/home' directory is mapped to App Service built in storage, your application will restart when an an App Service storage fail-over occurs.
+If '/home' directory is mapped to **App Service** built in storage, your application will restart when a storage fail-over occurs.
 
 If you don't require file persistence, you can set this app setting to **false**. this will make your app resilient to storage failovers.
 
-The absence of this app setting will result in the setting being **"true"**. In other words, if this app setting does not exist in storage will be mounted.
+The absence of this app setting will result in the setting being **"true"**. In other words, if this app setting does not exist for your app storage will be mounted.
 
-[Kudu (Advanced Tools)](https://github.com/projectkudu/kudu/wiki) for Linux Apps runs in a separate container. The Kudu container always maps the /home directory to the App Service built in storage.  That way, the /home/LogFiles directory will persist between restarts and scale out operations in the Kudu container.
+[**Kudu** (Advanced Tools)](https://github.com/projectkudu/kudu/wiki) for Linux Apps runs in a separate container. The **Kudu** container always maps the /home directory to the App Service built in storage.  That way, the `/home/LogFiles` directory will persist between restarts and scale out operations in the **Kudu** container.
 
-Therefore, if you need to get Docker logs or other logs, always use the Kudu Bash console instead of using SSH to access your app's container. (See this for more information on how to get the latest Docker logs from Kudu.)
+Therefore, if you need to get Docker logs or other logs, always use the **Kudu** Bash console instead of using SSH to access your app's container. (See this for more information on how to get the latest Docker logs from Kudu.)
 
 > **Note:**
-> Setting this app setting for **Code** scenarios will will have no impact.
->
+> 
+> **Bring your own Code** apps ignore this app setting and always mount the built in storage.
+ 
 
 ### You cannot change permissions on the /home directory when persisting storage
 
@@ -241,77 +242,87 @@ Of course, replace "#.#.#.#" with the IP of the DNS nameserver you want to use.
 
 ## Troubleshooting
 
-### If your site doesn't start, check the Docker log
+### If your app doesn't start, check the Docker log
 
-Applies to Web App for Containers
+|**CODE**|**CONTAINER**|
+|:------:|:-----------:|
+| ⛔    | ✅          |
 
-We log useful information into the Docker log that can help you troubleshoot your site when it doesn't start or if it's restarting. We log a lot more than you might be used to seeing in a Docker log, and we will continue to work on making this logging more useful.
+**App Service** logs useful information into the Docker log that can help you troubleshoot your site when it doesn't start or if it's restarting. The service logs a lot more than you might be used to seeing in a Docker log, and we will continue to work on making this logging more useful.
 
-There are several ways to access Docker logs.
+There are several ways to access Docker logs:
 
-Docker logs appear on the Container Settings page in the portal. (These are truncated, but you can download them by clicking on the Download Logs button.)
-You can find the Docker log in the /LogFiles directory. You can access this via the Kudu (Advanced Tools) Bash console or by using an FTP client to access it.
-You can use our API to download the current logs. (See "You can discover and download the latest Docker logs using Kudu" in this post for info on that.) The naming convention for the Docker log is YYYY_MM_DD_RDxxxxxxxxxxxx_docker.log.
-Note that if you try and download the Docker log that is currently in use using an FTP client, you may get an error because of a file lock. In that case, you can download it using our API (see "You can discover and download the latest Docker logs using Kudu" in this post) or you can use "tail" in the console to view it. (Our API gets you the current Docker log, so if you want to review a past log, use the "tail" option.)
+- Docker logs appear on the Container Settings page in the portal. (These are truncated, but you can download them by clicking on the Download Logs button.)
+- You can find the Docker log in the /LogFiles directory. You can access this via the Kudu (Advanced Tools) Bash console or by using an FTP client to access it.
+- You can use our API to download the current logs. (see (You can discover and download the latest Docker logs using Kudu)[#You-can-discover-and-download-the-latest-Docker-logs-using-Kudu])
+   - The naming convention for the Docker log is YYYY_MM_DD_RDxxxxxxxxxxxx_docker.log.
+
+> **Note** 
+>
+> If you try and download the Docker log that is currently in use using an FTP client, you may get an error because of a file lock. 
+>
+> In that case, you can download it using our API (see (You can discover and download the latest Docker logs using Kudu)[#You-can-discover-and-download-the-latest-Docker-logs-using-Kudu]) or you can use "tail" in the console to view it. (Our API gets you the current Docker log, so if you want to review a past log, use the "tail" option.)
 
 To view the Docker log using tail, access the console, switch into the LogFiles directory, and run this command:
 
-tail 2017_09_05_RD*0FA_docker.log
+`tail 2017_09_05_RD*0FA_docker.log`
 
 In this example, I'm viewing the Docker log for September 5. Note that I'm also using a wildcard replacement for the machine ID (the RD number) so that I don't have to type all the characters.
 
-Tip: You can pipe the output of tail to a new file in case you want to download it. Simply append "> filename.txt" to the command above.
+> **Tip:** 
+> 
+> You can pipe the output of tail to a new file in case you want to download it. Simply append "> filename.txt" to the command above.
 
 ### You can discover and download the latest Docker logs using Kudu
 
-Applies to Web App for Containers
+|**CODE**|**CONTAINER**|
+|:------:|:-----------:|
+| ⛔    | ✅          |
 
-We have an API that allows you to easily see the current Docker log details (such as the filename, etc.) and also download the current Docker logs in Zip format.
+App Service has an API that allows you to easily see the current Docker log details (such as the filename, etc.) and also download the current Docker logs in Zip format.
 
 To see details on the current Docker logs in JSON format, you can use this URL:
 
-https://[sitename].scm.azurewebsites.net/api/logs/docker
+`https://<yout-app-name>.scm.azurewebsites.net/api/logs/docker`
 
-You can get to this easily by going to Advanced Tools (Kudu) and then appending "/api/logs/docker" to the URL. The output of this will be a JSON response with the most relevant and current Docker logs.
+You can get to this easily by going to **Kudu** (Advanced Tools) and then appending "/api/logs/docker" to the URL. The output of this will be a JSON response with the most relevant and current Docker logs.
 
 If you want to download the logs shown in the above API in Zip format, append "zip" to the URL. For example:
 
-https://[sitename].scm.azurewebsites.net/api/logs/docker/zip
+`https://<yout-app-name>.scm.azurewebsites.net/api/logs/docker/zip`
 
-You can also click the link in Advanced Tools (Kudu) to download your latest Docker logs in Zip format.
 
 ### You can view the most recent entries in your Docker log in the Azure portal
 
-Applies to Web App for Containers
+|**CODE**|**CONTAINER**|
+|:------:|:-----------:|
+| ⛔    | ✅          |
 
-To make it easier to see what's going on with your Docker container, we show you the latest entries in the Docker log in the Azure portal. Simply click on Container Settings in the portal menu and you'll see the Docker log as shown in the figure below.
-
-Viewing the Docker Log
+To make it easier to see what's going on with your Docker container, we show you the latest entries in the Docker log in the Azure portal. Simply click on **Container Settings** in the portal menu and you'll see the Docker log.
 
 You can click the Copy button to copy the Docker log. You can also download the full Docker log by clicking on Download Logs.
 
 ### If your container takes a long time to start, increase the start time limit
 
-Applies to Web App for Containers
+|**CODE**|**CONTAINER**|
+|:------:|:-----------:|
+| ⛔    | ✅          |
 
-When we start your container, we'll wait a while for it to start and initialize. We consider the startup to be successful once the container is running and once we get a response to a ping so that we know it's ready to respond to HTTP traffic. We'll wait 230 seconds for that to happen. If we don't have a successful start within 230 seconds, we'll assume there's a problem and we'll stop the container.
+**App Service** will wait 230 seconds for a container to start, initialize and respond to an HTTP request. **App Service** interprets this first response to an HTTP request as an idication that your app has initialized and is ready to recive further requests. If the timout of 230 seconds is reached with no response from the app, then it's considerd a failure to start. 
 
-We realize that some containers might need more time than that to start, so we allow you to increase that 230 second wait time up to a limit of 1800 seconds. To configure that, add an app setting called WEBSITES_CONTAINER_START_TIME_LIMIT and set it to the number of seconds you would like for us to wait for your container to start (up to a maximum of 1800) as shown in the image below.
-
- 
-
-Configuring Container Start Time Limit
-
+Some containers might need more than 230 seconds to start, the default timeout can be overridden through the `WEBSITES_CONTAINER_START_TIME_LIMIT` app setting. This app setting can be set to a maximum of 1800 seconds.
 
 ### Your container must respond to an HTTP ping
 
-Applies to Web App for Containers
+|**CODE**|**CONTAINER**|
+|:------:|:-----------:|
+| ⛔    | ✅          |
 
-As I've already said, we will wait a certain amount of time for your container to start before we consider it be a failed start. In order for us to consider a container to be successfully started, the container must start and it must respond to an HTTP ping. If the container starts but does not respond to a ping, we will eventually log an event in the Docker log saying that it didn't start.
+App Service will a certain amount of time for your container to start before we consider it be a failed start. In order for App Service to consider a container to be successfully started, the container must start and it must respond to an HTTP ping. If the container starts but does not respond to a ping, we will eventually log an event in the Docker log saying that it didn't start.
 
-Here's a snippet from a Docker log that illustrates an interesting problem.
+Here's a snippet from a Docker log that illustrates the problem. 
 
-``` Bash
+``` log
 2017-09-14 19:26:22.494 INFO  - Starting container for site
 2017-09-14 19:26:22.496 INFO  - docker run -d -p 52879:80 --name customer-webapp . . .
 . . .
@@ -319,20 +330,22 @@ Here's a snippet from a Docker log that illustrates an interesting problem.
 2017-09-14 19:30:14.428 ERROR - Container customer-webapp_0 for site customer-webapp did not start within expected time limit. Elapsed time = 230.0443067 sec>
 ```
 
-I have truncated much of this output, but what you can see here is that the "docker run" command was run and we don't see any error messages. However, at the end of the log, we see a message that the container did not start within the expected time limit.
+I have truncated much of this output, but what you can see here is that 
 
-Notice in the next to the last line that the Node.js engine is listening on port 3000. The problem here is that port 3000 was never exposed, so when we attempt to ping the container, we aren't pinging on a port on which the container is listening. There are a couple of ways to resolve this.
+The log output shows the "docker run" command was run with no error messages. However, at the end of the log, we see a message that the container did not start within the expected time limit.
 
-Use the EXPOSE instruction in your Dockerfile to expose port 3000.
-Use the WEBSITES_PORT app setting with a value of "3000" to expose that port.
+Notice in the next to the last line that the Node.js engine is listening on port `3000`. The problem here is that port `3000` was never exposed, so when we attempt to ping the container, we aren't pinging on a port on which the container is listening. There are a couple of ways to resolve this.
+
+Use the `EXPOSE` instruction in your Dockerfile to expose port `3000`.
+Use the `WEBSITES_PORT` app setting with a value of "3000" to expose that port.
 
 ### You can remotely debug your Node.js app using VS Code
 
-Applies to Azure App Service on Linux Applies to Web App for Containers
+|**CODE**|**CONTAINER**|
+|:------:|:-----------:|
+| ✅    | ✅          |
 
-If you're a Node.js developer, you can remotely debug your Web App using VS Code. You can set breakpoints, step through code, etc. on your Web App running in App Service from your development machine. For all of the details on how to remotely debug, check out this blog post from Kenneth Auchenberg on the VS Code team.
-
-Remote debugging requires that you open a TCP tunnel from your development machine to App Service. You can find all of the details on doing that in our Things You Should Know: Web Apps and SSH blog post.
+If you're a *Node.js* developer, you can remotely debug your Web App using VS Code. You can set breakpoints, step through code, etc. on your Web App running in App Service from your development machine. For all of the details on how to remotely debug, check out [this blog post](https://medium.com/@auchenberg/introducing-remote-debugging-of-node-js-apps-on-azure-app-service-from-vs-code-in-public-preview-9b8d83a6e1f0) from Kenneth Auchenberg on the VS Code team.
 
 ## Best Practices
 
@@ -360,19 +373,21 @@ We offer a **BASH** console in [Kudu (Advanced Tools)](https://github.com/projec
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-As pointed out above, App Service terminates SSL/TLS at the front-ends. That means that SSL/TLS requests never get to your app. That's good news for you because it means that you don't need to (and should not) implement any support for SSL/TLS into your app. Also as stated above, it's important to understand that the front-ends where SSL/TLS is terminated are inside of our Azure data centers. If you use SSL/TLS with your app, your traffic across the Internet will always be safely encrypted.
+**App Service** terminates SSL/TLS at the front-ends. That means that SSL/TLS requests never get to your app. That's good news for you because it means that you don't need to (and should not) implement any support for SSL/TLS into your app. Also as stated above, it's important to understand that the front-ends where SSL/TLS is terminated are inside of our Azure data centers. If you use SSL/TLS with your app, your traffic across the Internet will always be safely encrypted.
 
 ### You can only expose one port to the outside world
 
 |**CODE**|**CONTAINER**|
 |:------:|:-----------:|
-| ✅    | ✅          |
+| ⛔    | ✅          |
 
 **Container** apps allow you to expose only one port to the outside world. That means that your container can only listen for HTTP/HTTPS requests on a single port. Some apps need multiple ports. For example, you might have one port that is used for requests into the app and a separate port that is used for a dashboard or admin portal. As of today, that configuration isn't possible in Web App for Containers.
 
-We will attempt to detect which port to bind to your container, but you can also use the **WEBSITES_PORT** app setting and configure it with a value for the port you want to bind to your container.
+We will attempt to detect which port to bind to your container, but you can also use the `WEBSITES_PORT` app setting and configure it with a value for the port you want to bind to your container.
 
-**Code** apps use port `80` and `443` by default and can't be configured to use alternate ports.
+> **Note**
+>
+> **Bring your own Code** apps use port `80` and `443` by default and can't be configured to use alternate ports.
 
 ### Don't use df to find your disk space usage
 
