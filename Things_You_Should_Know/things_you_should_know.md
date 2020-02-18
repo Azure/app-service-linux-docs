@@ -31,7 +31,7 @@ Azure App Service has a [Feedback forum](http://aka.ms/webapps-uservoice), here 
 
 If you're deploying using Web Deploy, set `WEBSITES_WEBDEPLOY_USE_SCM` to false.
 
-You can use Visual Studio to deploy to App Service using Web Deploy. However, when you do, you want to make sure that the endpoint for deployment isn't the Kudu container. To configure that, add an app setting to your app with a name of WEBSITES_WEBDEPLOY_USE_SCM and set the value to false.
+You can use **Visual Studio** to deploy to **App Service** using **Web Deploy**. However, when you do, you want to make sure that the endpoint for deployment isn't the Kudu container. To configure that, add an app setting to your app with a name of `WEBSITES_WEBDEPLOY_USE_SCM` and set the value to "false".
 
 ### To prevent down-time when you update your code, use Continuous Deployment
 
@@ -53,29 +53,30 @@ For more information on [Continuous Deployment](https://docs.microsoft.com/azure
 
 If you change your Docker container settings to point to a new container and then click Save, it may take a minute or so before you'll see the new container when you browse to your site. While the new container is being pulled and started, we will continue to serve requests to your site using the old container. Only when the new container is started and ready to receive requests will we start sending requests to it.
 
-A good way to tell if your new site is up and running is to the check the "site up time" for the Kudu (Advanced Tools) site as shown below. When the new container is up and running, the Kudu site will restart. If you see that the Kudu site has restarted, your new container should be ready.
+A good way to tell if your new site is up and running is to the check the "site up time" for the **Kudu** (Advanced Tools) site as shown below. When the new container is up and running, the Kudu site will restart. If you see that the Kudu site has restarted, your new container should be ready.
 
-### Custom images are stored on disk unless a worker change happens.
+### Custom images are stored on disk unless a worker change happens
 
 |**CODE**|**CONTAINER**|
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-The first time you use a custom Docker image, we will do a "docker pull" and pull all layers. These layers are stored on disk just as if you were using Docker on-premise. When we do a "docker pull" after a site restart, we will only pull layers that have changed. If there have been no changes, we will simply use existing layers on disk.
+The first time you use a custom Docker image, we will do a `docker pull` and pull all layers. These layers are stored on disk just as if you were using Docker on-premise. When we do a `docker pull`  after a site restart, we will only pull layers that have changed. If there have been no changes, we will simply use existing layers on disk.
 
 If you change workers for any reason, however, we will have to pull down all layers again. Your worker will change if you scale up/down or if you scale out to add additional workers. There are also rare cases where your worker may change without a scale operation, but these cases are uncommon.
 
-### Continuous Deployment requires that the image:tag combination remain the same.
+### Continuous Deployment requires that the image:tag combination remain the same
 
 |**CODE**|**CONTAINER**|
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-Docker containers in Web App for Containers are specified using an image:tag combination. Therefore, if you configure Continuous Deployment, you'll need to ensure that any updates to your Docker image don't change the tag.
+Docker containers in Web App for Containers are specified using an `image:tag` combination. Therefore, if you configure Continuous Deployment, you'll need to ensure that any updates to your Docker image don't change the tag.
 
 We've seen quite a few cases where customers will initially tag the image with a "v1" tag and enable CI. At some later time, they update the image and tag the new image with "v2" and then wonder why CI isn't working. Once you change the tag on an image, it's considered a different image from the initially configured image, and that will cause CI to not pick up the changes.
 
-Note: If you don't specify a tag, Docker will look for an image with a tag called "latest". Therefore, if your configuration doesn't explicitly use a tag and someone tags your image with anything other than "latest", it will break continuous deployment.
+> *Note:*
+> If you don't specify a tag, Docker will look for an image with a tag called "latest". Therefore, if your configuration doesn't explicitly use a tag and someone tags your image with anything other than "latest", it will break continuous deployment.
 
 ## Configuration
 
