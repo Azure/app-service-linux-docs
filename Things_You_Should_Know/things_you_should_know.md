@@ -91,26 +91,23 @@ Storage persistence can be a useful feature if you need to share information acr
 
 If '/home' directory is mapped to **App Service** built in storage, your application will restart when a storage fail-over occurs.
 
+> **Note:**
+> 
+> Permisions on the /home directory are set to `777`. You cannot change these permissions even if you attempt to do so from an initialization script or from SSH. 
+
+
 If you don't require file persistence, you can set this app setting to **false**. this will make your app resilient to storage failovers.
 
 The absence of this app setting will result in the setting being **"true"**. In other words, if this app setting does not exist for your app storage will be mounted.
 
 [**Kudu** (Advanced Tools)](https://github.com/projectkudu/kudu/wiki) for Linux Apps runs in a separate container. The **Kudu** container always maps the /home directory to the App Service built in storage.  That way, the `/home/LogFiles` directory will persist between restarts and scale out operations in the **Kudu** container.
 
-Therefore, if you need to get Docker logs or other logs, always use the **Kudu** Bash console instead of using SSH to access your app's container. (See this for more information on how to get the latest Docker logs from Kudu.)
+Therefore, if you need to get Docker logs or other logs, always use the **Kudu** Bash console instead of using SSH to access your app's container. (See [this](#If-your-app-doesn't-start,-check-the-Docker-log) for more information on how to get the latest Docker logs.)
 
 > **Note:**
 > 
 > **Bring your own Code** apps ignore this app setting and always mount the built in storage.
  
-
-### You cannot change permissions on the /home directory when persisting storage
-
-|**CODE**|**CONTAINER**|
-|:------:|:-----------:|
-| ⛔    | ✅          |
-
-When you persist storage with the WEBSITES_ENABLE_APP_SERVICE_STORAGE app setting, we mount a location in Azure Storage to the /home mount point. The permissions on this are 777. You cannot change these permissions, even if you attempt to do so from an initialization script or from SSH.
 
 ### App Settings are injected into your app as environment variables at runtime
 
@@ -127,7 +124,10 @@ If you need to set an environment variable for your application, simply add an A
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-We allow only alpha-numeric characters and the underscore character for an App Setting's name. (The value can contain special characters.) Any other characters will be stripped from the App Setting name (and, therefore, the environment variable name) at runtime. We also provide this information in our FAQ.
+You can use only letters (A-Z, a-z), numbers (0-9), and the underscore character (_) for application settings.
+
+Any other characters will be stripped from the App Setting name (and, therefore, the environment variable name) at runtime. 
+
 
 ### Your environment variables won't appear in the Bash console
 
@@ -135,7 +135,7 @@ We allow only alpha-numeric characters and the underscore character for an App S
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-If you use the Bash console in Advanced Tools (Kudu) to look at environment variables, you won't see environment variables that you set using App Settings. That's because the Bash console runs in a separate context from your Web App. In order to see your environment variables, use the Environment page in Advanced Tools or use code to retrieve the environment variables.
+If you use the Bash console in **Kudu** (Advanced Tools) to look at environment variables, you won't see environment variables that you set using App Settings. That's because the Bash console runs in a separate context from your Web App. In order to see your environment variables, use the Environment page in **Kudu** (Advanced Tools) or use code to retrieve the environment variables.
 
 ### Set your default document in a Node.js app using JavaScript
 
@@ -143,7 +143,9 @@ If you use the Bash console in Advanced Tools (Kudu) to look at environment vari
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-When you create a Node.js app, by default, it's going to use `hostingstart.html` as the default document unless you configure it to look for a different file. You can use a JavaScript file to configure your default document. Create a file called index.js in the root folder of your site and add the following content.
+When you create a Node.js app, by default, it's going to use `hostingstart.html` as the default document unless you configure it to look for a different file. You can use a JavaScript file to configure your default document. 
+
+Create a file called index.js in the root folder of your site and add the following content.
 
 ``` Node
 var express = require('express');
@@ -164,7 +166,7 @@ This will configure index.html as the default document for your app.
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-We've now added the ability to force SSL traffic using the "HTTPS Only" option in the Azure portal. For details on how to do that, see our documentation.
+App Service includes the ability to force SSL traffic using the "HTTPS Only" option in the Azure portal. For details on how to do that, see [Secure a custom DNS name with an SSL binding in Azure App Service](https://docs.microsoft.com/azure/app-service/configure-ssl-bindings#enforce-https).
 
 ### If you're persisting files, only the /home directory is persisted
 
@@ -180,27 +182,20 @@ If you need an extension or other component for your app to run, make sure that 
 
 For more information on creating your own container for use with Web App for Containers, see our documentation.
 
-### To use SSH, your Docker image needs special sauce
+### To use SSH and SFTP, your Docker image needs special sauce
 
 |**CODE**|**CONTAINER**|
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-We provide the ability to SSH into your app, but if you're using a custom container, you need to take additional steps in order to add this ability to your app. We've provided all the steps necessary here.
+We provide the ability to SSH into your app, but if you're using a custom container, you need to take additional steps in order to add this ability to your app [App Service enable SSH](https://docs.microsoft.com/azure/app-service/containers/configure-custom-container#enable-ssh)
 
-### To use SFTP, your Docker image needs more special sauce
-
-|**CODE**|**CONTAINER**|
-|:------:|:-----------:|
-| ⛔    | ✅          |
-
-Once you create a TCP tunnel to Azure App Service from your development machine, you can connect to your Web App using SFTP. However, if you are using Web App for Containers, your Docker image needs some special configuration for this to work. Specifically, the SFTP subsystem must be specified in the sshd_config file. (The sshd_config file is added to your app when you follow the directions here for enabling SSH into a custom container.)
+SFTP requieres an aditional configuration step, Specifically, the SFTP subsystem must be specified in the `sshd_config` file. (The sshd_config file should be added to your app as part steps to enable SSH on a custom container.)
 
 To use SFTP, make sure the following line is in your sshd_config file.
 
 `subsystem sftp internal-sftp`
 
-This will enable you to successfully transfer files using SFTP.
 
 ### You can use your favorite SSH client with Web Apps
 
@@ -208,7 +203,7 @@ This will enable you to successfully transfer files using SFTP.
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-You can use any SSH client you want with Web Apps. Whether you're a Windows user, a macOS user, or a Linux user, you can easily SSH into your Web App. For all of the details on doing that, see our "Things You Should Know: Web Apps and SSH" article.
+You can use any SSH client you want with Web Apps. Whether you're a Windows user, a macOS user, or a Linux user, you can easily SSH into your Web App. For more details on SSH see [App Service SSH Support](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-ssh-support) and [App Service enable SSH](https://docs.microsoft.com/azure/app-service/containers/configure-custom-container#enable-ssh)
 
 ### Don't worry about the SSH port in App Service
 
@@ -220,8 +215,11 @@ We use port `2222` for SSH into your app's container, but that doesn't mean that
 
 ### Pay attention to your slash direction
 
-Applies to Web App for Containers
-When specifying your image running in Docker Hub, make sure that you pay attention to your slash. Don't use a backslash because that won't work. You should separate the username and image name using a front slash (/).
+|**CODE**|**CONTAINER**|
+|:------:|:-----------:|
+| ⛔    | ✅          |
+
+When specifying your image running in Docker Hub, make sure that you pay attention to your slash. Don't use a backslash because that won't work. You should separate the username and image name using a front slash `/`.
 
 ### You can use your own DNS servers
 
@@ -229,7 +227,7 @@ When specifying your image running in Docker Hub, make sure that you pay attenti
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-Some customers want to use their own DNS servers within their containers. Configuring this is relatively simple using an initialization script. If you've followed our guidance on enabling SSH for your custom container, you should already have your container configured to use an initialization script. To use your own DNS servers, you simply need to include the following line in your initialization script.
+Some customers want to use their own DNS servers within their containers. Configuring this is relatively simple using an initialization script. If you've followed our guidance on [enabling SSH](#To-use-SSH,-your-Docker-image-needs-special-sauce) for your custom container, you should already have your container configured to use an initialization script. To use your own DNS servers, you simply need to include the following line in your initialization script.
 
 
 `echo "nameserver #.#.#.#" > /etc/resolv.conf`
