@@ -1,15 +1,15 @@
 # Things you should know: Web Apps on Linux
 
-Azure App Service on Linux supports 2 scenarios:
+**App Service** on Linux supports 2 scenarios:
 
 - Bring your own **CODE**
 - Bring your own **CONTAINER**
 
-For **CODE** scenarios, App Service provides a base container that is maintained by the platform. This container targets a specific development framework (.NET Core, PHP, Node, etc...) and a specific version of that framework (.NET Core 3.0, .NET Core 3.1, etc...).
+For **CODE** scenarios, **App Service** provides a base container that is maintained by the platform. This container targets a specific development framework (.NET Core, PHP, Node, etc...) and a specific version of that framework (.NET Core 3.0, .NET Core 3.1, etc...).
 
-For **CONTAINER** scenarios, App Service provides a host where a custom container provided by the customer can execute.
+For **CONTAINER** scenarios, **App Service** provides a host where a custom container provided by the customer can execute.
 
-In both scenarios, a set of App Service features are exposed through the ARM API as well as through the Azure Portal and Azure CLI / Powershell experience.
+In both scenarios, a set of **App Service** features are exposed through the ARM API as well as through the Azure Portal and Azure CLI / Powershell experience.
 
 ## General Information
 
@@ -19,7 +19,7 @@ In both scenarios, a set of App Service features are exposed through the ARM API
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-Azure App Service has a [Feedback forum](http://aka.ms/webapps-uservoice), here you can request new features and voted on them for priority. Please make sure to put "[Linux]" in the title so that we'll know it applies to App Service on Linux.
+**App Service** has a [Feedback forum](http://aka.ms/webapps-uservoice), here you can request new features and voted on them for priority. Please make sure to put "[Linux]" in the title so that we'll know it applies to **App Service** on Linux.
 
 ## Deployment
 
@@ -31,7 +31,7 @@ Azure App Service has a [Feedback forum](http://aka.ms/webapps-uservoice), here 
 
 If you're deploying using Web Deploy, set `WEBSITES_WEBDEPLOY_USE_SCM` to false.
 
-You can use **Visual Studio** to deploy to **App Service** using **Web Deploy**. However, when you do, you want to make sure that the endpoint for deployment isn't the Kudu container. To configure that, add an app setting to your app with a name of `WEBSITES_WEBDEPLOY_USE_SCM` and set the value to "false".
+You can use **Visual Studio** to deploy to **App Service** using **Web Deploy**. However, when you do, you want to make sure that the endpoint for deployment isn't the **Kudu** container. To configure that, add an app setting to your app with a name of `WEBSITES_WEBDEPLOY_USE_SCM` and set the value to "false".
 
 ### To prevent down-time when you update your code, use Continuous Deployment
 
@@ -39,9 +39,9 @@ You can use **Visual Studio** to deploy to **App Service** using **Web Deploy**.
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-If you update your code, push a new Docker image, and then restart your site manually to pick up that change, you're going to experience some down-time while App Service pulls the new image and start your container. You can avoid that by using the Continuous Deployment feature.
+If you update your code, push a new Docker image, and then restart your app manually to pick up that change, you're going to experience some down-time while **App Service** pulls the new image and start your container. You can avoid that by using the Continuous Deployment feature.
 
-When you use Continuous Deployment, any time you push a new Docker image to your registry, Web App for Containers will pick up that change automatically. We'll pull the image and start the container, and we'll wait until that new container is running and ready for HTTP requests before we switch over to it. During that time, your old image will continue to serve requests into your app.
+When you use Continuous Deployment, any time you push a new Docker image to your registry, **App Service** will pick up that change automatically. We'll pull the image and start the container, and we'll wait until that new container is running and ready for HTTP requests before we switch over to it. During that time, your old image will continue to serve requests into your app.
 
 For more information on [Continuous Deployment](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-ci-cd), see our documentation on it.
 
@@ -51,9 +51,9 @@ For more information on [Continuous Deployment](https://docs.microsoft.com/azure
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-If you change your Docker container settings to point to a new container and then click Save, it may take a minute or so before you'll see the new container when you browse to your site. While the new container is being pulled and started, we will continue to serve requests to your site using the old container. Only when the new container is started and ready to receive requests will we start sending requests to it.
+If you change your Docker container settings to point to a new container and then click Save, it may take a minute or so before you'll see the new container when you browse to your site. While the new container is being pulled and started, we will continue to serve requests to your app using the old container. Only when the new container is started and ready to receive requests will we start sending requests to it.
 
-A good way to tell if your new site is up and running is to the check the "site up time" for the **Kudu** (Advanced Tools) site as shown below. When the new container is up and running, the Kudu site will restart. If you see that the Kudu site has restarted, your new container should be ready.
+A good way to tell if your new app is up and running is to the check the "site up time" for the [**Kudu** (Advanced Tools)](https://github.com/projectkudu/kudu/wiki) app. When the new container is up and running, **Kudu** will restart. If you see that **Kudu** has restarted, your new container should be ready.
 
 ### Custom images are stored on disk unless a worker change happens
 
@@ -61,7 +61,7 @@ A good way to tell if your new site is up and running is to the check the "site 
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-The first time you use a custom Docker image, we will do a `docker pull` and pull all layers. These layers are stored on disk just as if you were using Docker on-premise. When we do a `docker pull`  after a site restart, we will only pull layers that have changed. If there have been no changes, we will simply use existing layers on disk.
+The first time you use a custom Docker image, we will do a `docker pull` and pull all layers. These layers are stored on disk just as if you were using Docker on-premise. When we do a `docker pull`  after a app restart, we will only pull layers that have changed. If there have been no changes, we will simply use existing layers on disk.
 
 If you change workers for any reason, however, we will have to pull down all layers again. Your worker will change if you scale up/down or if you scale out to add additional workers. There are also rare cases where your worker may change without a scale operation, but these cases are uncommon.
 
@@ -71,7 +71,7 @@ If you change workers for any reason, however, we will have to pull down all lay
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-Docker containers in Web App for Containers are specified using an `image:tag` combination. Therefore, if you configure Continuous Deployment, you'll need to ensure that any updates to your Docker image don't change the tag.
+Docker containers in **App Service** are specified using an `image:tag` combination. Therefore, if you configure Continuous Deployment, you'll need to ensure that any updates to your Docker image don't change the tag.
 
 We've seen quite a few cases where customers will initially tag the image with a "v1" tag and enable CI. At some later time, they update the image and tag the new image with "v2" and then wonder why CI isn't working. Once you change the tag on an image, it's considered a different image from the initially configured image, and that will cause CI to not pick up the changes.
 
@@ -101,7 +101,7 @@ If you don't require file persistence, you can set this app setting to **false**
 
 The absence of this app setting will result in the setting being **"true"**. In other words, if this app setting does not exist for your app storage will be mounted.
 
-[**Kudu** (Advanced Tools)](https://github.com/projectkudu/kudu/wiki) for Linux Apps runs in a separate container. The **Kudu** container always maps the /home directory to the App Service built in storage.  That way, the `/home/LogFiles` directory will persist between restarts and scale out operations in the **Kudu** container.
+[**Kudu** (Advanced Tools)](https://github.com/projectkudu/kudu/wiki) for Linux Apps runs in a separate container. The **Kudu** always maps the /home directory to the **App Service** built in storage.  That way, the `/home/LogFiles` directory will persist between restarts and scale out operations.
 
 Therefore, if you need to get Docker logs or other logs, always use the **Kudu** Bash console instead of using SSH to access your app's container. (See [this](#If-your-app-doesn't-start,-check-the-Docker-log) for more information on how to get the latest Docker logs.)
 
@@ -136,7 +136,7 @@ Any other characters will be stripped from the App Setting name (and, therefore,
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-If you use the Bash console in **Kudu** (Advanced Tools) to look at environment variables, you won't see environment variables that you set using App Settings. That's because the Bash console runs in a separate context from your Web App. In order to see your environment variables, use the Environment page in **Kudu** (Advanced Tools) or use code to retrieve the environment variables.
+If you use the Bash console in [**Kudu** (Advanced Tools)](https://github.com/projectkudu/kudu/wiki) to look at environment variables, you won't see environment variables that you set using App Settings. That's because the Bash console runs in a separate context from your App. In order to see your environment variables, use the **Environment** page in **Kudu** or use code to retrieve the environment variables.
 
 ### Set your default document in a Node.js app using JavaScript
 
@@ -146,7 +146,7 @@ If you use the Bash console in **Kudu** (Advanced Tools) to look at environment 
 
 When you create a Node.js app, by default, it's going to use `hostingstart.html` as the default document unless you configure it to look for a different file. You can use a JavaScript file to configure your default document. 
 
-Create a file called index.js in the root folder of your site and add the following content.
+Create a file called index.js in the root folder of your app and add the following content.
 
 ``` Node
 var express = require('express');
@@ -167,7 +167,7 @@ This will configure index.html as the default document for your app.
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-App Service includes the ability to force SSL traffic using the "HTTPS Only" option in the Azure portal. For details on how to do that, see [Secure a custom DNS name with an SSL binding in Azure App Service](https://docs.microsoft.com/azure/app-service/configure-ssl-bindings#enforce-https).
+**App Service** includes the ability to force SSL traffic using the "HTTPS Only" option in the Azure portal. For details on how to do that, see [Secure a custom DNS name with an SSL binding in Azure App Service](https://docs.microsoft.com/azure/app-service/configure-ssl-bindings#enforce-https).
 
 ### If you're persisting files, only the /home directory is persisted
 
@@ -175,13 +175,14 @@ App Service includes the ability to force SSL traffic using the "HTTPS Only" opt
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-By default, we don't persist files in your site. However, if you need to persist files, you can enable App Service Storage (see "You can enable and disable storage persistence with an app setting"). If you enable this, we mount the /home directory to Azure Storage. If your app is restarted, any files saved within the /home directory and sub-directories will persist. However, any files or directories outside of the /home directory will not be persisted between site recycles. This can impact you in a couple of different ways.
+By default, we don't persist files in your app. However, if you need to persist files, you can enable **App Service** built in storage (see [You can enable and disable storage persistence with an app setting](You-can-enable-and-disable-storage-persistence-with-an-app-setting)). 
 
-If you use npm, apt, or similar to install something from the console after your app starts, once the app restarts, whatever you installed will be gone.
-If you save files outside of the /home directory, if your app restarts, those files will be gone.
-If you need an extension or other component for your app to run, make sure that you install it via your Dockerfile. That way, it will be available always. If you need to persist files that your app is creating, make sure that you write them into the /home directory structure.
+If you enable this, any files saved within the /home directory and sub-directories will persist. However, any files or directories outside of the /home directory will not be persisted between app recycles. This can impact your app in a couple of different ways:
 
-For more information on creating your own container for use with Web App for Containers, see our documentation.
+- If you use npm, apt, or similar to install something from the console after your app starts, once the app restarts, whatever you installed will be gone.
+- If you save files outside of the /home directory, if your app restarts, those files will be gone.
+- If you need an extension or other component for your app to run, make sure that it's bundled with our application or installed as part of your initialization script.
+
 
 ### To use SSH and SFTP, your Docker image needs special sauce
 
@@ -198,13 +199,13 @@ To use SFTP, make sure the following line is in your sshd_config file.
 `subsystem sftp internal-sftp`
 
 
-### You can use your favorite SSH client with Web Apps
+### You can use your favorite SSH client with apps
 
 |**CODE**|**CONTAINER**|
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-You can use any SSH client you want with Web Apps. Whether you're a Windows user, a macOS user, or a Linux user, you can easily SSH into your Web App. For more details on SSH see [App Service SSH Support](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-ssh-support) and [App Service enable SSH](https://docs.microsoft.com/azure/app-service/containers/configure-custom-container#enable-ssh)
+You can use any SSH client you want with apps. Whether you're a Windows user, a macOS user, or a Linux user, you can easily SSH into your app. For more details on SSH see [App Service SSH Support](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-ssh-support) and [App Service enable SSH](https://docs.microsoft.com/azure/app-service/containers/configure-custom-container#enable-ssh)
 
 ### Don't worry about the SSH port in App Service
 
@@ -247,12 +248,12 @@ Of course, replace "#.#.#.#" with the IP of the DNS nameserver you want to use.
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-**App Service** logs useful information into the Docker log that can help you troubleshoot your site when it doesn't start or if it's restarting. The service logs a lot more than you might be used to seeing in a Docker log, and we will continue to work on making this logging more useful.
+**App Service** logs useful information into the Docker log that can help you troubleshoot your app when it doesn't start or if it's restarting. The service logs a lot more than you might be used to seeing in a Docker log, and we will continue to work on making this logging more useful.
 
 There are several ways to access Docker logs:
 
 - Docker logs appear on the Container Settings page in the portal. (These are truncated, but you can download them by clicking on the Download Logs button.)
-- You can find the Docker log in the /LogFiles directory. You can access this via the Kudu (Advanced Tools) Bash console or by using an FTP client to access it.
+- You can find the Docker log in the /LogFiles directory. You can access this via the [**Kudu** (Advanced Tools)](https://github.com/projectkudu/kudu/wiki) Bash console or by using an FTP client to access it.
 - You can use our API to download the current logs. (see [You can discover and download the latest Docker logs using Kudu](#You-can-discover-and-download-the-latest-Docker-logs-using-Kudu))
    - The naming convention for the Docker log is `YYYY_MM_DD_RDxxxxxxxxxxxx_docker.log`
 
@@ -278,13 +279,13 @@ In this example, I'm viewing the Docker log for September 5. Note that I'm also 
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-App Service has an API that allows you to easily see the current Docker log details (such as the filename, etc.) and also download the current Docker logs in Zip format.
+**App Service** has an API that allows you to easily see the current Docker log details (such as the filename, etc.) and also download the current Docker logs in Zip format.
 
 To see details on the current Docker logs in JSON format, you can use this URL:
 
 `https://<yout-app-name>.scm.azurewebsites.net/api/logs/docker`
 
-You can get to this easily by going to **Kudu** (Advanced Tools) and then appending "/api/logs/docker" to the URL. The output of this will be a JSON response with the most relevant and current Docker logs.
+You can get to this easily by going to [**Kudu** (Advanced Tools)](https://github.com/projectkudu/kudu/wiki) and then appending "/api/logs/docker" to the URL. The output of this will be a JSON response with the most relevant and current Docker logs.
 
 If you want to download the logs shown in the above API in Zip format, append "zip" to the URL. For example:
 
@@ -317,7 +318,7 @@ Some containers might need more than 230 seconds to start, the default timeout c
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-App Service will a certain amount of time for your container to start before we consider it be a failed start. In order for App Service to consider a container to be successfully started, the container must start and it must respond to an HTTP ping. If the container starts but does not respond to a ping, we will eventually log an event in the Docker log saying that it didn't start.
+**App Service** will a certain amount of time for your container to start before we consider it be a failed start. In order for **App Service** to consider a container to be successfully started, the container must start and it must respond to an HTTP ping. If the container starts but does not respond to a ping, we will eventually log an event in the Docker log saying that it didn't start.
 
 Here's a snippet from a Docker log that illustrates the problem. 
 
@@ -344,7 +345,7 @@ Use the `WEBSITES_PORT` app setting with a value of "3000" to expose that port.
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-If you're a *Node.js* developer, you can remotely debug your Web App using VS Code. You can set breakpoints, step through code, etc. on your Web App running in App Service from your development machine. For all of the details on how to remotely debug, check out [this blog post](https://medium.com/@auchenberg/introducing-remote-debugging-of-node-js-apps-on-azure-app-service-from-vs-code-in-public-preview-9b8d83a6e1f0) from Kenneth Auchenberg on the VS Code team.
+If you're a *Node.js* developer, you can remotely debug your App using VS Code. You can set breakpoints, step through code, etc. on your App running in **App Service** from your development machine. For all of the details on how to remotely debug, check out [this blog post](https://medium.com/@auchenberg/introducing-remote-debugging-of-node-js-apps-on-azure-app-service-from-vs-code-in-public-preview-9b8d83a6e1f0) from Kenneth Auchenberg on the VS Code team.
 
 ## Best Practices
 
@@ -354,7 +355,7 @@ If you're a *Node.js* developer, you can remotely debug your Web App using VS Co
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-You can **SSH** into your app container and install components. However, when your site is restarted, anything that you install will be gone. Why is that? That's the way Docker works. When your site starts, we run your Docker image and create a Docker container. Your app runs inside of that container, and the file system contains only what is in the Docker image. If your Docker image doesn't install a particular component, it won't be there when your container starts.
+You can **SSH** into your app container and install components. However, when your app is restarted, anything that you install will be gone. Why is that? That's the way Docker works. When your app starts, we run your Docker image and create a Docker container. Your app runs inside of that container, and the file system contains only what is in the Docker image. If your Docker image doesn't install a particular component, it won't be there when your container starts.
 
 If you want to install a particular component, make sure that you do it in a Dockerfile so that the component is included in your Docker image. See [this documentation](https://docs.microsoft.com/azure/app-service/containers/tutorial-custom-docker-image) for full information on how to do that.
 
@@ -364,7 +365,7 @@ If you want to install a particular component, make sure that you do it in a Doc
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-We offer a **BASH** console in [Kudu (Advanced Tools)](https://github.com/projectkudu/kudu/wiki) that you can use to browse directory structure, etc. It's important to realize that this console is running inside of the **Kudu** container. This is not the same container that your app is running in, so if you look at files and directories here, they won't reflect your app. The only exception to that is the /home directory. That directory is, by default, mounted from App Service built in storage, and it's the same location in both the **Kudu** container and your app's container. [Learn more about persistent storage](#You-can-enable-and-disable-storage-persistence-with-an-app-setting)
+We offer a **BASH** console in [Kudu (Advanced Tools)](https://github.com/projectkudu/kudu/wiki) that you can use to browse directory structure, etc. It's important to realize that this console is running inside of **Kudu**. This is not the same container that your app is running in, so if you look at files and directories here, they won't reflect your app. The only exception to that is the /home directory. That directory is, by default, mounted from **App Service** built in storage, and it's the same location in both the **Kudu** and your app's container. [Learn more about persistent storage](#You-can-enable-and-disable-storage-persistence-with-an-app-setting)
 
 ### You don't need (and should not have) SSL/TLS support in your app
 
@@ -380,7 +381,7 @@ We offer a **BASH** console in [Kudu (Advanced Tools)](https://github.com/projec
 |:------:|:-----------:|
 | ⛔    | ✅          |
 
-**Container** apps allow you to expose only one port to the outside world. That means that your container can only listen for HTTP/HTTPS requests on a single port. Some apps need multiple ports. For example, you might have one port that is used for requests into the app and a separate port that is used for a dashboard or admin portal. As of today, that configuration isn't possible in Web App for Containers.
+**Container** apps allow you to expose only one port to the outside world. That means that your container can only listen for HTTP/HTTPS requests on a single port. Some apps need multiple ports. For example, you might have one port that is used for requests into the app and a separate port that is used for a dashboard or admin portal. As of today, that configuration isn't possible in **App Service**.
 
 We will attempt to detect which port to bind to your container, but you can also use the `WEBSITES_PORT` app setting and configure it with a value for the port you want to bind to your container.
 
@@ -394,6 +395,6 @@ We will attempt to detect which port to bind to your container, but you can also
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-You're probably used to using `df` to find out disk space in your volumes. You can certainly do that in App Service, but what you'll see isn't really going to be as helpful as you might think.
+You're probably used to using `df` to find out disk space in your volumes. You can certainly do that in **App Service**, but what you'll see isn't really going to be as helpful as you might think.
 
-Assuming you are persisting files in the /home directory (which is currently the default), you will have a quota based on your pricing tier. However, if you use `df`, the disk space you see **won't reflect that quota**. If you want to find out your disk usage, use **Quotas** in your Web App's menu, **File System Storage** in the App Service Plan's menu, or use the REST API to find your usage.
+Assuming you are persisting files in the /home directory (which is currently the default), you will have a quota based on your pricing tier. However, if you use `df`, the disk space you see **won't reflect that quota**. If you want to find out your disk usage, use **Quotas** in your app's menu, **File System Storage** in the **App Service Plan** menu, or use the REST API to find your usage.
