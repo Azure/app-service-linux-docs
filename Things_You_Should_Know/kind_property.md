@@ -8,7 +8,7 @@ There are several different offerings in the azure portal that use the same unde
 
 **App Service** uses the value of the **kind property** to specialize the UX of a `Microsoft.Web\Sites` resource in the Azure Portal.
 
-The `kind` property of an app is set during create flow. The portal does this based on the creat flow of your choice and/or the configuration you enter. This is also true of the [App Service CLI](https://docs.microsoft.com/cli/azure/appservice?view=azure-cli-latest) and other clients like [Visual Studio Code](https://code.visualstudio.com/).
+The `kind` property of an app is set during create flow. The portal does this based on the create flow of your choice and/or the configuration you enter. This is also true of the [App Service CLI](https://docs.microsoft.com/cli/azure/appservice?view=azure-cli-latest) and other clients like [Visual Studio Code](https://code.visualstudio.com/).
 
 You will need to manually set the **kind property** if you are creating resources through [ARM templates](https://docs.microsoft.com/azure/azure-resource-manager/templates/), or using the [ARM API directly](https://docs.microsoft.com/rest/api/resources/).
 
