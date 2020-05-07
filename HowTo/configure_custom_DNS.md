@@ -1,4 +1,4 @@
-# Configure a custom DNS nameserver for a web app
+# How To - Use a custom DNS nameserver with your app
 
 This article shows you how to configure your apps to use a custom DNS name server for outgoing connections. Some of the features in App Service will change how outgoing DNS queries are resolved for your apps. This article is intended to help you understand how can DNS configurations change for your app how you can override and use a custom DNS.
 
