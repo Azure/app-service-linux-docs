@@ -12,7 +12,7 @@ For example on February 01, 2020 any application running on `PHP 7.0`  or `PHP 7
 
 ### End of Life for PHP 5.6
 
-Due to the popularity of **PHP 5.6** and the high volume of applications hosted using this version of the PHP runtime. Critical security fixes have been actively backported from the 7.X PHP branch into the version of **PHP 5.6** provided by **Azure App Service**.
+Due to the popularity of **PHP 5.6** and the high volume of applications hosted using this version of the PHP runtime, critical security fixes have been actively backported from the 7.X PHP branch into the version of **PHP 5.6** provided by **Azure App Service**.
 
 Extended support for this version of **PHP 5.6** will end on **February 01, 2021**. At this point any application hosted in App Service targeting this version of the **PHP 5.6** will be out of support and at risk of security vulnerabilities that remain unpatched.
 
@@ -24,6 +24,7 @@ Extended support for this version of **PHP 5.6** will end on **February 01, 2021
 | PHP 7.0 | End of Life      |    December 03, 2018     |    February 01, 2020    | Windows & Linux |
 | PHP 7.1 | End of Life      |    December 01, 2019     |    February 01, 2020    | Windows & Linux |
 | PHP 7.2 | Official Support |    November 30, 2020     |    February 01, 2021    | Windows & Linux |
-| PHP 7.3 | Official Support |    November 28, 2021     |    December 06, 2021    | Windows & Linux |
+| PHP 7.3 | Official Support |    December 06, 2020     |    December 06, 2021    | Windows & Linux |
+| PHP 7.4 | Official Support |    November 28, 2021     |    November 28, 2022    | Windows & Linux |
 
 [PHP Official Support timeline](https://www.php.net/supported-versions.php)
