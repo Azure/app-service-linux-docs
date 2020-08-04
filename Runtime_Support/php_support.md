@@ -28,3 +28,13 @@ Extended support for this version of **PHP 5.6** will end on **February 01, 2021
 | PHP 7.4 | Official Support |    November 28, 2021     |    November 28, 2022    | Windows & Linux |
 
 [PHP Official Support timeline](https://www.php.net/supported-versions.php)
+
+## How to update your app to target a different version of PHP
+
+>**NOTE**:
+>
+>Changing the stack settings of your app will trigger a re-start of your application.
+
+The version of PHP provided by app service can be modified through the Azure Portal: **Configuration**>**General Settings**>**Stack Settings**>**Minor Version**
+
+![PHP Minor Version](.\media\php.gif)
