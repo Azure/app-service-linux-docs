@@ -16,6 +16,14 @@ Due to the popularity of **PHP 5.6** and the high volume of applications hosted 
 
 Extended support for this version of **PHP 5.6** will end on **February 01, 2021**. At this point any application hosted in App Service targeting this version of the **PHP 5.6** will be out of support and at risk of security vulnerabilities that remain unpatched.
 
+### End of Life for PHP 7.4
+
+Extended support for **PHP 7.4** will end on **November 28, 2022**. After this date, your applications will continue to run, however any application hosted in App Service targeting **PHP 7.4** will be out of support and at risk of security vulnerabilities that remain unpatched.
+
+## PHP 8
+
+The next version of PHP is expected to be [PHP 8.0](https://wiki.php.net/todo/php80). Official support for PHP 8 will only be available on Linux, as a result of this App Service will only only support PHP 8 on Apps Service Linux instances.
+
 ## Support Timeline
 
 | Version |  Support Status  |  End of Official Support | End of Extended Support | OS Support |
@@ -26,6 +34,7 @@ Extended support for this version of **PHP 5.6** will end on **February 01, 2021
 | PHP 7.2 | Official Support |    November 30, 2020     |    February 01, 2021    | Windows & Linux |
 | PHP 7.3 | Official Support |    December 06, 2020     |    December 06, 2021    | Windows & Linux |
 | PHP 7.4 | Official Support |    November 28, 2021     |    November 28, 2022    | Windows & Linux |
+| PHP 8.x | TBD              |    TBD                   |    TBD                  | Linux only |
 
 [PHP Official Support timeline](https://www.php.net/supported-versions.php)
 
