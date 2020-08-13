@@ -11,7 +11,7 @@ As part of the execution of `az webapp up` command it performs a **best effort**
 # Troubleshooting  Steps
 
 1. Make sure you are in the right folder. `az webapp up` should be run from the local folder containing your code. The most common mistake is running the command in the parent directory. 
-2. Confirm your project structure complies with requirrements outlined in the the "Automatic Runtime Detection Logic" section below.
+2. Confirm your project structure complies with requirements outlined in the the "Automatic Runtime Detection Logic" section below.
 3. Still having issues? Create an issue in our repository: https://github.com/Azure/app-service-linux-docs/issues
 
 ## Automatic Runtime Detection Logic
