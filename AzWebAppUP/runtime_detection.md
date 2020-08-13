@@ -19,19 +19,19 @@ The runtime detections logic uses the hints outlined below. Any code that doesnâ
 
 ### Python detection logic
 
-Python detection looks for the existence of `requirements.txt` in the current working directory.
+Python detection looks for the existence of a file titled `requirements.txt` in the root folder of the project.
 
 ### Node detection logic
 
-Node detection looks for the existence of the `package.json` or `sever.js` or `index.js` in the current working directory.
+Node detection looks for the existence of the `package.json` or `sever.js` or `index.js` in the root folder of the project.
 
 ### ASP .NET and .NET Core detection logic
 
-ASP .NET and .NET Core detection is done by looking for the existence of `*.csproj` in the current working directory.
+ASP .NET and .NET Core detection is done by looking for the existence of `*.csproj` in the root folder of the project.
 
 ### HTML
 
-Static content needs to use the explicit `--html` flag to indicate that static content is being deployed. Validation is done by looking for `*.html` or `*.htm` or `*.shtml` files in the current working directory
+Static content needs to use the explicit `--html` flag to indicate that static content is being deployed. Validation is done by looking for `*.html` or `*.htm` or `*.shtml` files in the root folder of the project.
 
 ### Manual runtime definition
 
