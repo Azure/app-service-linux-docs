@@ -35,11 +35,10 @@ Extended support for this version of **PHP 5.6** will end on **February 01, 2021
 >
 >Changing the stack settings of your app will trigger a re-start of your application.
 
-The version of PHP provided by app service can be modified through the Azure portal: 
-1. Click on the **Configuration** blade in your App Service portal
-2. Go to the **General Settings** tab
-3. Under **Stack Settings**
-4. Click on the **Minor Version** drop-down and update your version
-
+Update your App Service apps to use a supported version of PHP in the Azure portal:
+1. In the Azure portal, click the **App Service** blade. Select the app you want to update. 
+2. In the Configuration panel, click the **General settings** tab.
+3. Under Stack Settings, click the drop-down menu under **Minor version** and select the PHP version you want (we recommend choosing the most recent version).
+4. Click **Save**.
 
 ![PHP Minor Version](./media/php.gif)
