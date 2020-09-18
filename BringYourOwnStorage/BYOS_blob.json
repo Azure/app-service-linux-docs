@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "webApp_Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the webapp to configure"
+            }
+        },
+        "webApp_Location": {
+            "type": "string",
+            "metadata": {
+                "description": "Location of the webapp to configure"
+            }
+        },
+        "BYOS_mountName": {
+            "defaultValue": "ARM-BYOS-mount",
+            "type": "string",
+            "metadata": {
+                "description": "Give your App Service mounted storage configuration a name."
+            }
+        },
+        "BYOS_mountPath": {
+            "defaultValue": "/home/byos_blob",
+            "type": "string",
+            "metadata": {
+                "description": "The location in the webapp filesystem that is mounted to the BYOS share."
+            }
+        },
+        "AzureStorage_AccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the Azure Storage account to be used."
+            }
+        },
+        "AzureStorage_ShareName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the azure blob container to mount."
+            }
+        }
+    },
+    "variables": {
+        "storageAccountId": "[resourceId('Microsoft.Storage/storageAccounts', parameters('AzureStorage_AccountName'))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2018-11-01",
+            "name": "[parameters('webApp_Name')]",
+            "location": "[parameters('webApp_Location')]",
+            "properties": {
+                "siteConfig": {
+                    "azureStorageAccounts": {
+                        "[parameters('BYOS_mountName')]": {
+                            "mountPath": "[parameters('BYOS_mountPath')]",
+                            "accountName": "[parameters('AzureStorage_AccountName')]",
+                            "type": "AzureBlob",
+                            "shareName": "[parameters('AzureStorage_ShareName')]",
+                            "accessKey": "[listKeys(variables('storageAccountId'), '2018-11-01').keys[0].value]"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
