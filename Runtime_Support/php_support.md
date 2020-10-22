@@ -24,7 +24,7 @@ Extended support for **PHP 7.4** will end on **November 28, 2022**. After this d
 
 ## PHP 8
 
-The next version of PHP is expected to be [PHP 8.0](https://wiki.php.net/todo/php80). Official support for PHP 8 will only be available on Linux, as a result of this App Service will only only support PHP 8 on Apps Service Linux instances.
+The next version of PHP is expected to be [PHP 8.0](https://wiki.php.net/todo/php80). Official support for PHP 8 will only be available on Linux, as a result of this App Service will only support PHP 8 on Apps Service Linux instances.
 
 ## Support Timeline
 
