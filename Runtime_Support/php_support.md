@@ -20,7 +20,7 @@ Extended support for this version of **PHP 5.6** will end on **February 01, 2021
 
 Extended support for **PHP 7.4** will end on **November 28, 2022**. After this date, your applications will continue to run, however any application hosted in App Service targeting **PHP 7.4** will be out of support and at risk of security vulnerabilities that remain unpatched.
 
-**If you are currently targeting Windows for PHP development, we advise to plan for migrating development to target Linux. After November 28 2022, Linux will be the only OS supported by future version of PHP and continued feature, quality and security updates**.
+**If you are currently targeting Windows for PHP development, we advise to plan for migrating development to target Linux. After November 28 2022, Linux will be the only OS supported by future versions of PHP and continued feature, quality and security updates**.
 
 ## PHP 8
 
