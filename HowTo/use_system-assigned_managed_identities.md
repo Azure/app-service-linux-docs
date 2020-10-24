@@ -51,7 +51,7 @@ az webapp identity assign -g $RG_Name -n $Web_Name -o none
 Identity_ID = $(az webapp show -g $RG_Name -n $Web_Name --query identity.principalId --output tsv)
 ```
 
-## STEP 3: Grant access to the identity on ACR
+## STEP 2: Grant access to the identity on ACR
 
 This step will register the identity with ACR and grant it the minimum permission necessary for a webapp to pull and host containers from it.
 
@@ -65,7 +65,7 @@ ACR_ID=$(az acr show -g $RG_Name -n $ACR_Name --query id --output tsv)
 az role assignment create --assignee $Identity_ID --scope $ACR_ID --role acrpull -o none
 ```
 
-## Step 4: Configure WebApp configuration
+## Step 3: Configure WebApp configuration
 
 This step will configure the webapp to use the assigned identity for docker pull operations and update the configuration to point to ACR and the Image:Tag for the container you want to use.
 
