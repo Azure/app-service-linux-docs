@@ -10,7 +10,7 @@ This guide uses the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azu
 
 ## STEP 0 create your resources
 
-> **Note:** If you already have resources you want to you use, skip to step 1
+> **Note:** If you already have resources you want to use, skip to step 1
 
 For this example we will need to create the following resources:
   
