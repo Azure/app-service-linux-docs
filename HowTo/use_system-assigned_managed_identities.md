@@ -21,11 +21,11 @@ For this example we will need to create the following resources:
 ``` bash
 # Modify for your environment
 
-location = "west us"    #Azure Region where the resources will be created
-RG_Name = "RG-test"     #Name of the resource group that will contain the resources
-ASP_Name = "ASP-Test"   #Name of the App Service plan
-Web_Name = "WebApp-101" #Globally unique name of the WebApp
-ACR_Name = "bkACRtest"  #Name of the Azure Container Registry
+$location = "west us"    #Azure Region where the resources will be created
+$RG_Name = "RG-SA-TEST"     #Name of the resource group that will contain the resources
+$ASP_Name = "ASP-SA-TEST"   #Name of the App Service plan
+$Web_Name = "Web-SA-TEST-101" #Globally unique name of the WebApp
+$ACR_Name = "acrSAtest"  #Name of the Azure Container Registry
 
 az group create -n $RG_Name -l $location -o none
 az acr create -n $ACR_Name --sku standard -g $RG_Name -l $location -o none
