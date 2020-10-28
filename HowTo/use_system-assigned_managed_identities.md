@@ -10,7 +10,7 @@ This guide uses the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azu
 
 ## STEP 0 create your resources
 
-> **Note:** If you already have resources you want to use, skip to step 1
+> **Note:** If you already have resources you want to use, skip to [Step 1](#STEP-1:-Assign-an-identity-to-your-WebApp)
 
 For this example we will need to create the following resources:
   
@@ -20,18 +20,19 @@ For this example we will need to create the following resources:
 
 ``` bash
 # Modify for your environment
+$location="westus"
+$RG_Name="SA-TEST-RG"
+$ASP_Name="SA-TEST-ASP"
+$Web_Name="SA-TEST-WEB-101"
+$ACR_Name="satestacr"
 
-$location = "west us"    #Azure Region where the resources will be created
-$RG_Name = "RG-SA-TEST"     #Name of the resource group that will contain the resources
-$ASP_Name = "ASP-SA-TEST"   #Name of the App Service plan
-$Web_Name = "Web-SA-TEST-101" #Globally unique name of the WebApp
-$ACR_Name = "acrSAtest"  #Name of the Azure Container Registry
-
+#Create resources
 az group create -n $RG_Name -l $location -o none
 az acr create -n $ACR_Name --sku standard -g $RG_Name -l $location -o none
 az appservice plan create --is-linux -n $ASP_Name --sku p1v2 -g $RG_Name -l $location -o none
 az webapp create -n $Web_Name -g $RG_Name -p $ASP_Name -i "nginx" -o none
 
+#List resources in the resource group
 az resource list -g $RG_Name -o table
 ```
 
@@ -43,12 +44,14 @@ This step will configure the webapp to use a system-assigned identity. System-as
 
 ```bash
 # Modify for your environment
+Webapp_Config=$(az webapp show -g $RG_Name -n $Web_Name --query id --output tsv)"/config/web"
 
-#Assign identity to the app
-az webapp identity assign -g $RG_Name -n $Web_Name -o none
+#Assign managed-identity to webapp
+az webapp identity assign -g $RG_Name -n $Web_Name --identities $Identity_ARMID -o none
 
-#Collect id for the system-assigned identity
-Identity_ID = $(az webapp show -g $RG_Name -n $Web_Name --query identity.principalId --output tsv)
+#Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
+az resource update --ids $Webapp_Config --set properties.acrUseManagedIdentityCreds=True -o none
+
 ```
 
 ## STEP 2: Grant access to the identity on ACR
@@ -57,34 +60,27 @@ This step will register the identity with ACR and grant it the minimum permissio
 
 ``` bash
 # Modify for your environment
-
-#Resource ID for ACR instance create in STEP 0
+Identity_ID=$(az identity show -g $RG_Name -n $ID_Name --query principalId --output tsv)
 ACR_ID=$(az acr show -g $RG_Name -n $ACR_Name --query id --output tsv)
 
 #ACR will allow the identity to perform pull operations and nothing more
 az role assignment create --assignee $Identity_ID --scope $ACR_ID --role acrpull -o none
 ```
 
-## Step 3: Configure WebApp configuration
+>NOTE: There can be some delay while a system-assigned managed-idenity is propagated through your AAD Tenant. If the `az role assignment create` fails wait and retry after a few min
+>
 
-This step will configure the webapp to use the assigned identity for docker pull operations and update the configuration to point to ACR and the Image:Tag for the container you want to use.
+## Step 3: Configure WebApp to pull image:tag from ACR
+
+This step will configure the webapp to point to ACR and the Image:Tag for the container you want to use.
 
 ```bash
 # Modify for your environment
-
-#URL for ACR instance create in STEP 0
 ACR_URL=$(az acr show -g $RG_Name --n $ACR_Name --query loginServer --output tsv)
-
-#Resource ID for WebApp configuration.
-Webapp_Config = $(az webapp show -g $RG_Name -n $Web_Name --query id --output tsv) + "/config/web"
-
-Image ="myapp:latest" #Docker image and tag to pull
-
-FX_Version = '"Docker|"' + $ACR_URL + "/" + $Image
-
-#Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
-az resource update --ids $Webapp_Config --set properties.acrUseManagedIdentityCreds=True -o none
+Image="myapp:latest"
+FX_Version="Docker|"$ACR_URL"/"$Image
 
 #Configure the ACR, Image and Tag to pull
 az resource update --ids $Webapp_Config --set properties.linuxFxVersion=$FX_Version -o none --force-string
+
 ```

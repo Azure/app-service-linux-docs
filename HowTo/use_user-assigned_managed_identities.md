@@ -21,19 +21,22 @@ For this example we will need to create the following resources:
 ``` bash
 # Modify for your environment
 
-$location = "west us"    #Azure Region where the resources will be created
-$RG_Name = "RG-UA-TEST"     #Name of the resource group that will contain the resources
-$ASP_Name = "ASP-UA-TEST"   #Name of the App Service plan
-$Web_Name = "Web-UA-TEST-101" #Globally unique name of the WebApp
-$ACR_Name = "acrUAtest"  #Name of the Azure Container Registry
-$ID_Name = "ID-UA" #Name for the User-Assigned managed identity
+#Variables
+location="westus"
+RG_Name="UA-TEST-RG"
+ASP_Name="UA-TEST-ASP"
+Web_Name="UA-TEST-Web-101"
+ACR_Name="UAtestACR"
+ID_Name="UA-TEST-Identity"
 
+#Resource Creation
 az group create -n $RG_Name -l $location -o none
 az acr create -n $ACR_Name --sku standard -g $RG_Name -l $location -o none
 az identity create -n $ID_Name -g $RG_Name -l $location -o none
 az appservice plan create --is-linux -n $ASP_Name --sku p1v2 -g $RG_Name -l $location -o none
 az webapp create -n $Web_Name -g $RG_Name -p $ASP_Name -i "nginx" -o none
 
+#List resources in the resource group
 az resource list -g $RG_Name -o table
 ```
 
@@ -46,13 +49,14 @@ This step will configure the webapp to use a user-assigned identity.
 ```bash
 # Modify for your environment
 
+Identity_ARMID=$(az identity show -g $RG_Name -n $ID_Name --query id -o tsv)
+Webapp_Config=$(az webapp show -g $RG_Name -n $Web_Name --query id --output tsv)"/config/web"
+ClientID=$(az identity show -g $RG_Name -n $ID_Name --query clientId --output tsv)
+
 #Assign managed-identity to webapp
-$Identity_ARMID = $(az identity show -g $RG_Name -n $ID_Name --query id -o tsv)
 az webapp identity assign -g $RG_Name -n $Web_Name --identities $Identity_ARMID -o none
 
 #Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
-$Webapp_Config = $(az webapp show -g $RG_Name -n $Web_Name --query id --output tsv) + "/config/web"
-$ClientID=$(az identity show -g $RG_Name -n $ID_Name --query clientId --output tsv)
 az resource update --ids $Webapp_Config --set properties.acrUseManagedIdentityCreds=True -o none
 az resource update --ids $Webapp_Config --set properties.AcrUserManagedIdentityID=$ClientID -o none
 
@@ -65,14 +69,12 @@ This step will register the identity with ACR and grant it the minimum permissio
 ``` bash
 # Modify for your environment
 
-#Collect Principal Id for the user-assigned identity
-$Identity_ID=$(az identity show -g $RG_Name -n $ID_Name --query principalId --output tsv)
-
-#Resource ID for ACR instance create in STEP 0
-$ACR_ID=$(az acr show -g $RG_Name -n $ACR_Name --query id --output tsv)
+Identity_ID=$(az identity show -g $RG_Name -n $ID_Name --query principalId --output tsv)
+ACR_ID=$(az acr show -g $RG_Name -n $ACR_Name --query id --output tsv)
 
 #ACR will allow the identity to perform pull operations and nothing more
 az role assignment create --assignee $Identity_ID --scope $ACR_ID --role acrpull -o none
+
 ```
 
 ## Step 3: Configure WebApp to pull image:tag from ACR
@@ -82,15 +84,9 @@ This step will configure the webapp to point to ACR and the Image:Tag for the co
 ```bash
 # Modify for your environment
 
-#URL for ACR instance create in STEP 0
-$ACR_URL=$(az acr show -g $RG_Name --n $ACR_Name --query loginServer --output tsv)
-
-#Resource ID for WebApp configuration.
-$Webapp_Config = $(az webapp show -g $RG_Name -n $Web_Name --query id --output tsv) + "/config/web"
-
-$Image ="myapp:latest" #Docker image and tag to pull
-
-$FX_Version = '"Docker|"' + $ACR_URL + "/" + $Image
+ACR_URL=$(az acr show -g $RG_Name --n $ACR_Name --query loginServer --output tsv)
+Image="myapp:latest"
+FX_Version="Docker|"$ACR_URL"/"$Image
 
 #Configure the ACR, Image and Tag to pull
 az resource update --ids $Webapp_Config --set properties.linuxFxVersion=$FX_Version -o none --force-string
