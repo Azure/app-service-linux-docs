@@ -10,13 +10,14 @@ This guide uses the [Azure CLI](https://docs.microsoft.com/cli/azure/install-azu
 
 ## STEP 0 create your resources
 
-> **Note:** If you already have resources you want to use, skip to step 1
+> **Note:** If you already have resources you want to use, skip to **Step 1**
 
 For this example we will need to create the following resources:
   
 - Web App
 - App Service Plan
 - Azure Container Registry
+- Managed-Identity
 
 ``` bash
 # Modify for your environment
