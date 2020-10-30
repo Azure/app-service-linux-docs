@@ -1,5 +1,7 @@
 # How to use system-assigned Managed Identities with App Service and Azure Container Registry
 
+>**NOTE**: This instructions only apply to Linux based containers configurations.
+
 App Service can use **system-assigned** [managed identities](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) to authenticate against **Azure Container Registry (ACR)** and perform `docker pull` operation.
 
 Using **managed identities** is a best practice because they allow for the principle of *least privileged* access to be followed compared to using the **admin** accounts.
