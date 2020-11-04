@@ -10,6 +10,14 @@ Once a version of .NET Core has reached it's end of life (EOL) it will no longer
 
 Existing applications configured to target a runtime version that has reached EOL should not be affected.
 
+## .NET 5 Early Access limitations
+
+During the early access period, .NET 5 apps will be subject to the **Early Access** limitations listed in the [early access support document](./early_access.md).
+
+[Application Insights](https://azure.microsoft.com/services/monitor) is currently not supported for .NET 5 apps, we are working with the Application Insights team to resolve this.
+
+
+
 ## Support Timeline
 
 |    Version    | Support Status |   End of Support  |   OS Support    |
