@@ -2,7 +2,7 @@
 
 ## .NET Update Policy
 
-App Service upgrades the underlying .NET runtime and SDK of your application as part of the regular platform updates. As a result of this update process, your application will be automatically updated to the latest patch version available in the platform for the configured minor version of your app.
+App Service upgrades the underlying .NET runtime and SDK of your application as part of the regular platform updates. As a result of this update, your application will be automatically updated to the latest patch version available in the platform for the configured minor version of your app.
 
 ### End of Life
 
