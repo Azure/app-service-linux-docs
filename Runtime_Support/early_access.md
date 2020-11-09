@@ -1,6 +1,6 @@
 # Early Access Runtime
 
-**Early Access** is a new feature of App Service that allows for the rapid delivery of updates and new versions of the programing languages/runtime and SDK supported by the platform. As a developer you will get access to the latest new releases, without having to wait for an App Service release cycle to include support.
+**Early Access** is a new feature of App Service that allows for the rapid delivery of updates and new versions of various-language programming runtimes and SDKs supported by the platform. As a developer, you will get access to the latest new releases without having to wait for an App Service release cycle to include support.
 
 This new features allows the service to decouple the release of new language support from the regular App Service platform updates. This is important because while App Service platform is updated on a regular cadence through the year (about once a month) framework and 3rd party releases don't follow the same schedule and can happen at any time.
 
