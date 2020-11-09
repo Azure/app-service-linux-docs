@@ -17,7 +17,7 @@ During the early access period, .NET 5 apps will be subject to the **Early Acces
 [Application Insights](https://azure.microsoft.com/services/monitor) is currently not supported for .NET 5 apps, we are working with the Application Insights team to resolve this.
 
 Visual Studio and Visual Studio for Mac will not support creating new .NET 5 Apps on App Service through the IDE at launch. As a workaround .NET 5 Apps can be created from the Azure Portal or Azure CLI.
-Publishing content to a .NET 5 works as expected. There is schedule update  that will remove this limitation.
+Publishing content to a .NET 5 app works as expected. There is a schedule update  that will remove this limitation.
 
 ## Support Timeline
 
