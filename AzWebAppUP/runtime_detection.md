@@ -29,6 +29,23 @@ Node detection looks for the existence of the `package.json` or `sever.js` or `i
 
 ASP .NET and .NET Core detection is done by looking for the existence of `*.csproj` in the root folder of the project.
 
+### .NET 5
+
+Detection logic for .NET 5 apps will look into your `*.csproj` file in the current folder.
+
+Detection will then check value set for  `TargetFramework` element looking for `net5.0` string.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
+```
+
+
 ### HTML
 
 Static content needs to use the explicit `--html` flag to indicate that static content is being deployed. Validation is done by looking for `*.html` or `*.htm` or `*.shtml` files in the root folder of the project.
