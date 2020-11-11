@@ -23,7 +23,7 @@ Publishing content to a .NET 5 app works as expected. There is a schedule update
 
 |    Version    | Support Status |   End of Support  |   OS Support    |
 |---------------| -------------- | ----------------- |---------------- |
-| .NET 5        | Current        | Feb, 2023         | Windows & Linux |
+| .NET 5        | Current        | Feb, 2022         | Windows & Linux |
 | .NET Core 3.1 | LTS            | December 3, 2022  | Windows & Linux |
 | .NET Core 3.0 | End of Life    | March 3, 2020     | Windows & Linux |
 | .NET Core 2.2 | End of Life    | December 23, 2019 | Windows & Linux |
