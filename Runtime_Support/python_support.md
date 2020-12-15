@@ -48,4 +48,4 @@ Update your App Service apps to use a supported version of Python in the Azure p
 3. Under Stack Settings, click the drop-down menu under **Minor version** and select the Python version you want (we recommend choosing the most recent version).
 4. Click **Save**.
 
-![Python Minor Version](./media/php.gif)
+![Python Minor Version](./media/python.gif)
