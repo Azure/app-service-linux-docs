@@ -30,7 +30,7 @@ On June 27th, 2023 Python 3.7 will not longer be offered as an option in the cre
 |  Version   |  Support Status  |  End of Official Support |    OS Support   |
 |------------| ---------------- |:------------------------:|:---------------:|
 | Python 2.x | Official Support |    January 01, 2020      | Windows & Linux |
-| Python 3.6 | Official Support |    December 23, 2020      | Windows & Linux |
+| Python 3.6 | Official Support |    December 23, 2021      | Windows & Linux |
 | Python 3.7 | Official Support |    June 27, 2023      | Linux |
 
 [Python Official Support timeline](https://devguide.python.org/#status-of-python-branches)
@@ -42,7 +42,7 @@ On June 27th, 2023 Python 3.7 will not longer be offered as an option in the cre
 >**NOTE**:
 >Changing the stack settings of your app will trigger a re-start of your application.
 
-Update your App Service apps to use a supported version of PHP in the Azure portal:
+Update your App Service apps to use a supported version of Python in the Azure portal:
 1. In the Azure portal, click the **App Service** blade. Select the app you want to update. 
 2. In the Configuration panel, click the **General settings** tab.
 3. Under Stack Settings, click the drop-down menu under **Minor version** and select the Python version you want (we recommend choosing the most recent version).
