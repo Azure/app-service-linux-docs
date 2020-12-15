@@ -8,13 +8,13 @@ App Service upgrades the underlying Python runtime of your application as part o
 
 Once a version of Python has reached it's end of support no new critical or security fixes will be available.
 
-On February 2, 2020 Python 2.7 will not longer be offered as an option in the create process for App Service. Existing apps targeting Python 2.7 will not be affected.
+On February 2, 2020 Python 2.7 will no longer be offered as an option in the create process for App Service. Existing apps targeting Python 2.7 will not be affected.
 
 ### Python 3.6 End of Official Support
 
 Once a version of Python has reached it's end of support no new critical or security fixes will be available.
 
-On December 23rd, 2021 Python 3.6 will not longer be offered as an option in the create process for App Service. Existing apps targeting Python 3.6 will not be affected.
+On December 23rd, 2021 Python 3.6 will no longer be offered as an option in the create process for App Service. Existing apps targeting Python 3.6 will not be affected.
 
 > If you are currently targeting Windows for Python development, we advise to plan for migrating development to target Linux.  After December 23 2021, Linux will be the only OS supported by future versions of Python and continued feature, quality and security updates.
 
@@ -22,7 +22,7 @@ On December 23rd, 2021 Python 3.6 will not longer be offered as an option in the
 
 Once a version of Python has reached it's end of support no new critical or security fixes will be available.
 
-On June 27th, 2023 Python 3.7 will not longer be offered as an option in the create process for App Service. Existing apps targeting Python 3.7 will not be affected.
+On June 27th, 2023 Python 3.7 will no longer be offered as an option in the create process for App Service. Existing apps targeting Python 3.7 will not be affected.
 
 
 ## Support Timeline
