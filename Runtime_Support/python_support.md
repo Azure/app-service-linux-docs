@@ -16,7 +16,7 @@ Once a version of Python has reached it's end of support no new critical or secu
 
 On December 23rd, 2021 Python 3.6 will no longer be offered as an option in the create process for App Service. Existing apps targeting Python 3.6 will not be affected.
 
-> If you are currently targeting Windows for Python development, we advise to plan for migrating development to target Linux.  After December 23 2021, Linux will be the only OS supported by future versions of Python and continued feature, quality and security updates.
+> **If you are currently targeting Windows for Python development, we advise to plan for migrating development to target Linux.  After December 23 2021, Linux will be the only OS supported by future versions of Python and continued feature, quality and security updates. Once your application is refactored to target Linux, follow the QuickStart documentation for [deploying a Python app using App Service on Linux](https://docs.microsoft.com/azure/app-service/quickstart-python?tabs=bash&pivots=python-framework-flask)** 
 
 ### Python 3.7 End of Official Support
 
