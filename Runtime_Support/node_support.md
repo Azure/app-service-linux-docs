@@ -14,13 +14,10 @@ Existing applications configured to target a runtime version that has reached EO
 
 |    Version    | Support Status |   End of Support  |   OS Support    |
 |---------------| -------------- | ----------------- |---------------- |
-|  Node.js 4.x  | End of Life    | April 30 2018     | Windows & Linux |
-|  Node.js 6.x  | End of Life    | April 30 2019     | Windows & Linux |
-|  Node.js 7.x  | End of Life    | June 30 2017      | Windows & Linux |
 |  Node.js 8.x  | End of Life    | December 31 2019  | Windows & Linux |
 |  Node.js 9.x  | End of Life    | June 30 2019      | Windows & Linux |
-|  Node.js 10.x | Active LTS     | April 01 2021     | Windows & Linux |
-|  Node.js 11.x | End of Life    | June 01 2019      | Windows & Linux |
-|  Node.js 12.x | Active LTS     | April 01 2022     | Windows & Linux |
+|  Node.js 10.x | End of Life    | April 30 2021     | Windows & Linux |
+|  Node.js 12.x | Active LTS     | April 30 2022     | Windows & Linux |
+|  Node.js 14.x | Active LTS     | April 30 2023     | Windows & Linux |
 
 [Node.js support timeline](https://nodejs.org/about/releases/)
