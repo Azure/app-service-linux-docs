@@ -1,6 +1,13 @@
 # How to use system-assigned Managed Identities with App Service and Azure Container Registry
 
->**NOTE**: This instructions only apply to Linux based containers configurations.
+>**NOTE**:
+>
+> - This instructions only apply to Linux based containers configurations.
+> - The Webapp and the Azure Container registry must be on the same azure subscription
+>   - Accessing an a container registry on a different subscription is currently **not supported**.
+> - The Azure Container registry must be internet accessible.
+>   - Pulling container images through a Private Link / Private endpoint connection is currently **not supported**.
+>
 
 App Service can use **system-assigned** [managed identities](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) to authenticate against **Azure Container Registry (ACR)** and perform `docker pull` operation.
 
