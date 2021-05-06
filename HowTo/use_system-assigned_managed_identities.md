@@ -53,12 +53,10 @@ This step will configure the webapp to use a system-assigned identity. System-as
 
 ```bash
 # Modify for your environment
-Webapp_Config=$(az webapp show -g $RG_Name -n $Web_Name --query id --output tsv)"/config/web"
-
-#Assign managed-identity to webapp
-az webapp identity assign -g $RG_Name -n $Web_Name --identities $Identity_ARMID -o none
+Identity_ID = az webapp identity assign -g $RG_Name -n $Web_Name --query principalId --output tsv
 
 #Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
+Webapp_Config=$(az webapp show -g $RG_Name -n $Web_Name --query id --output tsv) + "/config/web"
 az resource update --ids $Webapp_Config --set properties.acrUseManagedIdentityCreds=True -o none
 
 ```
@@ -69,11 +67,11 @@ This step will register the identity with ACR and grant it the minimum permissio
 
 ``` bash
 # Modify for your environment
-Identity_ID=$(az identity show -g $RG_Name -n $ID_Name --query principalId --output tsv)
 ACR_ID=$(az acr show -g $RG_Name -n $ACR_Name --query id --output tsv)
 
 #ACR will allow the identity to perform pull operations and nothing more
 az role assignment create --assignee $Identity_ID --scope $ACR_ID --role acrpull -o none
+
 ```
 
 >NOTE: There can be some delay while a system-assigned managed-idenity is propagated through your AAD Tenant. If the `az role assignment create` fails wait and retry after a few min
