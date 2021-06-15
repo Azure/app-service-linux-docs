@@ -53,10 +53,10 @@ This step will configure the webapp to use a system-assigned identity. System-as
 
 ```bash
 # Modify for your environment
-Identity_ID = az webapp identity assign -g $RG_Name -n $Web_Name --query principalId --output tsv
+Identity_ID=$(az webapp identity assign -g $RG_Name -n $Web_Name --query principalId --output tsv)
 
 #Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
-Webapp_Config=$(az webapp show -g $RG_Name -n $Web_Name --query id --output tsv) + "/config/web"
+Webapp_Config=$(az webapp show -g $RG_Name -n $Web_Name --query id --output tsv)"/config/web"
 az resource update --ids $Webapp_Config --set properties.acrUseManagedIdentityCreds=True -o none
 
 ```
