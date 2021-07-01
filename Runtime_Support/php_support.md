@@ -16,6 +16,10 @@ Due to the popularity of **PHP 5.6** and the high volume of applications hosted 
 
 Extended support for this version of **PHP 5.6** will end on **February 01, 2021**. At this point any application hosted in App Service targeting this version of the **PHP 5.6** will be out of support and at risk of security vulnerabilities that remain unpatched.
 
+### End of Life for PHP 7.3
+
+Extended support for **PHP 7.3** will end on **December 6, 2021**. After this date, your applications will continue to run, however any application hosted in App Service targeting **PHP 7.3** will be out of support and at risk of security vulnerabilities that remain unpatched.
+
 ### End of Life for PHP 7.4
 
 Extended support for **PHP 7.4** will end on **November 28, 2022**. After this date, your applications will continue to run, however any application hosted in App Service targeting **PHP 7.4** will be out of support and at risk of security vulnerabilities that remain unpatched.
