@@ -22,7 +22,7 @@ On December 23rd, 2021 Python 3.6 will no longer be offered as an option in the 
 
 Once a version of Python has reached it's end of support no new critical or security fixes will be available.
 
-On June 27th, 2023 Python 3.7 will no longer be offered as an option in the create process for App Service. Existing apps targeting Python 3.7 will not be affected.
+On June 27th, 2023 Python 3.7 will no longer be offered as an option in the create process for App Service. Existing apps targeting Python 3.7 will not be affected.  We recommend migrating your application to Python 3.8.  See our guidance [below](#how-to-update-your-app-to-target-a-different-version-of-python) to target a new version.
 
 
 ## Support Timeline
@@ -32,6 +32,8 @@ On June 27th, 2023 Python 3.7 will no longer be offered as an option in the crea
 | Python 2.x | Official Support |    January 01, 2020      | Windows & Linux |
 | Python 3.6 | Official Support |    December 23, 2021      | Windows & Linux |
 | Python 3.7 | Official Support |    June 27, 2023      | Linux |
+| Python 3.8 | Official Support |    October 14, 2024      | Linux |
+| Python 3.9 | Early Access |    October 05, 2025      | Linux |
 
 [Python Official Support timeline](https://devguide.python.org/#status-of-python-branches)
 
