@@ -18,7 +18,7 @@ Extended support for this version of **PHP 5.6** will end on **February 01, 2021
 
 ### End of Life for PHP 7.3
 
-Extended support for **PHP 7.3** will end on **December 6, 2021**. After this date, your applications will continue to run, however any application hosted in App Service targeting **PHP 7.3** will be out of support and at risk of security vulnerabilities that remain unpatched.
+Extended support for **PHP 7.3** will end on **December 6, 2021**. After this date, your applications will continue to run, however any application hosted in App Service targeting **PHP 7.3** will be out of support and at risk of security vulnerabilities that remain unpatched.  We recommend migrating your application to PHP 7.4.  See our guidance [below](#how-to-update-your-app-to-target-a-different-version-of-php) to target a new version.
 
 ### End of Life for PHP 7.4
 
