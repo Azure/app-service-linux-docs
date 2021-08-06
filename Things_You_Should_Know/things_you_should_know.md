@@ -69,6 +69,14 @@ We've seen quite a few cases where customers will initially tag the image with a
 >
 > If you don't specify a tag, Docker will look for an image with a tag called "latest". Therefore, if your configuration doesn't explicitly use a tag and someone tags your image with anything other than "latest", it will break continuous deployment.
 
+### SQLite and other file based databases are not supported
+
+|**CODE**|**CONTAINER**|
+|:------:|:-----------:|
+| ✅    | ✅          |
+
+The file system of your application is a mounted network share. This is what allows for scale out scenarios where your code needs to be executed across multiple hosts. Unfortunatly this blocks the use of file Based database providers like SQLite since it's not possible to aquiere exclusive locks on the database file.
+
 ## Configuration
 
 ### You can enable and disable storage persistence with an app setting
