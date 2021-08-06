@@ -75,7 +75,7 @@ We've seen quite a few cases where customers will initially tag the image with a
 |:------:|:-----------:|
 | ✅    | ✅          |
 
-The file system of your application is a mounted network share. This is what allows for scale out scenarios where your code needs to be executed across multiple hosts. Unfortunatly this blocks the use of file Based database providers like SQLite since it's not possible to aquiere exclusive locks on the database file.
+The file system of your application is a mounted network share. This is what allows for scale out scenarios where your code needs to be executed across multiple hosts. Unfortunately this blocks the use of file Based database providers like SQLite since it's not possible to acquirer exclusive locks on the database file.
 
 ## Configuration
 
