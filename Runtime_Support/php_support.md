@@ -40,7 +40,7 @@ The next version of PHP is expected to be [PHP 8.0](https://wiki.php.net/todo/ph
 | PHP 7.2 | End of Life      |    November 30, 2020     |    February 01, 2021    | Windows & Linux |
 | PHP 7.3 | Official Support |    December 06, 2020     |    December 06, 2021    | Windows & Linux |
 | PHP 7.4 | Official Support |    November 28, 2021     |    November 28, 2022    | Windows & Linux |
-| PHP 8.x | TBD              |    TBD                   |    TBD                  | Linux only |
+| PHP 8.x | Official Support              |    TBD                   |    TBD                  | Linux only |
 
 [PHP Official Support timeline](https://www.php.net/supported-versions.php)
 
