@@ -16,15 +16,17 @@ You will need to manually set the **kind property** if you are creating resource
 
 The following table contains a list of valid values for Kind property:
 
-|Kind                      | Resource Type                  |
-|--------------------------|--------------------------------|
-|`app`                     | Windows Web app                |
-|`app,linux`               | Linux Web app                  |
-|`hyperV`                  | Windows Container Web App      |
-|`app,container,windows`   | Windows Container Web App      |
-|`app,linux,container`     | Linux Container Web App        |
-|`functionapp`             | Function App                   |
-|`functionapp,linux`       | Linux Consumption Function app |
+|Kind                                     | Resource Type                  |
+|-----------------------------------------|--------------------------------|
+|`app`                                    | Windows Web app                |
+|`app,linux`                              | Linux Web app                  |
+|`hyperV`                                 | Windows Container Web App      |
+|`app,container,windows`                  | Windows Container Web App      |
+|`app,linux,kubernetes`                   | Linux Web App on ARC           |
+|`functionapp`                            | Function Code App              |
+|`functionapp,linux`                      | Linux Consumption Function app |
+|`functionapp,linux,container,kubernetes` | Function Container App on ARC  |
+|`functionapp,linux,kubernetes`           | Function Code App on ARC       |
 
 There are other kind values that have been valid in the past, however as of this writing this are the only valid `kind` property values in active use.
 
