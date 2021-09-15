@@ -20,6 +20,7 @@ The following table contains a list of valid values for Kind property:
 |-----------------------------------------|--------------------------------|
 |`app`                                    | Windows Web app                |
 |`app,linux`                              | Linux Web app                  |
+|`app,linux,container`                    | Linux Container Web app        |
 |`hyperV`                                 | Windows Container Web App      |
 |`app,container,windows`                  | Windows Container Web App      |
 |`app,linux,kubernetes`                   | Linux Web App on ARC           |
