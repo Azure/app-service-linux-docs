@@ -29,6 +29,6 @@ The following table contains a list of valid values for Kind property:
 |`functionapp,linux,container,kubernetes` | Function Container App on ARC  |
 |`functionapp,linux,kubernetes`           | Function Code App on ARC       |
 
-There are other kind values that have been valid in the past, however as of this writing this are the only valid `kind` property values in active use.
+There are other kind values that have been valid in the past, however as of the latest update of this page, these are the only recommended `kind` property values in active use.
 
-If the `value` of the kind property is null, empty, or not on this list. The portal treats the resource as Web App.
+If the `value` of the kind property is null, empty, or not on this list, the portal treats the resource as Web App.
