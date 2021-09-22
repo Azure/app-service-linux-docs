@@ -14,7 +14,7 @@ Existing applications configured to target a runtime version that has reached EO
 
 | Version  | Support Status  |   End of Support  |   OS Support    |
 |----------| --------------- | ----------------- |---------------- |
-| Ruby 2.6 | Supported       | TBA               | Linux |
+| Ruby 2.6 | security maintenance | March 31, 2022    | Linux |
 | Ruby 2.5 | EOL             | March 31, 2021    | Linux |
 | Ruby 2.4 | EOL             | April 5th, 2020   | Linux |
 | Ruby 2.3 | EOL             | March 31, 2019    | Linux |
