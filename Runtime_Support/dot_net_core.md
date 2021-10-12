@@ -6,7 +6,7 @@ App Service upgrades the underlying .NET runtime and SDK of your application as 
 
 ### .NET 5 End of Official Support
 
-Once a version of Node has reached it's end of support no new critical or security fixes will be available.
+Once a version of .NET has reached it's end of support no new critical or security fixes will be available.
 
 In May, 2022 .NET 5 will no longer be offered as an option in the create process for App Service. Existing apps targeting .NET 5 will not be affected.  We recommend migrating your application to .NET 6 when available in November.  See our guidance [below](#how-to-update-your-app-to-target-a-different-version-of-dotnet) to target a new version.
 
