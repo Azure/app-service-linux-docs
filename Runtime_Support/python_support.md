@@ -29,11 +29,12 @@ On June 27th, 2023 Python 3.7 will no longer be offered as an option in the crea
 
 |  Version   |  Support Status  |  End of Official Support |    OS Support   |
 |------------| ---------------- |:------------------------:|:---------------:|
+| Python 3.9 | Early Access     |    October 05, 2025      | Linux           |
+| Python 3.8 | Official Support |    October 14, 2024      | Linux           |
+| Python 3.7 | Official Support |    June 27, 2023         | Linux           |
+| Python 3.6 | Official Support |    December 23, 2021     | Windows & Linux |
 | Python 2.x | Official Support |    January 01, 2020      | Windows & Linux |
-| Python 3.6 | Official Support |    December 23, 2021      | Windows & Linux |
-| Python 3.7 | Official Support |    June 27, 2023      | Linux |
-| Python 3.8 | Official Support |    October 14, 2024      | Linux |
-| Python 3.9 | Early Access |    October 05, 2025      | Linux |
+
 
 [Python Official Support timeline](https://devguide.python.org/#status-of-python-branches)
 
