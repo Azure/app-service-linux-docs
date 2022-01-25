@@ -8,7 +8,7 @@ App Service upgrades the underlying .NET runtime and SDK of your application as 
 
 Once a version of .NET has reached it's end of support no new critical or security fixes will be available.
 
-In May, 2022 .NET 5 will no longer be offered as an option in the create process for App Service. Existing apps targeting .NET 5 will not be affected.  We recommend migrating your application to .NET 6 when available in November.  See our guidance [below](#how-to-update-your-app-to-target-a-different-version-of-dotnet) to target a new version.
+On May 8th, 2022 .NET 5 will no longer be offered as an option in the create process for App Service. Existing apps targeting .NET 5 will not be affected.  We recommend migrating your application to .NET 6 when available in November.  See our guidance [below](#how-to-update-your-app-to-target-a-different-version-of-dotnet) to target a new version.
 
 ### End of Life
 
@@ -29,8 +29,8 @@ Publishing content to a .NET 5 app works as expected. There is a schedule update
 
 |    Version    | Support Status |   End of Support  |   OS Support    |
 |---------------| -------------- | ----------------- |---------------- |
-| .NET 6        | LTS            | November, 2024    | Windows & Linux |
-| .NET 5        | Current        | May, 2022         | Windows & Linux |
+| .NET 6        | LTS            | November 8, 2024    | Windows & Linux |
+| .NET 5        | Current        | May 8, 2022         | Windows & Linux |
 | .NET Core 3.1 | LTS            | December 3, 2022  | Windows & Linux |
 | .NET Core 3.0 | End of Life    | March 3, 2020     | Windows & Linux |
 | .NET Core 2.2 | End of Life    | December 23, 2019 | Windows & Linux |
