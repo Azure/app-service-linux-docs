@@ -42,7 +42,7 @@ Publishing content to a .NET 5 app works as expected. There is a schedule update
 [.NET Core Support timeline](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)
 
 
-## How to update your app to target a different version of dotnet
+## How to update your app to target a different version of .NET
 
 >**NOTE**:
 >Changing the stack settings of your app will trigger a re-start of your application.
