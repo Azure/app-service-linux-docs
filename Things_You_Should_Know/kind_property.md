@@ -16,14 +16,20 @@ You will need to manually set the **kind property** if you are creating resource
 
 The following table contains a list of valid values for Kind property:
 
-|Kind                | Resource Type                  |
-|--------------------|--------------------------------|
-|`app`               | Web app                        |
-|`api`               | API app                        |
-|`functionapp`       | Function App                   |
-|`functionapp,linux` | Linux Consumption Function app |
-|`hyperV`            | Windows Container Web App      |
+|Kind                                     | Resource Type                  |
+|-----------------------------------------|--------------------------------|
+|`app`                                    | Windows Web app                |
+|`app,linux`                              | Linux Web app                  |
+|`app,linux,container`                    | Linux Container Web app        |
+|`hyperV`                                 | Windows Container Web App      |
+|`app,container,windows`                  | Windows Container Web App      |
+|`app,linux,kubernetes`                   | Linux Web App on ARC           |
+|`app,linux,container,kubernetes`         | Linux Container Web App on ARC |
+|`functionapp`                            | Function Code App              |
+|`functionapp,linux`                      | Linux Consumption Function app |
+|`functionapp,linux,container,kubernetes` | Function Container App on ARC  |
+|`functionapp,linux,kubernetes`           | Function Code App on ARC       |
 
-There are other kind values that have been valid in the past, however as of this writing this are the only valid `kind` property values in active use.
+There are other kind values that have been valid in the past, however as of the latest update of this page, these are the only recommended `kind` property values in active use.
 
-If the `value` of the kind property is null, empty, or not on this list. The portal treats the resource as Web App.
+If the `value` of the kind property is null, empty, or not on this list, the portal treats the resource as Web App.
