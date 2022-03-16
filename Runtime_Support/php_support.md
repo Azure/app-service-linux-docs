@@ -43,6 +43,7 @@ The next version of PHP is expected to be [PHP 8.0](https://wiki.php.net/todo/ph
 | PHP 8.0 | Official Support |    November 26, 2022     |    November 26, 2023    | Linux only |
 | PHP 8.1 | Official Support |    November 25, 2023     |    November 25, 2024    | TBD |
 
+
 [PHP Official Support timeline](https://www.php.net/supported-versions.php)
 
 ## How to update your app to target a different version of PHP
