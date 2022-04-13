@@ -2,7 +2,7 @@
 
 > **NOTE**:
 >
-> - These instructions only apply to Windows app service plans
+> - These instructions apply to both Windows and Linux App Service Plans (See Step 7)
 > - These instructions are for .Net (6) only
 
 Websockets are a great tool for bi-directional messaging and can be used with App Service. In this tutorial, we will create a simple chat client/server using websockets and Node.js. The chat app is based off of the following sample code from [AspNetCore.Docs](https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/fundamentals/websockets/samples/6.x/WebSocketsSample).
@@ -426,7 +426,9 @@ dotnet run --urls=https://localhost:5001/
 
 ## Step 7 deploy to app service
 
-After you're satisfied with you websockets app, you can deploy to app service using the Azure CLI. 
+After you're satisfied with you websockets app, you can deploy to app service using the Azure CLI.
+
+### Windows App Service Plan
 
 To deploy your app, run the following Azure CLI commands: 
 
@@ -436,6 +438,18 @@ az webapp config set --name <app-name> --resource-group <resource-group-name> --
 ```
 
 The first command will create a Basic pricing tier webapp with your specified name in the resource group and subscription of your choice. The second command enables websockets for the same app created by the previous command. Without the second command, your webapp will not allow websocket connections, even if you're attempting to initialized a websocket server in your application.
+
+### Linux App Service Plan
+
+To deploy your app, run the following Azure CLI command: 
+
+```azurecli-interactive
+az webapp up --sku B1 --name <app-name> --resource-group <resource-group-name> --subscription <subscription-name> --os-type Linux
+```
+
+This command creates a Basic tier webapp with your specified name in the resource group and subscription of your choice. Note that to run a .NET app on Linux, you'll need to explicitly specify your OS type, otherwise the Azure CLI will default to Windows. Also note, enabling WebSockets is not required on Linux App Service Plans. 
+
+
 
 ## Clean up resources
 
