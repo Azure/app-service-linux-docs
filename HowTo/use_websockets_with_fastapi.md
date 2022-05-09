@@ -199,6 +199,10 @@ az webapp config set --name <app-name> --resource-group  <resource-group-name> -
 
 The first command will create a Basic pricing tier webapp with your specified name in the resource group and subscription of your choice. The second command sets a custom startup script to use uvicorn worker(s) to kick off our FastAPI app. 
 
+## Troubleshooting
+
+If your application refuses to properly start or your websockets refuse to connect, first make sure your `main.py` is using `wss://<app-name>.azurewebsites.net/ws` for websocket connections. Specifying a port or using `ws://` will likely cause websocket connection timeouts or connection refusals.
+
 ## Clean up resources
 
 When no longer needed, you can use the [az group delete](https://docs.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest#az-group-delete) command to remove the resource group, and all related resources:
