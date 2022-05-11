@@ -1,4 +1,6 @@
-If you'd like to run your Ruby on Rails workloads in a container you can do so by using a [custom container]() The following is a tutorial on how to run your Ruby on Rails application in a container on App Service.
+# How to run Ruby on Rails custom container on App Service
+
+If you'd like to run your Ruby on Rails workloads in a container you can do so by using a [custom container](https://docs.microsoft.com/en-us/azure/app-service/quickstart-custom-container?tabs=dotnet&pivots=container-linux). The following is a tutorial on how to run your Ruby on Rails application in a container on App Service.
 
 #### Prerequisite 
 1. Ruby on Rails application
