@@ -494,11 +494,10 @@ To deploy your app, run the following Azure CLI commands:
 
 ```bash
 az webapp up --sku B1 --name <app-name> --resource-group <resource-group-name> --subscription <subscription-name>
-az webapp config set --name <app-name> --resource-group --web-sockets-enabled true
 az webapp config set --name <app-name> --resource-group  <resource-group-name> --startup-file "uvicorn --host 0.0.0.0 <app-name>.asgi:application"
 ```
 
-The first command will create a Basic pricing tier webapp with your specified name in the resource group and subscription of your choice. The second command enables websockets for the same app created by the previous command. The third command sets a custom startup script to use uvicorn to kick off our Django app. 
+The first command will create a Basic pricing tier webapp with your specified name in the resource group and subscription of your choice. The second command sets a custom startup script to use uvicorn to kick off our Django app. 
 
 The custom startup script is required since App Service assumes you'll be using a wsgi app and will automatically use gunicorn to start the application. This won't work for asgi apps, which means we'll need to use a custom script to start our app properly.
 

@@ -247,14 +247,13 @@ After you're satisfied with you websockets app, you can deploy to app service us
 
 **IMPORTANT** remember to switch your websocket URL from `ws://localhost:8080` to `wss://<app-name>.azurewebsites.net`. 
 
-To deploy your app, run the following Azure CLI commands: 
+To deploy your app, run the following Azure CLI command: 
 
 ```bash
 az webapp up --sku B1 --name <app-name> --resource-group <resource-group-name> --subscription <subscription-name>
-az webapp config set --name <app-name> --resource-group <resource-group-name> --web-sockets-enabled true
 ```
 
-The first command will create a Basic pricing tier webapp with your specified name in the resource group and subscription of your choice. The second command enables websockets for the same app created by the previous command. Without the second command, your webapp will not allow websocket connections, even if your server.js is listening for them.
+This command will create a Basic pricing tier webapp with your specified name in the resource group and subscription of your choice. 
 
 ## Clean up resources
 
