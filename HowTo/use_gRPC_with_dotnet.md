@@ -13,9 +13,9 @@ In this tutorial, we'll be deploying a gRPC server to App Service and making a g
 The following tutorial builds from the created gRPC client and server in that documentation.  If you already have a gRPC client and server, you may use these steps to add to existing .NET apps as well.
 
 ### Setup the gRPC Server app
-In order to prepare our gRPC server application to deploy to App Service, we will need to configure the kestrel to listen to an additional port that only listens for HTTP/2
+In order to prepare our gRPC server application to deploy to App Service, we will need to configure Kestrel to listen to an additional port that only listens for plain-text HTTP/2
 
-In your **Program.cs** add the following code to configure the kestrel.  In this example we're listening to port 8585, but you can use another number.
+In your **Program.cs** add the following code to configure Kestrel.  In this example we're listening to port 8585, but you can use another number.
 
 ```C#
 // Configure Kestral to listen on a specific HTTP port 
