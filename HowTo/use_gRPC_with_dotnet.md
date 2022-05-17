@@ -18,7 +18,7 @@ In order to prepare our gRPC server application to deploy to App Service, we wil
 In your **Program.cs** add the following code to configure Kestrel.  In this example we're listening to port 8585, but you can use another number.
 
 ```C#
-// Configure Kestral to listen on a specific HTTP port 
+// Configure Kestrel to listen on a specific HTTP port 
 builder.WebHost.ConfigureKestrel(options => 
 { 
     options.ListenAnyIP(8080); 
@@ -30,7 +30,7 @@ builder.WebHost.ConfigureKestrel(options =>
 
 ```
 
-Once configured this will ensure that your application is listening to a specific HTTP/2 only port, which will be needed when we deploy to App Service.
+Once configured this will ensure that your application is listening to a specific HTTP/2 only port, which will be needed when we deploy to App Service. 
 
 If you are using the templated code from the ASP.NET tutorial we will need to remove the EndpointDefaults configuration in the appsettings.json file.  In the **appsettings.json** file, remove the commented code below.
 
@@ -66,7 +66,7 @@ The first setting you'll need to configure is the HTTP version
 3. Go to the **HTTP version** drop-down and select **2.0**
 4. Click **save**
 
-This will restart your application and configure your site to allow clients to connect over HTTP/2.
+This will restart your application and configure the front end to allow clients to make HTTP/2 calls.
 
 #### 2. Enable HTTP20ProxyFlag
 Next, you'll need to configure the HTTP20ProxyFlag:
