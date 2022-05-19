@@ -20,6 +20,18 @@ Extended support for this version of **PHP 5.6** will end on **January 01, 2019*
 
 Extended support for **PHP 7.3** will end on **December 6, 2021**. After this date, your applications will continue to run, however any application hosted in App Service targeting **PHP 7.3** will be out of support and at risk of security vulnerabilities that remain unpatched.  We recommend migrating your application to PHP 7.4.  See our guidance [below](#how-to-update-your-app-to-target-a-different-version-of-php) to target a new version.
 
+>**NOTE**:
+>
+>If you are explicitly hardcoding paths to PHP 7.2 or 7.3 in your web.config files i.e. `D:\Program Files (x86)\PHP\v7.3\...` or `o	D:\Program Files\PHP\v7.3\...` they should be remove to rely on the versions available in the path to avoid breaking your app.
+>
+>If your app is using custom PHP extensions they must be updated to PHP 7.4
+>
+>| Example | |
+>|--|--|
+>| Safe |	extension=php_mysqli.dll |
+>| Custom Extension | extension=d:\home\site\wwwroot\bin\my_nifty_php_72_extension.dll|
+
+
 ### End of Life for PHP 7.4
 
 Extended support for **PHP 7.4** will end on **November 28, 2022**. After this date, your applications will continue to run, however any application hosted in App Service targeting **PHP 7.4** will be out of support and at risk of security vulnerabilities that remain unpatched.
