@@ -31,7 +31,7 @@ Extended support for **PHP 7.3** will end on **December 6, 2021**. After this da
 >| Safe |	extension=php_mysqli.dll |
 >| Custom Extension | extension=d:\home\site\wwwroot\bin\my_nifty_php_72_extension.dll|
 >
-> If you need a specific version of PHP [bring your own runtime](https://azureossd.github.io/2022/05/18/Custom-PHP-runtime-for-App-Service-Windows/index.html)
+> If you need a specific version of PHP you can [bring your own runtime](https://azureossd.github.io/2022/05/18/Custom-PHP-runtime-for-App-Service-Windows/index.html)
 
 ### End of Life for PHP 7.4
 
