@@ -9,4 +9,4 @@ Before deploying this sample to App Service you'll need to uncomment the followi
 ```c#
 options.ListenAnyIp(8080);
 ```
-Next, follow the directions in this [How-To]() to setup your web app to run a gRPC service.  
+Next, follow the directions in this [How-To](https://github.com/Azure/app-service-linux-docs/blob/master/HowTo/gRPC/use_gRPC_with_dotnet.md) to setup your web app to run a gRPC service.  
