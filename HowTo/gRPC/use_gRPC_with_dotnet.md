@@ -10,7 +10,7 @@ The following is a tutorial on how to deploy a .NET 6 gRPC application on App Se
 #### Prerequisite
 In this tutorial, we'll be deploying a gRPC server to App Service and making a gRPC request to the deployed server from a local gRPC client.  If you have not created a gRPC client and server yet, please follow this [ASP.NET Core tutorial](https://docs.microsoft.com/aspnet/core/tutorials/grpc/grpc-start?view=aspnetcore-6.0&tabs=visual-studio#create-a-grpc-service) to do so.  
 
-The following tutorial builds from the created gRPC client and server in that documentation.  If you already have a gRPC client and server, you may use these steps to add to existing .NET apps as well.
+The following tutorial builds from the created gRPC client and server in that documentation.  If you already have a gRPC client and server, you may use these steps to add to existing .NET apps as well.  If you would like to view .NET 6 and .NET Core 3.1 samples, please visit [here](https://github.com/Azure/app-service-linux-docs/tree/master/HowTo/gRPC).
 
 ### Setup the gRPC Server app
 In order to prepare our gRPC server application to deploy to App Service, we will need to configure Kestrel to listen to an additional port that only listens for plain-text HTTP/2.
