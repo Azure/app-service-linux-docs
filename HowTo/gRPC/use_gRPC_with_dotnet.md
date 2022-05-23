@@ -34,7 +34,7 @@ Once configured this will ensure that your application is listening to a specifi
 
 If you are using the templated code from the ASP.NET tutorial we will need to remove the EndpointDefaults configuration in the appsettings.json file.  In the **appsettings.json** file, remove the commented code below.
 
-```json
+```jsonc
 { 
   "Logging": { 
     "LogLevel": { 
