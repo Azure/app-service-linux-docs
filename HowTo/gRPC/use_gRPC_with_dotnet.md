@@ -1,11 +1,11 @@
 # How-to deploy a .NET 6 gRPC app on App Service
 
 > [!WARNING]
-> The following documentation is dependent on a future release of App Service that is not currently available
+> The following documentation is dependent on a future release of App Service that is not currently available to the public.  gRPC is currently available to try in EUAP with Private Preview.
 
-gRPC is a Remote Procedure Call framework that is used to  streamline messages between your client and server over HTTP/2.  Using gRPC protocol over HTTP/2 enables the use of features like multiplexing to send multiple parallel requests over the same connection and bi-directional streaming for sending requests and responses simultaneously.  
+gRPC is a Remote Procedure Call framework that is used to streamline messages between your client and server over HTTP/2.  Using gRPC protocol over HTTP/2 enables the use of features like multiplexing to send multiple parallel requests over the same connection and bi-directional streaming for sending requests and responses simultaneously.  
 
-gRPC on App Service (Linux only) is now available through the use of a [reverse proxy](https://microsoft.github.io/reverse-proxy/articles/grpc.html) that enables HTTP/2 calls.  The following is a tutorial on how to deploy a .NET 6 gRPC application on App Service. 
+The following is a tutorial on how to deploy a .NET 6 gRPC application on App Service. 
 
 #### Prerequisite
 In this tutorial, we'll be deploying a gRPC server to App Service and making a gRPC request to the deployed server from a local gRPC client.  If you have not created a gRPC client and server yet, please follow this [ASP.NET Core tutorial](https://docs.microsoft.com/aspnet/core/tutorials/grpc/grpc-start?view=aspnetcore-6.0&tabs=visual-studio#create-a-grpc-service) to do so.  
@@ -104,7 +104,7 @@ Navigate back to the **Program.cs** file and swap out the localhost address for 
 
 ```C#
 // replace the localhost address with your App Service URL
-using var channel = GrpcChannel.ForAddress($"https://mygrpcgreeterapp.azurewebsites.net/");
+using var channel = GrpcChannel.ForAddress($"https://mygrpcapp.azurewebsites.net/");
 ```
 
 Now save your application and run the local client (Ctrl+F5).  Your console application should receive and display the message from your gRPC service.  If you used the server from the ASP.NET tutorial, it will read the same message:
@@ -118,5 +118,4 @@ The response from your deployed server will be shown using the updated channel. 
 
 #### Resources
 1. [Create a .NET Core gRPC client and server in ASP.NET Core | Microsoft Docs](https://docs.microsoft.com/aspnet/core/tutorials/grpc/grpc-start?view=aspnetcore-6.0&tabs=visual-studio)
-2. [Proxing gRPC (microsoft.github.io)](https://microsoft.github.io/reverse-proxy/articles/grpc.html)
-3. [Troubleshoot gRPC on .NET Core | Microsoft Docs](https://docs.microsoft.com/aspnet/core/grpc/troubleshoot?view=aspnetcore-6.0#call-a-grpc-service-with-an-untrustedinvalid-certificate)
+2. [Troubleshoot gRPC on .NET Core | Microsoft Docs](https://docs.microsoft.com/aspnet/core/grpc/troubleshoot?view=aspnetcore-6.0#call-a-grpc-service-with-an-untrustedinvalid-certificate)
