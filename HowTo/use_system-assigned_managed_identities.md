@@ -3,8 +3,6 @@
 > **NOTE**:
 >
 > - These instructions only apply to Linux based containers configurations.
-> - The Webapp and the Azure Container registry must be on the same azure subscription
->   - Accessing a container registry on a different subscription is currently **not supported**.
 > - The Azure Container registry must be internet accessible.
 >   - Pulling container images through a Private Link / Private endpoint connection is currently **not supported**.
 
