@@ -8,11 +8,12 @@
 ## CLI
 
 - [How to use the Azure CLI to configure your webapp to pull images from ACR using a User Assigned managed identity](cli_user-assigned_managed_identities.md)
-- [How to use the Azure CLI to configure your webapp to pull images from ACR using a System  Assigned managed identity](cli_system-assigned_managed_identities.md)
+- [How to use the Azure CLI to configure your webapp to pull images from ACR using a System Assigned managed identity](cli_system-assigned_managed_identities.md)
 
 ## ARM
 
-TODO:Examples on how to set this up through ARM
+- [How to use the ARM Templates to configure your webapp to pull images from ACR using a System Assigned managed identity](arm_system-assigned_managed_identity.md)
+
 
 ## Bicep
 
