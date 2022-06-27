@@ -2,8 +2,8 @@
 
 ## Portal
 
-- [How to use the portal to configure your webapp to pull images from ACR using a User Assigned managed identity](portal_user-assigned_managed_identity.md)
-- [How to use the portal to configure your webapp to pull images from ACR using a System  Assigned managed identity](portal_system-assigned_managed_identity.md)
+- [How to use the Azure portal to configure your webapp to pull images from ACR using a User Assigned managed identity](portal_user-assigned_managed_identity.md)
+- [How to use the Azure portal to configure your webapp to pull images from ACR using a System  Assigned managed identity](portal_system-assigned_managed_identity.md)
 
 ## CLI
 
