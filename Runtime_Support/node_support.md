@@ -26,7 +26,7 @@ Existing applications configured to target a runtime version that has reached EO
 
 No further critical or security fixes will be available.
 
-App Service recommends migrating your application to supported version.
+App Service recommends migrating your application to a supported version.
 
 ## How to update your app to target a different version of Node
 

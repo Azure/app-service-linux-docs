@@ -4,11 +4,32 @@
 
 App Service upgrades the underlying PHP runtime of your application as part of the regular platform updates. As a result of this regular update process, your application will be automatically updated to the latest patch version of PHP available in the platform.
 
-### End of Extended Support
+## Support Timeline
 
-Once a version of PHP has reached it's end of extended support your application will be upgraded to the next recommended supported minor version.
+| Version |  Support Status   | End of Support          | OS Support |
+|---------| -----------------:|:-----------------------:| ---------- |
+| PHP 8.2 | TBD               |    November 25, 2025    | Linux only |
+| PHP 8.1 | Official Support  |    November 25, 2024    | Linux only |
+| PHP 8.0 | Official Support  |    November 26, 2023    | Linux only |
+| PHP 7.4 | Maintenance       |    November 28, 2022    | Windows & Linux |
+| PHP 7.3 | End of Life       |    December 06, 2021    | Windows & Linux |
+| PHP 7.2 | End of Life       |    February 01, 2021    | Windows & Linux |
+| PHP 7.1 | End of Life       |    February 01, 2020    | Windows & Linux |
+| PHP 7.0 | End of Life       |    February 01, 2020    | Windows & Linux |
+| PHP 5.6 | End of Life       |    January 01, 2019     | Windows & Linux |
 
-For example on February 01, 2020 any application running on `PHP 7.0`  or `PHP 7.1` will be upgraded to `PHP 7.3`
+[PHP Official Support timeline](https://www.php.net/supported-versions.php)
+
+
+## End of Life
+
+Once a version of PHP has reached it's end of life (EOL) it will no longer be available as a selection in the Azure Portal or Azure CLI.
+
+Existing applications configured to target a runtime version that has reached EOL should continue to work but will be out of support.
+
+No further critical or security fixes will be available.
+
+App Service recommends migrating your application to a supported version.
 
 ### End of Life for PHP 5.6
 
@@ -16,9 +37,14 @@ Due to the popularity of **PHP 5.6** and the high volume of applications hosted 
 
 Extended support for this version of **PHP 5.6** will end on **January 01, 2019**. At this point any application hosted in App Service targeting this version of the **PHP 5.6** will be out of support and at risk of security vulnerabilities that remain unpatched.
 
-### End of Life for PHP 7.3
+### End of Life for PHP 7.X apps on Windows
 
-Extended support for **PHP 7.3** will end on **December 6, 2021**. After this date, your applications will continue to run, however any application hosted in App Service targeting **PHP 7.3** will be out of support and at risk of security vulnerabilities that remain unpatched.  We recommend migrating your application to PHP 7.4.  See our guidance [below](#how-to-update-your-app-to-target-a-different-version-of-php) to target a new version.
+Once a version of PHP has reached it's end of life your application will be upgraded to the next recommended supported minor version.
+
+For example:
+
+- On February 2020 any application running on `PHP 7.0`  or `PHP 7.1` will be upgraded to `PHP 7.3`
+- On February 2022 any application running on `PHP 7.3`  will be upgraded to `PHP 7.4`
 
 >**NOTE**:
 >
@@ -33,8 +59,6 @@ Extended support for **PHP 7.3** will end on **December 6, 2021**. After this da
 >
 > If you need a specific version of PHP you can [bring your own runtime](https://azureossd.github.io/2022/05/18/Custom-PHP-runtime-for-App-Service-Windows/index.html)
 
-### End of Life for PHP 7.4
-
 Extended support for **PHP 7.4** will end on **November 28, 2022**. After this date, your applications will continue to run, however any application hosted in App Service targeting **PHP 7.4** will be out of support and at risk of security vulnerabilities that remain unpatched.
 
 **If you are currently targeting Windows for PHP development, we advise to plan for migrating development to target Linux. After November 28 2022, Linux will be the only OS supported by future versions of PHP and continued feature, quality and security updates**.
@@ -42,22 +66,6 @@ Extended support for **PHP 7.4** will end on **November 28, 2022**. After this d
 ## PHP 8
 
 The next version of PHP is expected to be [PHP 8.0](https://wiki.php.net/todo/php80). Official support for PHP 8 will only be available on Linux, as a result of this App Service will only support PHP 8 on Apps Service Linux instances.
-
-## Support Timeline
-
-| Version |  Support Status  |  End of Official Support | End of Extended Support | OS Support |
-|---------| ---------------- |:------------------------:|:-----------------------:| ---------- |
-| PHP 5.6 | End of Life      |    December 31, 2018     |    January 01, 2019    | Windows & Linux |
-| PHP 7.0 | End of Life      |    December 03, 2018     |    February 01, 2020    | Windows & Linux |
-| PHP 7.1 | End of Life      |    December 01, 2019     |    February 01, 2020    | Windows & Linux |
-| PHP 7.2 | End of Life      |    November 30, 2020     |    February 01, 2021    | Windows & Linux |
-| PHP 7.3 | End of Life      |    December 06, 2020     |    December 06, 2021    | Windows & Linux |
-| PHP 7.4 | Extended support |    November 28, 2021     |    November 28, 2022    | Windows & Linux |
-| PHP 8.0 | Official Support |    November 26, 2022     |    November 26, 2023    | Linux only |
-| PHP 8.1 | Official Support |    November 25, 2023     |    November 25, 2024    | TBD |
-
-
-[PHP Official Support timeline](https://www.php.net/supported-versions.php)
 
 ## How to update your app to target a different version of PHP
 
