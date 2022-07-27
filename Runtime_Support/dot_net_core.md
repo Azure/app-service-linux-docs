@@ -25,14 +25,9 @@ App Service upgrades the underlying .NET runtime and SDK of your application as 
 
 During the early access period, a runtime will be subject to the **Early Access** limitations listed in the [early access support document](./early_access.md).
 
+## End of Life
 
-### .NET 5 End of Official Support
-
-On May 8th, 2022 .NET 5 will no longer be offered as an option in the create process for App Service. Existing apps targeting .NET 5 will not be affected.
-
-### End of Life
-
-Once a version of .NET has reached it's end of life (EOL) it will no longer be available from Runtime Stack selection dropdown.
+Once a version of .NET has reached it's end of life (EOL) it will no longer be available as a selection in the Azure Portal or Azure CLI.
 
 Existing applications configured to target a runtime version that has reached EOL should continue to work but will be out of support.
 
