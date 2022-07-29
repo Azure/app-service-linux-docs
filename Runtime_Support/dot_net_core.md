@@ -6,18 +6,18 @@ App Service upgrades the underlying .NET runtime and SDK of your application as 
 
 ## Support Timeline
 
-|    Version    | Support Status |   End of Support  |   OS Support    |
+|    Version    | Support Status |   End of Life     |   OS Support    |
 |---------------| -------------- | ----------------- |---------------- |
-| .NET 7        | Early Access   | May 2024          | Windows & Linux |
-| .NET 6        | LTS            | November 8, 2024  | Windows & Linux |
-| .NET 5        | End of Life    | May 8, 2022       | Windows & Linux |
-| .NET Core 3.1 | LTS            | December 3, 2022  | Windows & Linux |
-| .NET Core 3.0 | End of Life    | March 3, 2020     | Windows & Linux |
-| .NET Core 2.2 | End of Life    | December 23, 2019 | Windows & Linux |
-| .NET Core 2.1 | End of Life    | August 21, 2021   | Windows & Linux |
-| .NET Core 2.0 | End of Life    | October 1, 2018   | Windows & Linux |
-| .NET Core 1.1 | End of Life    | June 27 2019      | Windows & Linux |
-| .NET Core 1.0 | End of Life    | June 27 2019      | Windows & Linux |
+| .NET 7        | Early Access   | TBD               | Windows & Linux |
+| .NET 6        | LTS            | November, 2024    | Windows & Linux |
+| .NET 5        | End of Life    | May, 2022         | Windows & Linux |
+| .NET Core 3.1 | LTS            | December, 2022    | Windows & Linux |
+| .NET Core 3.0 | End of Life    | March, 2020       | Windows & Linux |
+| .NET Core 2.2 | End of Life    | December, 2019    | Windows & Linux |
+| .NET Core 2.1 | End of Life    | August, 2021      | Windows & Linux |
+| .NET Core 2.0 | End of Life    | October, 2018     | Windows & Linux |
+| .NET Core 1.1 | End of Life    | June, 2019        | Windows & Linux |
+| .NET Core 1.0 | End of Life    | June, 2019        | Windows & Linux |
 
 [.NET Core Support timeline](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)
 

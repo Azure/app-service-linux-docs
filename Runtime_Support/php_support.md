@@ -6,17 +6,16 @@ App Service upgrades the underlying PHP runtime of your application as part of t
 
 ## Support Timeline
 
-| Version |  Support Status   | End of Support          | OS Support |
-|---------| -----------------:|:-----------------------:| ---------- |
-| PHP 8.2 | TBD               |    November 25, 2025    | Linux only |
-| PHP 8.1 | Official Support  |    November 25, 2024    | Linux only |
-| PHP 8.0 | Official Support  |    November 26, 2023    | Linux only |
-| PHP 7.4 | Maintenance       |    November 28, 2022    | Windows & Linux |
-| PHP 7.3 | End of Life       |    December 06, 2021    | Windows & Linux |
-| PHP 7.2 | End of Life       |    February 01, 2021    | Windows & Linux |
-| PHP 7.1 | End of Life       |    February 01, 2020    | Windows & Linux |
-| PHP 7.0 | End of Life       |    February 01, 2020    | Windows & Linux |
-| PHP 5.6 | End of Life       |    January 01, 2019     | Windows & Linux |
+| Version |  Support Status   | End of Life      | OS Support |
+|---------| -----------------:|:----------------:| ---------- |
+| PHP 8.1 | Pending           |  November, 2024  | Linux only |
+| PHP 8.0 | Official Support  |  November, 2023  | Linux only |
+| PHP 7.4 | Maintenance       |  November, 2022  | Windows & Linux |
+| PHP 7.3 | End of Life       |  December, 2021  | Windows & Linux |
+| PHP 7.2 | End of Life       |  February, 2021  | Windows & Linux |
+| PHP 7.1 | End of Life       |  February, 2020  | Windows & Linux |
+| PHP 7.0 | End of Life       |  February, 2020  | Windows & Linux |
+| PHP 5.6 | End of Life       |  January, 2019   | Windows & Linux |
 
 [PHP Official Support timeline](https://www.php.net/supported-versions.php)
 

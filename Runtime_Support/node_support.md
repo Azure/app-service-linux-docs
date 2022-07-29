@@ -6,15 +6,15 @@ App Service upgrades the underlying Node.js runtime and SDK of your application 
 
 ## Support Timeline
 
-|    Version    | Support Status |   End of Support  |   OS Support    |
+|    Version    | Support Status |  End of Life      |   OS Support    |
 |---------------| -------------- | ----------------- |---------------- |
-|  Node 18 LTS  | TBD            | April 2025        | Windows & Linux |
-|  Node 16 LTS  | LTS            | April 30 2024     | Windows & Linux |
-|  Node 14 LTS  | Maintenance    | April 30 2023     | Windows & Linux |
-|  Node 12 LTS  | End of Life    | April 30 2022     | Windows & Linux |
-|  Node 10.x    | End of Life    | April 30 2021     | Windows & Linux |
-|  Node 9.x     | End of Life    | June 30 2019      | Windows & Linux |
-|  Node 8.x     | End of Life    | December 31 2019  | Windows & Linux |
+|  Node 18 LTS  | Pending        | April 2025        | Windows & Linux |
+|  Node 16 LTS  | LTS            | April, 2024       | Windows & Linux |
+|  Node 14 LTS  | Maintenance    | April, 2023       | Windows & Linux |
+|  Node 12 LTS  | End of Life    | April, 2022       | Windows & Linux |
+|  Node 10.x    | End of Life    | April, 2021       | Windows & Linux |
+|  Node 9.x     | End of Life    | June, 2019        | Windows & Linux |
+|  Node 8.x     | End of Life    | December, 2019    | Windows & Linux |
 
 [Node.js support timeline](https://nodejs.org/about/releases/)
 
