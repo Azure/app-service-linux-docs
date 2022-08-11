@@ -1,7 +1,7 @@
 # How-to deploy a .NET 6 gRPC app on App Service
 
 > [!WARNING]
-> The following documentation is dependent on a future release of App Service that is not currently available to the public.  gRPC is currently available to try in EUAP with Private Preview.
+> gRPC is currently available to try as a Public Preview feature.
 
 gRPC is a Remote Procedure Call framework that is used to streamline messages between your client and server over HTTP/2.  Using gRPC protocol over HTTP/2 enables the use of features like multiplexing to send multiple parallel requests over the same connection and bi-directional streaming for sending requests and responses simultaneously.  
 
