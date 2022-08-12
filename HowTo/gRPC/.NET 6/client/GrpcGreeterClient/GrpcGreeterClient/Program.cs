@@ -4,7 +4,8 @@ using GrpcGreeterClient;
 
 
 // The port number must match the port of the gRPC server.
-using var channel = GrpcChannel.ForAddress("http://localhost:8181"); 
+//using var channel = GrpcChannel.ForAddress("http://localhost:8181");
+using var channel = GrpcChannel.ForAddress("https://jefmarti-grpc-http20proxy-test.azurewebsites.net");
 var client = new Greeter.GreeterClient(channel);
 var reply = await client.SayHelloAsync(
                   new HelloRequest { Name = "GreeterClient" });

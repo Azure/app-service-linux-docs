@@ -68,24 +68,12 @@ The first setting you'll need to configure is the HTTP version
 
 This will restart your application and configure the front end to allow clients to make HTTP/2 calls.
 
-#### 2. Enable HTTP20ProxyFlag
-Next, you'll need to configure the HTTP20ProxyFlag:
-1. Type in [resources.azure.com](https://resources.azure.com) to navigate to the Azure Resource Explorer
-2. go to the left pane and click on + subscriptions
-3. find and click on your subscription from the list
-4. click on + resourceGroups under your subscription name
-5. find your resource group and click on your resource group name
-6. click on + providers under your resource group
-7. click on + Microsoft.web
-8. click on + sites
-9. click on the name of your site + mygrpcgreeterapp
-10. go to the open pane to the right and click on edit
-11. scroll down and find the siteConfig property 
-12. under siteConfig, find http20ProxyFlag
-13. update the value from null to 1
-14. navigate to the top of the pane and click PUT
+#### 2. Enable HTTP 2.0 Proxy
+Next, you'll need to configure the HTTP 2.0 Proxy:
+1. Under the same **Platform settings** section, find the **HTTP 2.0 Proxy** setting and switch it to **On**.
+2. Click **save**
 
-Once clicked, a green checkmark will flash on the screen.  This setting will configure your site to be forwarded HTTP/2 requests.
+Once turned on, this setting will configure your site to be forwarded HTTP/2 requests.
 
 #### 3. Add HTTP20_ONLY_PORT application setting
 Earlier, we configured the application to listen to a specific HTTP/2 only port.  Here we'll add an app setting HTTP20_ONLY_PORT and put the value as the port number we used earlier.
