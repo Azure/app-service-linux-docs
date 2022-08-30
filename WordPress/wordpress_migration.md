@@ -11,7 +11,8 @@ By default, the file upload size for WordPress on Linux App Services is limited 
 |    Application Setting Name    | Default Value | New Value   |
 |--------------------------------|---------------|-------------|
 |    UPLOAD_MAX_FILESIZE         |      50M      |   256M      |
-|    POST_MAX_SIZE               |      128M     |   256M      |        
+|    POST_MAX_SIZE               |      128M     |   256M      |    
+    
 Reference: [Application Settings](./wordpress_application_settings.md)
 
 
