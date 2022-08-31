@@ -1,10 +1,8 @@
 # WordPress Migration to Linux App Service
 
-This document describes the migration approach for any WordPress site to WordPress on Linux AppService.
+This document describes two different approaches to migrate your WordPress site from any hosting providers to Azure Linux App Services. These migration approaches will let you continue with the existing WordPress site as it is. It is recommended to transition the traffic to new site after proper validation.
 
-There are two ways you can migrate your WordPress site from other hosting providers to Azure Linux App Services. These migration approaches will let you continue the existing WordPress sites as it is. It is recommended to transition your traffic to new site after proper validation.
-
-**Note:**  Migrate the content to test instance first, validate all E2E scenarios of your website and if everything is working as expected then can swap this instance to production slot.  
+**Note:**  Migrate the content to test instance first, validate all E2E scenarios of your website and if everything is working as expected then can swap this instance to production slot.
  
 
 ## 	1. All-In-One WP Migration Plugin
@@ -35,8 +33,7 @@ If you choose to migrate the site using this plugin, install All-In-One Migratio
 2.	Open All-In-One WP Migration plugin
 3.	Click on import option on the destination site, and upload the file downloaded in previous section
 4.	Empty the caches in W3TC plugin (or any other caches) and validate the content of the site.
- -	Click on the Performance option given in the left sidebar of the admin panel.
- -  Then click on Dashboard option and you will see a button with label 'empty all caches'.
+    - Go to Performance -> Dashboard in the admin panel. You will see a button with label 'empty all caches'.
 
 ### Recommended Plugins:
 Usually it is not required, however after the data migration, it is better to validate that you have the default recommended plugins activated and configured properly as it was before. [If you are strictly bound to not use them, then you can remove the plugins]. 
