@@ -35,17 +35,17 @@ If you choose to migrate the site using this plugin, install All-In-One Migratio
 2.	Open All-In-One WP Migration plugin
 3.	Click on import option on the destination site, and upload the file downloaded in previous section
 4.	Empty the caches in W3TC plugin (or any other caches) and validate the content of the site.
-    a. Click on the **Performance** option given in the left sidebar of the admin panel to open the W3TC plugin.
-    b. Then click on the **Dashboard** option shown below it.
-    c. On the dashboard, you will see a button with the label **Empty All Caches**.
+    - Click on the **Performance** option given in the left sidebar of the admin panel to open the W3TC plugin.
+    - Then click on the **Dashboard** option shown below it.
+    - On the dashboard, you will see a button with the label **Empty All Caches**.
 
 
 ### Recommended Plugins:
 Usually it is not required, but after the site migration, it is better to validate that you have the default recommended plugins activated and configured properly as before. If you are strictly bound to not using them, then you can remove the plugins.
 
--The W3TC plugin should be activated and configured properly to use the local Redis cache server and Azure CDN/Blob Storage (if it was configured to use them originally).
+- The W3TC plugin should be activated and configured properly to use the local Redis cache server and Azure CDN/Blob Storage (if it was configured to use them originally).
 
--WP Smush plugin is activated and configured properly for image optimization. Please see [Image Compression] (./wordpress_image_compression.md) for more information on configuration.
+- WP Smush plugin is activated and configured properly for image optimization. Please see [Image Compression] (./wordpress_image_compression.md) for more information on configuration.
 
 
 ### Recommended WordPress Settings:
