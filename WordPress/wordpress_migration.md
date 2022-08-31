@@ -1,17 +1,19 @@
 # WordPress Migration to Linux App Service
 
-This document describes two different approaches to migrate your WordPress site from any hosting providers to Azure Linux App Services. These migration approaches will let you continue with the existing WordPress site as it is. It is recommended to transition the traffic to new site after proper validation.
+This document describes two different approaches to migrating your WordPress sites from any hosting provider to Azure Linux App Services. These migration approaches will let you continue with the existing WordPress site as it is. It is recommended to transition the traffic to the new site after proper validation.
 
-**Note:**  Migrate the content to test instance first, validate all E2E scenarios of your website and if everything is working as expected then can swap this instance to production slot.
+**Note:** Migrate the content to a test instance first, validate all E2E scenarios of your website, and if everything works as expected, swap this instance to the production slot.
  
 
 ## 	1. All-In-One WP Migration Plugin
 
-This is a very popular and trusted plugin used for migrating sites with ease and is also recommended by Azure WordPress team. However, there are certain things that needs to be taken care before starting on WordPress Migration. 
+This is a very popular and trusted plugin used for migrating sites with ease and is also recommended by the Azure WordPress team. However, there are certain things that need to be taken care of before starting on the WordPress migration.
 
-This approach is recommended for smaller sites where the content size is less than 256MB. If it is more than that, you can either **buy the premium version** of the plugin which can bypass the file upload limit, or you can **manually migrate** the site using the steps mentioned in next section.
- 
-By default, the file upload size for WordPress on Linux App Services is limited to 50MB and it can be increased up to 256MB (Maximum Limit). To change the file upload size limit you need to add the following Application Settings in the App Service and save it. 
+
+This approach is recommended for smaller sites where the content size is less than 256MB. If it is more, you can either **purchase the premium version** of the plugin, which allows you to bypass the file upload limit, or you can **manually migrate** the site using the steps outlined in the next section.
+
+
+By default, the file upload size for WordPress on Linux App Services is limited to 50MB, and it can be increased up to 256MB (Maximum Limit). To change the file upload size limit, you need to add the following Application Settings in the App Service and save it.
 
 
 |    Application Setting Name    | Default Value | New Value   |
@@ -33,10 +35,11 @@ If you choose to migrate the site using this plugin, install All-In-One Migratio
 2.	Open All-In-One WP Migration plugin
 3.	Click on import option on the destination site, and upload the file downloaded in previous section
 4.	Empty the caches in W3TC plugin (or any other caches) and validate the content of the site.
-    - Go to Performance -> Dashboard in the admin panel. You will see a button with label 'empty all caches'.
+    - On the left sidebar of the admin dashboard, go to Performance -> Dashboard. You will see button with label "Empty All Caches" to clear all the caches.
+
 
 ### Recommended Plugins:
-Usually it is not required, however after the data migration, it is better to validate that you have the default recommended plugins activated and configured properly as it was before. [If you are strictly bound to not use them, then you can remove the plugins]. 
+Usually it is not required, however after the site migration, it is better to validate that you have the default recommended plugins activated and configured properly as it was before. [If you are strictly bound to not use them, then you can remove the plugins]. 
  
 - W3TC plugin should be activated and configured properly to use the local Redis cache server and Azure CDN/Blob Storage (if it was configured to use them originally). 
 
