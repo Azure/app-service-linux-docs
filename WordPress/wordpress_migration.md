@@ -43,7 +43,10 @@ If you choose to migrate the site using this plugin, install All-In-One Migratio
 ### Recommended Plugins:
 Usually it is not required, but after the site migration, it is better to validate that you have the default recommended plugins activated and configured properly as before. If you are strictly bound to not using them, then you can remove the plugins.
 
-- The W3TC plugin should be activated and configured properly to use the local Redis cache server and Azure CDN/Blob Storage (if it was configured to use them originally). For more information on how to configure these, please refer to the following documentations: [Local Redis Cache](./wordpress_local_redis_cache), [Azure CDN](./wordpress_azure_cdn), [Azure Blob Storage](./wordpress_azure_blob_storage)
+- The W3TC plugin should be activated and configured properly to use the local Redis cache server and Azure CDN/Blob Storage (if it was configured to use them originally). For more information on how to configure these, please refer to the following documentations.
+[Configuring Local Redis Cache with WordPress](./wordpress_local_redis_cache)
+[Configuring Azure CDN with WordPress](./wordpress_azure_cdn)
+[Confiuring Azure Blob Storage wit WordPress](./wordpress_azure_blob_storage)
 
 - WP Smush plugin is activated and configured properly for image optimization. Please see [Image Compression](./wordpress_image_compression.md) for more information on configuration.
 
