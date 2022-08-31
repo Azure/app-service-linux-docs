@@ -35,20 +35,23 @@ If you choose to migrate the site using this plugin, install All-In-One Migratio
 2.	Open All-In-One WP Migration plugin
 3.	Click on import option on the destination site, and upload the file downloaded in previous section
 4.	Empty the caches in W3TC plugin (or any other caches) and validate the content of the site.
-    - On the left sidebar of the admin dashboard, go to Performance -> Dashboard. You will see button with label "Empty All Caches" to clear all the caches.
+    a. Click on the **Performance** option given in the left sidebar of the admin panel to open the W3TC plugin.
+    b. Then click on the **Dashboard** option shown below it.
+    c. On the dashboard, you will see a button with the label **Empty All Caches**.
 
 
 ### Recommended Plugins:
-Usually it is not required, however after the site migration, it is better to validate that you have the default recommended plugins activated and configured properly as it was before. [If you are strictly bound to not use them, then you can remove the plugins]. 
- 
-- W3TC plugin should be activated and configured properly to use the local Redis cache server and Azure CDN/Blob Storage (if it was configured to use them originally). 
+Usually it is not required, but after the site migration, it is better to validate that you have the default recommended plugins activated and configured properly as before. If you are strictly bound to not using them, then you can remove the plugins.
 
-- WP Smush plugin is activated and configured properly for image optimizations. For more information on configuration please refer to  [Image Compression](./wordpress_image_compression.md).
+-The W3TC plugin should be activated and configured properly to use the local Redis cache server and Azure CDN/Blob Storage (if it was configured to use them originally).
+
+-WP Smush plugin is activated and configured properly for image optimization. Please see [Image Compression] (./wordpress_image_compression.md) for more information on configuration.
+
 
 ### Recommended WordPress Settings:
-The following WordPress settings are recommended. However, when the users migrate their custom site, is it up to them to decide whether to use these settings or not.
- 
-1. Launch the WordPress Admin.
-2. Set permalink structure to 'day and name' which perform better compared to plain permalink structure (which uses the format?p=123)
-3. Under comment settings, enable the option to break comments into pages.
-4. Show excerpts instead of full post in the feed.
+The following WordPress settings are recommended. However, when the users migrate their custom sites, is it up to them to decide whether to use these settings or not.
+
+1. Open the WordPress Admin dashboard.
+2. Set the permalink structure to 'day and name', which performs better compared to the plain permalink structure (which uses the format?p=123).
+3. Under the comment settings, enable the option to break comments into pages.
+4. Show excerpts instead of the full post in the feed.
