@@ -45,9 +45,9 @@ Usually it is not required, but after the site migration, it is better to valida
 
 - The W3TC plugin should be activated and configured properly to use the local Redis cache server and Azure CDN/Blob Storage (if it was configured to use them originally). For more information on how to configure these, please refer to the following documentations.
 
-    [Configuring Local Redis Cache with WordPress](./wordpress_local_redis_cache) <br>
-    [Configuring Azure CDN with WordPress](./wordpress_azure_cdn)<br>
-    [Confiuring Azure Blob Storage wit WordPress](./wordpress_azure_blob_storage)<br>
+    [How to configure local Redis Cache with WordPress](./wordpress_local_redis_cache) <br>
+    [How to configure Azure CDN with WordPress](./wordpress_azure_cdn)<br>
+    [How to configure Azure Blob Storage](./wordpress_azure_blob_storage)<br>
 
 - WP Smush plugin is activated and configured properly for image optimization. Please see [Image Compression](./wordpress_image_compression.md) for more information on configuration.
 
