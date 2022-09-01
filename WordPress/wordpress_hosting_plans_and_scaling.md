@@ -17,18 +17,18 @@ Although fixed hosting plans are offered during the create time, the users are f
 
 **Important Note:** It is very important to note that both AppService as well as MySQL server has to be scaled appropriately. Upgrading AppService to a higher configuration, but forgetting to upgrade database server might create performance issues due to bottleneck created by lower configuration of database server. This has been observed as one of the common mistake users make while scaling their application.
 
-### Scaling AppService Plan:
+### 1. Scaling AppService Plan:
 There are two workflows for scaling your application, scale up and scale out. Please refer to the following link for more information on [Scaling AppService](https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up). 
 
-[Scale up:](https://en.wikipedia.org/wiki/Scalability#Vertical_or_scale_up) Get more CPU, memory, disk space, and extra features like dedicated virtual machines (VMs), custom domains and certificates, staging slots, autoscaling, and more. You scale up by changing the pricing tier of the App Service plan that your app belongs to. 
+[**Scale up:**](https://en.wikipedia.org/wiki/Scalability#Vertical_or_scale_up) Get more CPU, memory, disk space, and extra features like dedicated virtual machines (VMs), custom domains and certificates, staging slots, autoscaling, and more. You scale up by changing the pricing tier of the App Service plan that your app belongs to. <br>
 <kbd><img src="./media/scaling_wordpress_1.png" width="800" /></kbd>
 
-[Scale out:](https://en.wikipedia.org/wiki/Scalability#Horizontal_or_scale_out) Increase the number of VM instances that run your app. You can scale out to as many as 30 instances, depending on your pricing tier.<br>
+[**Scale out:**](https://en.wikipedia.org/wiki/Scalability#Horizontal_or_scale_out) Increase the number of VM instances that run your app. You can scale out to as many as 30 instances, depending on your pricing tier.<br>
 
 <kbd><img src="./media/scaling_wordpress_2.png" width="800" /></kbd>
 
 
-### Scaling MySQL Database Server:
+### 2. Scaling MySQL Database Server:
 Go to the MySQL server resource and select **Compute + storage** under **Settings** section. Select an appropriate tier for scaling and then click on save. It usually takes a few minutes for the changes to get reflected. You can find the MySQL server resource in the same resource group where WordPress has been deployed.
 
 <kbd><img src="./media/scaling_wordpress_3.png" width="800" /></kbd>
