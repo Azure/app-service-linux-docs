@@ -91,6 +91,8 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
 
     Reference: [WordPress Application Settings](./wordpress_application_settings.md)
 
+    ![Database Application Settings](./media/wordpress_database_app_settings.png)
+
 
 ### Recommended Plugins:
 Usually it is not required, but after the site migration, it is better to validate that you have the default recommended plugins activated and configured properly as before. If you are strictly bound to not using them, then you can remove the plugins.
