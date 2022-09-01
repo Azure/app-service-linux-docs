@@ -62,7 +62,7 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
 
 
 ### Export the data at source site: 
-1. Download the **wp-content** folder from the source site. You can use popular FTP tools like [FileZilla](https://filezilla-project.org/download.php?type=client) to connect to the web server and download the content. Depending on the size of your content, it could take sometime. Meanwhile, you can go to next step to download a copy of your source database. 
+1. Download the **wp-content** folder from the source site. You can use popular FTP tools like [FileZilla](https://filezilla-project.org/download.php?type=client) to connect to the web server and download the content. Depending on the size of your content, it could take sometime. Meanwhile, you can go to the next step to download a copy of your database. 
 
 2. Export the contents of the source database into an SQL file. You can perform this task either using MySQL client tools like HeidiSQL, MySQL workbench, PhpMyAdmin or through command line interface. You can download the MySQL Workbench from [here](https://dev.mysql.com/downloads/workbench/) or install phpmyadmin using these [steps](https://docs.phpmyadmin.net/en/latest/setup.html). For more information on exporting the database, please refer to the following [documentation](https://dev.mysql.com/doc/workbench/en/wb-admin-export-import-management.html).
 
