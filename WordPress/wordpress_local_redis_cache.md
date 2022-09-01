@@ -10,8 +10,8 @@ By default, WordPress is configured to use Redis server cache using the **W3 Tot
 
 Please see the images below for manual configuration and usage of Redis Cache.  Note that you have to click on either **Save Settings** or **Save Setting & Purge Cache** button of each section after entering the configurations. 
 
-**Reference Links:**
-[W3 Total Cache – WordPress plugin | WordPress.org](https://wordpress.org/plugins/w3-total-cache/)
+**Reference Links:** <br>
+[W3 Total Cache – WordPress plugin | WordPress.org](https://wordpress.org/plugins/w3-total-cache/)<br>
 
 <br>
 <kbd><img src="./media/local_redis_cache_1.png" width="1000" /></kbd>
