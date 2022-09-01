@@ -67,11 +67,14 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
 [You can perform this task either using MySQL client tools like HeidiSQL, MySQL workbench, PhpMyAdmin or through command line interface] 
 
 ### Import the data at destination site: 
-1. Go to SCM site of your App Service using **\<sitename\>.scm.azurewebsites.net/newui** and open Bash and delete the existing content of **/home/site/www/wp-content** folder using the following command 
+1. Go to SCM site of your WordPress App Service using the following URL 
+    **https://\<sitename\>.scm.azurewebsites.net/newui** 
+2. Open Bash shell
+3. Delete the existing content of **/home/site/www/wp-content** folder using the following command 
     ````
     rm -rf /home/site/www/wp-content/* 
     ````
-    Now upload the new contents of **wp-content** folder using the File Manager. Please note that if you are not able to upload everything at once, then you can try dividing your upload into multiple smaller ones.
+4. Now upload the new contents of **wp-content** folder using the File Manager. Click on the label that says '**Drag a File/Folder here to upload, or click to select one**'. Please note that if you are not able to upload everything at once, then you can try dividing your upload into multiple smaller ones.
 
 2. Import the SQL file into the target database of your new site. You can do it via the PhpMyAdmin dashboard available at **\<sitename\>.azurewebsites.net/phpmyadmin**. Please note that if you are unable to one single large SQL file, please try to break it into multiple smaller parts and try uploading.
 		
