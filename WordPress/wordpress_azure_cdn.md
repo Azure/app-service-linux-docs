@@ -1,6 +1,6 @@
 # Configuring Azure CDN with WordPress
 
-Azure Content Delivery Network (CDN) offers a global solution for rapidly delivering high-bandwidth content to users by caching their content at strategically placed physical nodes across the world. It can  help in enhancing the performance of the WordPress application by serving static files such as images, js, css through its global endpoint. This also help in significantly reducing the load on the web server. 
+**Azure Content Delivery Network (CDN)** offers a global solution for rapidly delivering high-bandwidth content to users by caching their content at strategically placed physical nodes across the world. It can  help in enhancing the performance of the WordPress application by serving static files such as images, js, css through its global endpoint. This also help in significantly reducing the load on the web server. 
 
 For Linux WordPress offering, a new Azure CDN profile and an endpoint is created using the **Azure CDN Standard from Microsoft** product ([Compare Azure CDN Products](https://docs.microsoft.com/en-us/azure/cdn/cdn-features?toc=/azure/frontdoor/TOC.json)).  The CDN endpoint is then configured in WordPress using **W3 Total Cache** plugin and it's setting can be seen in the CDN tab of plugin's settings. Please note that it usually takes up to **15 minutes** for the CDN to show up and get configured in WordPress, after the deployment of App Service. 
 
