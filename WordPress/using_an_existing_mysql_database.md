@@ -7,12 +7,12 @@
 5. Backup your WordPress site and database. Please see [WordPress backups](https://wordpress.org/support/article/wordpress-backups/) and [Backing up your database](https://wordpress.org/support/article/backing-up-your-database/) for more details.
 6. Launch the Azure Portal and navigate to your **App Service -> Configuration** blade. Update the database name in the **Application Settings** of App Service and save it. This will restart your App and the new changes will get reflected.
 
-|    Application Setting Name    |
-|--------------------------------|
-|    DATABASE_NAME               |
-|    DATABASE_HOST               |
-|    DATABASE_USERNAME           |
-|    DATABASE_PASSWORD           |
+    |    Application Setting Name    |
+    |--------------------------------|
+    |    DATABASE_NAME               |
+    |    DATABASE_HOST               |
+    |    DATABASE_USERNAME           |
+    |    DATABASE_PASSWORD           |
     
-Reference: [WordPress Application Settings](./wordpress_application_settings.md)
+    Reference: [WordPress Application Settings](./wordpress_application_settings.md)
 
