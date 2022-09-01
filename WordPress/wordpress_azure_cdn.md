@@ -12,9 +12,9 @@ The following Application Settings are passed on to the Web App during the deplo
 |CDN_ENDPOINT | cdn endpoint url   |
 
 
-**Reference Links:**
-[What is a content delivery network on Azure?](https://docs.microsoft.com/en-us/azure/cdn/cdn-overview?toc=/azure/frontdoor/TOC.json)
-[Compare Azure CDN Products](https://docs.microsoft.com/en-us/azure/cdn/cdn-features?toc=/azure/frontdoor/TOC.json)
+**Reference Links:**<br>
+[What is a content delivery network on Azure?](https://docs.microsoft.com/en-us/azure/cdn/cdn-overview?toc=/azure/frontdoor/TOC.json) <br>
+[Compare Azure CDN Products](https://docs.microsoft.com/en-us/azure/cdn/cdn-features?toc=/azure/frontdoor/TOC.json)<br>
 [W3 Total Cache – WordPress plugin | WordPress.org](https://wordpress.org/plugins/w3-total-cache/)
 
 
