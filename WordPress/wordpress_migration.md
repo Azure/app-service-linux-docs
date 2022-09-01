@@ -19,8 +19,9 @@ By default, the file upload size for WordPress on Linux App Services is limited 
 |    Application Setting Name    | Default Value | New Value   |
 |--------------------------------|---------------|-------------|
 |    UPLOAD_MAX_FILESIZE         |      50M      |   256M      |
-|    POST_MAX_SIZE               |      128M     |   256M      |    
-Reference: [Application Settings](./wordpress_application_settings.md)    
+|    POST_MAX_SIZE               |      128M     |   256M      |
+
+Reference: [WordPress Application Settings](./wordpress_application_settings.md)    
 
 If you choose to migrate the site using this plugin, install All-In-One Migration plugin on both source and target sites.
 
@@ -77,15 +78,14 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
 		
 3. Update the database settings in the **Application Settings** of App Service and save it. This will restart your App and the new changes will get reflected.
 
+    |    Application Setting Name    | Update Required?                         |
+    |--------------------------------|------------------------------------------|
+    |    DATABASE_NAME               |      Yes, replace with new database name |
+    |    DATABASE_HOST               |      Not Required                        |   
+    |    DATABASE_USERNAME           |      Not Required                        |   
+    |    DATABASE_PASSWORD           |      Not Required                        |
 
-
-|    Application Setting Name    | Update Required?                         |
-|--------------------------------|------------------------------------------|
-|    DATABASE_NAME               |      Yes, replace with new database name |
-|    DATABASE_HOST               |      Not Required                        |   
-|    DATABASE_USERNAME           |      Not Required                        |   
-|    DATABASE_PASSWORD           |      Not Required                        |   
-Reference: [Application Settings](./wordpress_application_settings.md)
+    Reference: [WordPress Application Settings](./wordpress_application_settings.md)
 
 
 ### Recommended Plugins:
