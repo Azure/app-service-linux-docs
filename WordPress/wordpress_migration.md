@@ -20,7 +20,7 @@ By default, the file upload size for WordPress on Linux App Services is limited 
 |--------------------------------|---------------|-------------|
 |    UPLOAD_MAX_FILESIZE         |      50M      |   256M      |
 |    POST_MAX_SIZE               |      128M     |   256M      |    
-    
+Reference: [Application Settings](./wordpress_application_settings.md)    
 
 If you choose to migrate the site using this plugin, install All-In-One Migration plugin on both source and target sites.
 
@@ -60,17 +60,50 @@ The following WordPress settings are recommended. However, when the users migrat
 ## 2. Manual Migration Process
 The prerequisite is that the WordPress on Linux Azure App Service must have been created with an appropriate hosting plan from here: [WordPress on Linux App Service](./https://portal.azure.com/#create/WordPress.WordPress).
 
-1. Download the wp-content folder from the source site.
-		
+
+### Export the data at source site: 
+1. Download the **wp-content** folder from the source site.
 2. Export the contents of source database into an SQL file.
 [You can perform this task either using MySQL client tools like HeidiSQL, MySQL workbench, PhpMyAdmin or through command line interface] 
-		
-3. Go to SCM site of your App Service using **\<sitename\>.scm.azurewebsites.net/newui** and open Bash and delete the existing content of **/home/site/www/wp-content** folder using the following command 
+
+### Import the data at destination site: 
+1. Go to SCM site of your App Service using **\<sitename\>.scm.azurewebsites.net/newui** and open Bash and delete the existing content of **/home/site/www/wp-content** folder using the following command 
     ````
     rm -rf /home/site/www/wp-content/* 
     ````
-    Now upload the new contents of 'wp-content' folder using the File Manager. Please note that if you are not able to upload everything at once, then you can try dividing your upload into multiple smaller ones.
+    Now upload the new contents of **wp-content** folder using the File Manager. Please note that if you are not able to upload everything at once, then you can try dividing your upload into multiple smaller ones.
 
-4. Import the SQL file into the target database of your new site. You can do it via the PhpMyAdmin dashboard available at **\<sitename\>.azurewebsites.net/phpmyadmin**. Please note that if you are unable to one single large SQL file, please try to break it into multiple smaller parts and try uploading.
+2. Import the SQL file into the target database of your new site. You can do it via the PhpMyAdmin dashboard available at **\<sitename\>.azurewebsites.net/phpmyadmin**. Please note that if you are unable to one single large SQL file, please try to break it into multiple smaller parts and try uploading.
 		
-5. Update the database settings in the **Application Settings** of App Service and save it. This will restart your App and the new changes will get reflected.
+3. Update the database settings in the **Application Settings** of App Service and save it. This will restart your App and the new changes will get reflected.
+
+
+
+|    Application Setting Name    | Update Required?                         |
+|--------------------------------|------------------------------------------|
+|    DATABASE_NAME               |      Yes, replace with new database name |
+|    DATABASE_HOST               |      Not Required                        |   
+|    DATABASE_USERNAME           |      Not Required                        |   
+|    DATABASE_PASSWORD           |      Not Required                        |   
+Reference: [Application Settings](./wordpress_application_settings.md)
+
+
+### Recommended Plugins:
+Usually it is not required, but after the site migration, it is better to validate that you have the default recommended plugins activated and configured properly as before. If you are strictly bound to not using them, then you can remove the plugins.
+
+- The W3TC plugin should be activated and configured properly to use the local Redis cache server and Azure CDN/Blob Storage (if it was configured to use them originally). For more information on how to configure these, please refer to the following documentations:<br> [Local Redis Cache](./wordpress_local_redis_cache), [Azure CDN](./wordpress_azure_cdn), [Azure Blob Storage](./wordpress_azure_blob_storage).
+
+- WP Smush plugin is activated and configured properly for image optimization. Please see [Image Compression](./wordpress_image_compression.md) for more information on configuration.
+
+
+### Recommended WordPress Settings:
+The following WordPress settings are recommended. However, when the users migrate their custom sites, is it up to them to decide whether to use these settings or not.
+
+1. Open the WordPress Admin dashboard.
+2. Set the permalink structure to 'day and name', as it performs better compared to the plain permalinks that uses the format **?p=123**.
+3. Under the comment settings, enable the option to break comments into pages.
+4. Show excerpts instead of the full post in the feed.
+
+
+
+		
