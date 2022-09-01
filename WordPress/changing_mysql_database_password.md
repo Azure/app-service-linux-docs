@@ -22,7 +22,7 @@ First, go to the MySQL resource corresponding to your WordPress deployment, and 
 Then navigate to the Configuration section of your AppService and update the **DATABASE_PASSWORD** Application Settings in your AppService. Once you update the value, click on Save and wait for app to get restarted. 
 
 <br>
-<kbd><img src="./media/changing_mysql_password_1.png" width="1000" /></kbd>
+<kbd><img src="./media/changing_mysql_password_1.png" width="1000" /></kbd><br>
 <kbd><img src="./media/changing_mysql_password_2.png" width="1000" /></kbd>
 
 
