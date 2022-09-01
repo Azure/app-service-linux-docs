@@ -67,9 +67,9 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
 		
 3. Go to SCM site of your App Service using **\<sitename\>.scm.azurewebsites.net/newui** and open Bash and delete the existing content of **/home/site/www/wp-content** folder using the following command 
 
-````
+    ````
 **rm -rf /home/site/www/wp-content/\*** 
-````
+    ````
 
 Now upload the new contents of 'wp-content' folder using the File Manager. Please note that if you are not able to upload everything at once, then you can try dividing your upload into multiple smaller ones.
 
