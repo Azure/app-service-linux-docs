@@ -4,7 +4,7 @@
 
 For a quick start, three types of hosting plans are made available for WordPress on Linux AppServices. These plan dictates what resources are available, what features are enabled and how it is priced. Each hosting plans comes with a pre-defined configuration for AppService and MySQL database server. 
 
-| Hosting Plan | WebApp | Database (MySQL Flexible Server) |
+| Hosting Plan | App Service | Database (MySQL Flexible Server) |
 |--------------|--------|----------------------------------|
 |Basic|	**B1** (1 vCores, 1.75 GB RAM, 10 GB Storage)|	**Burstable, B1ms** <br>(1 vCores, 2 GiB RAM, 32 GiB storage, 400 IOPS)|
 |Standard|	**P1V2** (1 vCores, 3.5 GB RAM, 250 GB Storage)|	**General Purpose, D2ds_v4** <br>(2 vCores, 8 GiB RAM, 128 GiB storage, 700 IOPS)|
