@@ -14,10 +14,10 @@ Navigate to **WebSSH/Bash** shell in scm portal of your WordPress App. You can a
 <kbd><img src="./media/post_startup_script_2.png" width="700" /></kbd><br>
 <br>
 
-Add your start-up commands to **/home/dev/startup.sh** file.
 <kbd><img src="./media/post_startup_script_3.png" width="700" /></kbd><br>
 <br>
 
+Add your start-up commands to **/home/dev/startup.sh** file.
 <kbd><img src="./media/post_startup_script_4.png" width="700" /></kbd><br>
 Restart your app for the changes to get reflected. Please make sure the start-up script is tested properly (preferably in a test deployment slot of your app service).
 
