@@ -55,3 +55,22 @@ The following WordPress settings are recommended. However, when the users migrat
 2. Set the permalink structure to 'day and name', as it performs better compared to the plain permalinks that uses the format **?p=123**.
 3. Under the comment settings, enable the option to break comments into pages.
 4. Show excerpts instead of the full post in the feed.
+
+
+## Manual Migration Process
+The prerequisite is that the WordPress on Linux Azure App Service must have been created with an appropriate hosting plan from here: [Create a WordPress site using Microsoft Azure App Service](./https://portal.azure.com/#create/WordPress.WordPress).
+
+1. Download the wp-content folder from the source site.
+		
+2. Export the contents of source database into an SQL file.
+[You can perform this task either using MySQL client tools like HeidiSQL, MySQL workbench, PhpMyAdmin or through command line interface] 
+		
+3. Go to SCM site of your App Service using **<sitename>.scm.azurewebsites.net/newui** and open Bash and delete the existing content of **/home/site/www/wp-content** folder using the following command 
+
+    **rm -rf /home/site/www/wp-content/\*** 
+
+Now upload the new contents of 'wp-content' folder using the File Manager. Please note that if you are not able to upload everything at once, then you can try dividing your upload into multiple smaller ones.
+
+4. Import the SQL file into the target database of your new site. You can do it via the PhpMyAdmin dashboard available at **\<sitename\>.azurewebsites.net/phpmyadmin**. Please note that if you are unable to one single large SQL file, please try to break it into multiple smaller parts and try uploading.
+		
+5. Update the database settings in the **Application Settings** of App Service and save it. This will restart your App and the new changes will get reflected.
