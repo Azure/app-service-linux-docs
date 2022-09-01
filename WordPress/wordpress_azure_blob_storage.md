@@ -19,6 +19,18 @@ The following Application Settings are passed on to the Web App during the deplo
 |BLOB_CONTAINER_NAME |
 
 
+### Miscellaneous Information:
+- Blob Storage is configured with WordPress using **W3 Total Cache** plugin and its settings can be seen in the CDN tab of the plugin's settings. In this tab, it is not recommended to change settings to host wp-includes/ files, theme files or other non-Media files that are not in wp-content/uploads folder. Enabling these settings will change these files' URL that point to Blob Storage and this can lead to issues if the files are not present in Blob Storage (which usually would be the case since non-Media files are not spontaneously uploaded to Blob Storage).
+
+- Storage Account settings are defined in W3 Total Cache CDN tab. Storage Account Key can be visible to Administrators.  Azure Blog Storage container setting is set to ‘public, read-only’  blob access.
+
+- In case Blob Storage needs to be disabled, then in addition to disabling CDN in W3Total Cache settings, files from Blob Container need to be moved to wp-content/uploads folder in AppService if not already present.
+
+- If Custom Domain or CDN is enabled for Blob Storage, then the domain name needs to be updated in **'Configuration -> Replace site's hostname with'** setting in W3 Total Cache CDN settings.
+
+**Note:** Azure Blob Storage currently doesn't support SSL with custom domain. Click here for more information on custom domain mapping to Azure Blob Storage.
+
+
 **Reference Links:**<br>
 [Introduction to Azure Blob Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction)<br>
 [Storage account overview - Azure Storage | Microsoft Docs](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview#performance-tiers)<br>
