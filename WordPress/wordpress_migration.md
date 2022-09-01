@@ -68,9 +68,9 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
 
 ### Import the data at destination site: 
 1. Go to SCM site of your WordPress App Service using the following URL.
-
-    **https://\<sitename\>.scm.azurewebsites.net/newui** 
-    
+    ````
+    https://\<sitename\>.scm.azurewebsites.net/newui 
+    ````
 2. Open Bash Shell from the menu shown on the left side.
 3. Delete the existing content of **/home/site/www/wp-content** folder using the following command.
     ````
