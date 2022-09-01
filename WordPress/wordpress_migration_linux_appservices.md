@@ -111,5 +111,19 @@ The following WordPress settings are recommended. However, when the users migrat
 4. Show excerpts instead of the full post in the feed.
 
 
+<br>
+## Search and replace (paths and domain)
+One common issue that users face during migration is that some of the contents of their old site uses absolute urls/paths instead of relative ones. To resolve this issue, you can use plugins like [Search and Replace](https://wordpress.org/plugins/search-replace/) to update the database records.
 
-		
+
+## Configuring Custom Domian
+If you plan to setup your site with a new Custom Domain please follow the steps described here: Tutorial: [Map existing custom DNS name - Azure App Service | Microsoft Docs](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain?tabs=a%2Cazurecli)
+
+
+## Migrating Custom DNS Name
+When you migrate a live site and its DNS domain name to App Service, that DNS name is already serving live traffic. You can avoid downtime in DNS resolution during the migration by binding the active DNS name to your App Service app pre-emptively as per the steps described here: [Migrate an active DNS name - Azure App Service | Microsoft Docs](https://docs.microsoft.com/en-us/azure/app-service/manage-custom-dns-migrate-domain)
+
+
+## Updating SSL Certificates
+If your site is configured with SSL certs, then we need to redo the setup following the instructions here: [Add and manage TLS/SSL certificates - Azure App Service | Microsoft Docs](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate?tabs=apex%2Cportal)
+
