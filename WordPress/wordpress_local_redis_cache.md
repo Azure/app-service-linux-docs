@@ -12,3 +12,11 @@ Please see the images below for manual configuration and usage of Redis Cache.  
 
 **Reference Links:**
 [W3 Total Cache – WordPress plugin | WordPress.org](https://wordpress.org/plugins/w3-total-cache/)
+
+
+![local redis cache configuration 1](./media/local_redis_cache_1.png)
+![local redis cache configuration 2](./media/local_redis_cache_2.png)
+![local redis cache configuration 3](./media/local_redis_cache_3.png)
+![local redis cache configuration 4](./media/local_redis_cache_4.png)
+![local redis cache configuration 5](./media/local_redis_cache_5.png)
+![local redis cache configuration 6](./media/local_redis_cache_6.png)
