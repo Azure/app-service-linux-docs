@@ -130,5 +130,5 @@ If your site is configured with SSL certs, then we need to redo the setup follow
 
 
 ## Using an existing MySQL database  
-Please refer to : [Using existing MySQL database](./using_an_existing_mysql_database.md)
+Please refer to [Using an existing MySQL database](./using_an_existing_mysql_database.md)
 
