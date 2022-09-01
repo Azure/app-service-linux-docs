@@ -36,8 +36,8 @@ It is very important to note that there are two types of Application Settings.
 Note that these are used only once during the installation process and any subsequent changes to these application settings after installation will not impact the WordPress application.
 
 
-| Application Setting  |	Scope	 | Default Value |	Max	Value  | Description                      |
-|----------------------|-----------------|---------------|-------------|----------------------------------|
+| Application Setting  |	Scope	       | Default Value |	Max	Value  | Description                      |
+|----------------------|-------------------|---------------|-------------|----------------------------------|
 |SETUP_PHPMYADMIN|	PhpMyAdmin|	TRUE|	-|	Setups PhpMyAdmin dashboard and can be accessed from /phpmyadmin on your site. Only used once during the installation process. It is recommended to not change this once the WordPress installation is complete as it might change the routing rules.|
 |CDN_ENABLED|	Azure CDN|	-|	-|	Enables and configures CDN during installation time if the flag is set to true.|
 |CDN_ENDPOINT|	Azure CDN|	-|	-|	The CDN endpoint is configured in the WordPress during installation time. CDN takes around 15 minutes to come up and get configured. CDN_ENABLED flag has to be set to true for this to be configured.|
