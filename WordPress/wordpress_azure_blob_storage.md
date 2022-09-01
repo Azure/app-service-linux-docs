@@ -1,4 +1,6 @@
 # Configuring Azure Blob Storage with WordPress
+
+## Configuring Azure Blob Storage with WordPress
 **Azure Blob Storage** reduces the load on the web server by serving media files of WordPress (i.e files in wp-content/uploads folder) through a Blob Container. Media files such as images & video are delivered by secure read-only https hyperlinks. 
 
 For Linux WordPress offering, a new Azure storage account with blob container is created using the standard performance tier. Blob Storage details are then configured into WordPress using W3 Total Cache plugin and the settings can be seen in the CDN tab of the plugin's settings. 
@@ -19,7 +21,7 @@ The following Application Settings are passed on to the Web App during the deplo
 |BLOB_CONTAINER_NAME |
 
 
-### Miscellaneous Information:
+## Miscellaneous Information:
 - Blob Storage is configured with WordPress using **W3 Total Cache** plugin and its settings can be seen in the CDN tab of the plugin's settings. In this tab, it is not recommended to change settings to host wp-includes/ files, theme files or other non-Media files that are not in wp-content/uploads folder. Enabling these settings will change these files' URL that point to Blob Storage and this can lead to issues if the files are not present in Blob Storage (which usually would be the case since non-Media files are not spontaneously uploaded to Blob Storage).
 
 - Storage Account settings are defined in W3 Total Cache CDN tab. Storage Account Key can be visible to Administrators.  Azure Blog Storage container setting is set to ‘public, read-only’  blob access.
@@ -28,7 +30,7 @@ The following Application Settings are passed on to the Web App during the deplo
 
 - If Custom Domain or CDN is enabled for Blob Storage, then the domain name needs to be updated in **'Configuration -> Replace site's hostname with'** setting in W3 Total Cache CDN settings.
 
-**Note:** Azure Blob Storage currently doesn't support SSL with custom domain. Click here for more information on custom domain mapping to Azure Blob Storage.
+- Azure Blob Storage currently doesn't support SSL with custom domain. Click here for more information on custom domain mapping to Azure Blob Storage.
 
 
 **Reference Links:**<br>
