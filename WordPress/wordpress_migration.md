@@ -84,7 +84,7 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
 
     |    Application Setting Name    | Update Required?                         |
     |--------------------------------|------------------------------------------|
-    |    DATABASE_NAME               |      Yes, replace with new database name |
+    |    DATABASE_NAME               |      Yes, replace with the source (exported) database name |
     |    DATABASE_HOST               |      Not Required                        |   
     |    DATABASE_USERNAME           |      Not Required                        |   
     |    DATABASE_PASSWORD           |      Not Required                        |
