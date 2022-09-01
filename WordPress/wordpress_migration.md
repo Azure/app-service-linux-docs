@@ -78,9 +78,9 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
     ````
 4. Now upload the new contents of **wp-content** folder using the File Manager. Click on the label that says '**Drag a File/Folder here to upload, or click to select one**'. Please note that if you are not able to upload everything at once, then you can try dividing your upload into multiple smaller ones.
 
-2. Import the SQL file into the target database of your new site. You can do it via the PhpMyAdmin dashboard available at **\<sitename\>.azurewebsites.net/phpmyadmin**. Please note that if you are unable to one single large SQL file, please try to break it into multiple smaller parts and try uploading.
-		
-3. Update the database settings in the **Application Settings** of App Service and save it. This will restart your App and the new changes will get reflected.
+5. Import the SQL file from the source database into the database of your newly created WordPress site. You can do it via the PhpMyAdmin dashboard available at **\<sitename\>.azurewebsites.net/phpmyadmin**. Please note that if you are unable to one single large SQL file, please try to break it into multiple smaller parts and try uploading. Steps to import the database through phpmyadmin is described [here](https://docs.phpmyadmin.net/en/latest/import_export.html).
+	
+6. Launch the Azure Portal and navigate to your App Service -> Configuration. Update the database name in the **Application Settings** of App Service and save it. This will restart your App and the new changes will get reflected.
 
     |    Application Setting Name    | Update Required?                         |
     |--------------------------------|------------------------------------------|
