@@ -63,8 +63,12 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
 
 ### Export the data at source site: 
 1. Download the **wp-content** folder from the source site.
-2. Export the contents of source database into an SQL file.
-[You can perform this task either using MySQL client tools like HeidiSQL, MySQL workbench, PhpMyAdmin or through command line interface] 
+2. Export the contents of source database into an SQL file. You can perform this task either using MySQL client tools like HeidiSQL, MySQL workbench, PhpMyAdmin or through command line interface. 
+    - Download MySQL Workbench from [here](https://dev.mysql.com/downloads/workbench/) or you can install phpmyadmin using these [steps](https://docs.phpmyadmin.net/en/latest/setup.html).
+    - Follow the steps described [here](https://dev.mysql.com/doc/workbench/en/wb-admin-export-import-management.html) to export the content of WordPress database 
+    
+
+
 
 ### Import the data at destination site: 
 1. Go to SCM site of your WordPress App Service using the following URL.
@@ -78,7 +82,7 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
     ````
 4. Now upload the new contents of **wp-content** folder using the File Manager. Click on the label that says '**Drag a File/Folder here to upload, or click to select one**'. Please note that if you are not able to upload everything at once, then you can try dividing your upload into multiple smaller ones.
 
-5. Import the SQL file downloaded from the source database into the database of your newly created WordPress site. You can do it via the PhpMyAdmin dashboard available at **\<sitename\>.azurewebsites.net/phpmyadmin**. Please note that if you are unable to one single large SQL file, please try to break it into multiple smaller parts and try uploading. Steps to import the database through phpmyadmin are described [here](https://docs.phpmyadmin.net/en/latest/import_export.html).
+5. Import the SQL file downloaded from the source database into the database of your newly created WordPress site. You can do it via the PhpMyAdmin dashboard available at **\<sitename\>.azurewebsites.net/phpmyadmin**. Please note that if you are unable to one single large SQL file, please try to break it into multiple smaller parts and try uploading. Steps to import the database through phpmyadmin are described [here](https://docs.phpmyadmin.net/en/latest/import_export.html#import).
 
 6. Launch the Azure Portal and navigate to your **App Service -> Configuration** blade. Update the database name in the **Application Settings** of App Service and save it. This will restart your App and the new changes will get reflected.
 
