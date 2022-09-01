@@ -63,9 +63,7 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
 
 ### Export the data at source site: 
 1. Download the **wp-content** folder from the source site.
-2. Export the contents of source database into an SQL file. You can perform this task either using MySQL client tools like HeidiSQL, MySQL workbench, PhpMyAdmin or through command line interface. 
-    - Download MySQL Workbench from [here](https://dev.mysql.com/downloads/workbench/) or you can install phpmyadmin using these [steps](https://docs.phpmyadmin.net/en/latest/setup.html).
-    - Follow the steps described [here](https://dev.mysql.com/doc/workbench/en/wb-admin-export-import-management.html) to export the content of WordPress database
+2. Export the contents of source database into an SQL file. You can perform this task either using MySQL client tools like HeidiSQL, MySQL workbench, PhpMyAdmin or through command line interface. Download MySQL Workbench from [here](https://dev.mysql.com/downloads/workbench/) or you can install phpmyadmin using these [steps](https://docs.phpmyadmin.net/en/latest/setup.html). For more information on exporting the database, please refer to the following [documentation](https://dev.mysql.com/doc/workbench/en/wb-admin-export-import-management.html).
 
 ### Import the data at destination site: 
 1. Go to SCM site of your WordPress App Service using the following URL.
