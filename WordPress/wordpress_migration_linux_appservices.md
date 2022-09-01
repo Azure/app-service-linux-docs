@@ -129,9 +129,8 @@ When you migrate a live site and its DNS domain name to App Service, that DNS na
 If your site is configured with SSL certs, then we need to redo the setup following the instructions here: [Add and manage TLS/SSL certificates - Azure App Service | Microsoft Docs](https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate?tabs=apex%2Cportal)
 
 
-## Using an existing MySQL database
- s  
-
+## Using an existing MySQL database  
+###
 1. It is recommended to ensure that both App Service(web server) and database server are running in the same region to avoid performance issues.
 2. It is recommended to use [Azure MySQL Flexible Server](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DBforMySQL%2FflexibleServers) as database.
 3. It is recommended to keep the database in the same VNET as your App Service. Follow the steps described [here](https://docs.microsoft.com/en-us/azure/mysql/flexible-server/how-to-manage-virtual-network-portal).
