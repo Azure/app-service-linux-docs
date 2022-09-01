@@ -5,14 +5,14 @@ Go to the Azure Portal and navigate to your **App Service -> Configuration** bla
 ![Application Settings](./media/wordpress_database_application_settings.png)
 
 It is very important to note that there are two types of Application Settings.
-	1. 'Persistent' Application Settings which are impactful throughout the entire lifetime of your WordPress application. Any changes to these settings will update the same in your WordPress application.
+1. **Persistent** Application Settings which are impactful throughout the entire lifetime of your WordPress application. Any changes to these settings will update the same in your WordPress application.
 	
-	2. 'Non-Persistent' Application Settings which are used as a 'one-time' reference during the installation process. Any subsequent changes to these App Settings after the installation is complete will not update the same in WordPress application. 
+2. **Non-Persistent** Application Settings which are used as a 'one-time' reference during the installation process. Any subsequent changes to these App Settings after the installation is complete will not update the same in WordPress application. 
 
 
 ## Persistent Application Settings
 
-|----------------------|-------------|---------------|-------------|----------------------------------|
+
 | Application Setting  |	Scope	 | Default Value |	Max	Value  | Description                      |
 |----------------------|-------------|---------------|-------------|----------------------------------|
 |WEBSITES_CONTAINER_START_TIME_LIMIT|	Web App|	900|	-|	The amount of time the platform will wait (for the site to come up) before it restarts your container. WP installation takes around 5-10 mins after the AppService is deployed. By default, timeout limit for Linux AppService is 240 seconds. So, overriding this value to 900 seconds for WordPress deployments to avoid container restarts during the setup process. This is a required setting, and it is recommended to not change this value.|
