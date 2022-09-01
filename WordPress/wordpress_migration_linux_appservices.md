@@ -112,6 +112,7 @@ The following WordPress settings are recommended. However, when the users migrat
 
 
 <br>
+
 ## Search and replace (paths and domain)
 One common issue that users face during migration is that some of the contents of their old site uses absolute urls/paths instead of relative ones. To resolve this issue, you can use plugins like [Search and Replace](https://wordpress.org/plugins/search-replace/) to update the database records.
 
