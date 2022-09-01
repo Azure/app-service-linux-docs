@@ -140,10 +140,10 @@ If your site is configured with SSL certs, then we need to redo the setup follow
 
     |    Application Setting Name    | Update Required?                         |
     |--------------------------------|------------------------------------------|
-    |    DATABASE_NAME               |      Yes, replace with the source (exported) database name |
-    |    DATABASE_HOST               |      Yes, replace with the source  Required                        |   
-    |    DATABASE_USERNAME           |      Yes, replace with the source  Required                        |   
-    |    DATABASE_PASSWORD           |      Yes, replace with the source                        |
+    |    DATABASE_NAME               |      Yes                        |
+    |    DATABASE_HOST               |      Yes                        |   
+    |    DATABASE_USERNAME           |      Yes                        |   
+    |    DATABASE_PASSWORD           |      Yes                        |
 
     Reference: [WordPress Application Settings](./wordpress_application_settings.md)
 
