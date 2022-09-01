@@ -7,7 +7,7 @@ It is very important to note that there are two types of Application Settings.
 2. **Non-Persistent** Application Settings which are used as a 'one-time' reference during the installation process. Any subsequent changes to these App Settings after the installation is complete will not update the same in WordPress application. 
 
 
-## 1. Persistent Application Settings
+## Persistent Application Settings
 
 
 | Application Setting  |	Scope	 | Default Value |	Max	Value  | Description                      |
@@ -31,7 +31,7 @@ It is very important to note that there are two types of Application Settings.
 
 
 
-## 2. Non-Persistent Application Settings
+## Non-Persistent Application Settings
 
 Note that these are used only once during the installation process and any subsequent changes to these application settings after installation will not impact the WordPress application.
 
