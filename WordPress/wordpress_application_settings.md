@@ -1,16 +1,13 @@
 
 # WordPress Application Settings
 
-Go to the Azure Portal and navigate to your **App Service -> Configuration** blade. Update the required **Application Settings** of App Service and save it. This will restart your App and the new changes will get reflected. 
-![Application Settings](./media/wordpress_database_application_settings.png)
-
 It is very important to note that there are two types of Application Settings.
 1. **Persistent** Application Settings which are impactful throughout the entire lifetime of your WordPress application. Any changes to these settings will update the same in your WordPress application.
 	
 2. **Non-Persistent** Application Settings which are used as a 'one-time' reference during the installation process. Any subsequent changes to these App Settings after the installation is complete will not update the same in WordPress application. 
 
 
-## Persistent Application Settings
+## 1. Persistent Application Settings
 
 
 | Application Setting  |	Scope	 | Default Value |	Max	Value  | Description                      |
@@ -34,23 +31,28 @@ It is very important to note that there are two types of Application Settings.
 
 
 
-## Non-Persistent Application Settings
+## 2. Non-Persistent Application Settings
 
 Note that these are used only once during the installation process and any subsequent changes to these application settings after installation will not impact the WordPress application.
 
-Application Setting	Scope	Default Value	Max	Description
-SETUP_PHPMYADMIN	PhpMyAdmin	TRUE	-	Setups PhpMyAdmin dashboard and can be accessed from /phpmyadmin on your site. Only used once during the installation process. It is recommended to not change this once the WordPress installation is complete as it might change the routing rules.
-CDN_ENABLED	Azure CDN	-	-	Enables and configures CDN during installation time if the flag is set to true.
-CDN_ENDPOINT	Azure CDN	-	-	The CDN endpoint is configured in the WordPress during installation time. CDN takes around 15 minutes to come up and get configured. CDN_ENABLED flag has to be set to true for this to be configured.
-BLOB_STORAGE_ENABLED	Azure Blob Storage	-	-	Enables and configures blob during installation time if the flag is set to true.
-STORAGE_ACCOUNT_NAME	Azure Blob Storage	-	-	
-BLOB_CONTAINER_NAME	Azure Blob Storage	-	-	
-STORAGE_ACCOUNT_KEY	Azure Blob Storage	-	-	
-WORDPRESS_ADMIN_EMAIL	WordPress Setup	-	-	
-WORDPRESS_ADMIN_USER	WordPress Setup	-	-	
-WORDPRESS_ADMIN_PASSWORD	WordPress Setup	-	-	
-WORDPRESS_TITLE	WordPress Setup	-	-	
-WORDPRESS_LOCALE_CODE	WordPress Setup	en_US	-	WordPress localization code for site language.
+
+| Application Setting  |	Scope	 | Default Value |	Max	Value  | Description                      |
+|----------------------|-------------|---------------|-------------|----------------------------------|
+|SETUP_PHPMYADMIN|	PhpMyAdmin|	TRUE|	-|	Setups PhpMyAdmin dashboard and can be accessed from /phpmyadmin on your site. Only used once during the installation process. It is recommended to not change this once the WordPress installation is complete as it might change the routing rules.|
+|CDN_ENABLED|	Azure CDN|	-|	-|	Enables and configures CDN during installation time if the flag is set to true.|
+|CDN_ENDPOINT|	Azure CDN|	-|	-|	The CDN endpoint is configured in the WordPress during installation time. CDN takes around 15 minutes to come up and get configured. CDN_ENABLED flag has to be set to true for this to be configured.|
+|BLOB_STORAGE_ENABLED|	Azure Blob Storage|	-|	-|	Enables and configures blob during installation time if the flag is set to true.|
+|STORAGE_ACCOUNT_NAME|	Azure Blob Storage|	-|	-|	
+|BLOB_CONTAINER_NAME|	Azure Blob Storage|	-|	-|	
+|STORAGE_ACCOUNT_KEY|	Azure Blob Storage|	-|	-|	
+|WORDPRESS_ADMIN_EMAIL|	WordPress Setup|	-|	-|	
+|WORDPRESS_ADMIN_USER|	WordPress Setup|	-|	-|	
+|WORDPRESS_ADMIN_PASSWORD|	WordPress Setup|	-|	-|	
+|WORDPRESS_TITLE|	WordPress Setup|	-|	-|	
+|WORDPRESS_LOCALE_CODE|	WordPress Setup|	en_US|	-|	WordPress localization code for site language.|
 
 
 
+## Configuring Applicatoin Settings
+Go to the Azure Portal and navigate to your **App Service -> Configuration** blade. Update the required **Application Settings** of App Service and save it. This will restart your App and the new changes will get reflected. 
+![Application Settings](./media/wordpress_database_application_settings.png)
