@@ -18,6 +18,6 @@ The following Application Settings are passed on to the Web App during the deplo
 [W3 Total Cache – WordPress plugin | WordPress.org](https://wordpress.org/plugins/w3-total-cache/) <br>
 
 <br>
-<kbd><img src="./media/wp_azure_cdn_1.png" width="800" /></kbd>
-<kbd><img src="./media/wp_azure_cdn_2.png" width="800" /></kbd>
-<kbd><img src="./media/wp_azure_cdn_3.png" width="800" /></kbd>
+<kbd><img src="./media/wp_azure_cdn_1.png" width="1000" /></kbd>
+<kbd><img src="./media/wp_azure_cdn_2.png" width="1000" /></kbd>
+<kbd><img src="./media/wp_azure_cdn_3.png" width="1000" /></kbd>
