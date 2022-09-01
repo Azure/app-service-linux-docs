@@ -69,7 +69,7 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
     ````
     rm -rf /home/site/www/wp-content/* 
     ````
-Now upload the new contents of 'wp-content' folder using the File Manager. Please note that if you are not able to upload everything at once, then you can try dividing your upload into multiple smaller ones.
+    Now upload the new contents of 'wp-content' folder using the File Manager. Please note that if you are not able to upload everything at once, then you can try dividing your upload into multiple smaller ones.
 
 4. Import the SQL file into the target database of your new site. You can do it via the PhpMyAdmin dashboard available at **\<sitename\>.azurewebsites.net/phpmyadmin**. Please note that if you are unable to one single large SQL file, please try to break it into multiple smaller parts and try uploading.
 		
