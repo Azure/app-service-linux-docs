@@ -91,7 +91,7 @@ The prerequisite is that the WordPress on Linux Azure App Service must have been
 
     Reference: [WordPress Application Settings](./wordpress_application_settings.md)
 
-    ![Database Application Settings](./media/wordpress_database_app_settings.png)
+    ![Database Application Settings](./media/wordpress_database_application_settings.png)
 
 
 ### Recommended Plugins:
