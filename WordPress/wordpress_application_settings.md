@@ -52,6 +52,7 @@ Note that these are used only once during the installation process and any subse
 |WORDPRESS_LOCALE_CODE|	WordPress Setup|	en_US|	-|	WordPress localization code for site language.|
 
 
+<br>
 
 ## Configuring Applicatoin Settings
 Go to the Azure Portal and navigate to your **App Service -> Configuration** blade. Update the required **Application Settings** of App Service and save it. This will restart your App and the new changes will get reflected. 
