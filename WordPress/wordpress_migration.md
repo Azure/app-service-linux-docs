@@ -58,16 +58,18 @@ The following WordPress settings are recommended. However, when the users migrat
 
 
 ## Manual Migration Process
-The prerequisite is that the WordPress on Linux Azure App Service must have been created with an appropriate hosting plan from here: [Create a WordPress site using Microsoft Azure App Service](./https://portal.azure.com/#create/WordPress.WordPress).
+Prerequisite is that the WordPress on Linux Azure App Service must have been created with an appropriate hosting plan from here: [WordPress on Linux App Service](./https://portal.azure.com/#create/WordPress.WordPress).
 
 1. Download the wp-content folder from the source site.
 		
 2. Export the contents of source database into an SQL file.
 [You can perform this task either using MySQL client tools like HeidiSQL, MySQL workbench, PhpMyAdmin or through command line interface] 
 		
-3. Go to SCM site of your App Service using **<sitename>.scm.azurewebsites.net/newui** and open Bash and delete the existing content of **/home/site/www/wp-content** folder using the following command 
+3. Go to SCM site of your App Service using **\<sitename\>.scm.azurewebsites.net/newui** and open Bash and delete the existing content of **/home/site/www/wp-content** folder using the following command 
 
-    **rm -rf /home/site/www/wp-content/\*** 
+````
+**rm -rf /home/site/www/wp-content/\*** 
+````
 
 Now upload the new contents of 'wp-content' folder using the File Manager. Please note that if you are not able to upload everything at once, then you can try dividing your upload into multiple smaller ones.
 
