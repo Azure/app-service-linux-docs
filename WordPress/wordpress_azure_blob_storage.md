@@ -1,6 +1,5 @@
 # Configuring Azure Blob Storage with WordPress
 
-## Configuring Azure Blob Storage with WordPress
 **Azure Blob Storage** reduces the load on the web server by serving media files of WordPress (i.e files in wp-content/uploads folder) through a Blob Container. Media files such as images & video are delivered by secure read-only https hyperlinks. 
 
 For Linux WordPress offering, a new Azure storage account with blob container is created using the standard performance tier. Blob Storage details are then configured into WordPress using W3 Total Cache plugin and the settings can be seen in the CDN tab of the plugin's settings. 
@@ -37,3 +36,8 @@ The following Application Settings are passed on to the Web App during the deplo
 [Introduction to Azure Blob Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction)<br>
 [Storage account overview - Azure Storage | Microsoft Docs](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview#performance-tiers)<br>
 [W3 Total Cache – WordPress plugin | WordPress.org](https://wordpress.org/plugins/w3-total-cache/) <br>
+
+<br>
+<kbd><img src="./media/wp_azure_blob_1.png" width="1000" /></kbd>
+<kbd><img src="./media/wp_azure_blob_2.png" width="1000" /></kbd>
+<kbd><img src="./media/wp_azure_blob_3.png" width="1000" /></kbd>
