@@ -15,7 +15,9 @@ The following Application Settings are passed on to the Web App during the deplo
 **Reference Links:**<br>
 [Compare Azure CDN products](https://docs.microsoft.com/en-us/azure/cdn/cdn-features?toc=/azure/frontdoor/TOC.json)<br>
 [What is a content delivery network on Azure?](https://docs.microsoft.com/en-us/azure/cdn/cdn-overview?toc=/azure/frontdoor/TOC.json) <br>
-[W3 Total Cache – WordPress plugin | WordPress.org](https://wordpress.org/plugins/w3-total-cache/)
+[W3 Total Cache – WordPress plugin | WordPress.org](https://wordpress.org/plugins/w3-total-cache/) <br>
 
-
-
+<br>
+<kbd><img src="./media/wp_azure_cdn_1.png" width="800" /></kbd>
+<kbd><img src="./media/wp_azure_cdn_2.png" width="800" /></kbd>
+<kbd><img src="./media/wp_azure_cdn_3.png" width="800" /></kbd>
