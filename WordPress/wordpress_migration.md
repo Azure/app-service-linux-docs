@@ -57,7 +57,7 @@ The following WordPress settings are recommended. However, when the users migrat
 4. Show excerpts instead of the full post in the feed.
 
 
-## Manual Migration Process
+## 2. Manual Migration Process
 Prerequisite is that the WordPress on Linux Azure App Service must have been created with an appropriate hosting plan from here: [WordPress on Linux App Service](./https://portal.azure.com/#create/WordPress.WordPress).
 
 1. Download the wp-content folder from the source site.
