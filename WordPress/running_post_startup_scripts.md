@@ -1,8 +1,8 @@
-# Running Start-up Script in WordPress Linux App Services
+# Running Start-up Scripts on WordPress Linux App Services
 
-Start-up commands can be added to a pre-defined bash shell script file **(/home/dev/startup.sh)** which is executed after webapp container starts.
+Start-up commands or script can be added to a pre-defined bash shell file **(/home/dev/startup.sh)** which is executed after the webapp container starts.
 
-App Service architecture inherently has non persistent storage **(excluding files in /home directory)** where all file updates are lost after app restart and reverted to the original state. A majority of config files are stored in /etc directory and a start-up script can be used to edit these non-persistent files. Since the start-up script is executed after each app start-up, the edited changes made would persist after restarts or on scaling out the app service.
+App Service architecture inherently has non persistent storage for files outside **/home** directory where all file updates are lost after app restarts and reverted to the original state. A majority of config files are stored in /etc directory and start-up script can be used to edit these non-persistent files. Since the start-up script is executed after each app start-up, the edited changes made would persist after restarts or on scaling out of the app service.
 
 <br>
 Navigate to WebSSH/Bash shell in scm portal of your WordPress app. You can access the SCM site either from Azure Protal or using the following URL **https://\<sitename\>.scm.azurewebsites.net**
