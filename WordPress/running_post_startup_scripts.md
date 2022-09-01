@@ -6,20 +6,14 @@ App Service architecture inherently has non persistent storage for files outside
 
 <br>
 
-1. Navigate to WebSSH/Bash shell in scm portal of your WordPress app. You can access the SCM site either from Azure Protal or using the following **https://\<sitename\>.scm.azurewebsites.net/newui**
+Navigate to **WebSSH/Bash** shell in scm portal of your WordPress App. You can access the SCM site either from Azure Protal or using the following URL **https://\<sitename\>.scm.azurewebsites.net/newui**
 
 <kbd><img src="./media/post_startup_script_1.png" width="1000" /></kbd><br>
-<br>
-
-2.
 <kbd><img src="./media/post_startup_script_2.png" width="1000" /></kbd><br>
 <br>
 
-3.Add your start-up commands to **/home/dev/startup.sh** file.
+Add your start-up commands to **/home/dev/startup.sh** file.
 <kbd><img src="./media/post_startup_script_3.png" width="1000" /></kbd><br>
-<br>
-
-4.
 <kbd><img src="./media/post_startup_script_4.png" width="1000" /></kbd><br>
 Restart your app for the changes to get reflected. Please make sure the start-up script is tested properly (preferably in a test deployment slot of your app service).
 
