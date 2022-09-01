@@ -54,6 +54,6 @@ Note that these are used only once during the installation process and any subse
 
 <br>
 
-## Configuring Applicatoin Settings
+## Configuring Application Settings
 Go to the Azure Portal and navigate to your **App Service -> Configuration** blade. Update the required **Application Settings** of App Service and save it. This will restart your App and the new changes will get reflected. 
 ![Application Settings](./media/wordpress_database_application_settings.png)
