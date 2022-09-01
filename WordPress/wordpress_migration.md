@@ -55,8 +55,6 @@ The following WordPress settings are recommended. However, when the users migrat
 2. Set the permalink structure to 'day and name', as it performs better compared to the plain permalinks that uses the format **?p=123**.
 3. Under the comment settings, enable the option to break comments into pages.
 4. Show excerpts instead of the full post in the feed.
-
-<br>
 <br>
 
 ## 2. Manual Migration Process
