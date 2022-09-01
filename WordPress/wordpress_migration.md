@@ -58,6 +58,7 @@ The following WordPress settings are recommended. However, when the users migrat
 
 <br>
 <br>
+
 ## 2. Manual Migration Process
 The prerequisite is that the WordPress on Linux Azure App Service must have been created with an appropriate hosting plan from here: [WordPress on Linux App Service](./https://portal.azure.com/#create/WordPress.WordPress).
 
