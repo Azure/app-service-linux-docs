@@ -9,21 +9,37 @@ To complete this quickstart, you need:
 
 ## 1 - Sample Application
 
-First, create a folder for your project and create a file called main.go. We will be doing most of our coding here.
+First, create a folder for your project.
+
+Go to the terminal window, change into the folder you just created and run `go mod init <ModuleName>`. The ModuleName could just be the folder name at this point.
+
+The `go mod init` command creates a go.mod file to track your code's dependencies. So far, the file includes only the name of your module and the Go version your code supports. But as you add dependencies, the go.mod file will list the versions your code depends on.
+
+Create a file called main.go. We will be doing most of our coding here.
 
 ```golang
 
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "net/http"
+)
 
 func main() {
-    fmt.Println("Hello World")
+    http.HandleFunc("/", HelloServer)
+    http.ListenAndServe(":8080", nil)
+}
+
+func HelloServer(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
 }
 
 ```
 
-If you want to do a sanity check, you can run this by opening up a terminal, navigating to your project’s directory and then calling `go run main.go`. You should see that it successfully outputs `Hello World` in your terminal.
+This program use the `net.http` package to handle all requests to the web root with the HelloServer function. The call to `http.ListenAndServe` tells the server to listen on the TCP network address :8080
+
+If you want to do a sanity check, you can run this by opening up a terminal, navigating to your project’s directory and then calling `go run main.go`. Now open a browser window and type the URL `http://localhost:8080/world`. You should see the message `Hello, world!`.
 
 ## 2 - Create a web app in Azure
 
