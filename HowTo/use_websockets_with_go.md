@@ -15,7 +15,13 @@ This guide also assumes that you have [Go](https://go.dev/doc/install) installed
 
 ## STEP 1 create a simple main.go
 
-First, create a folder for your project and create a file called main.go. We will be doing most of our coding here.
+First, create a folder for your project.
+
+Go to the terminal window, change into the folder you just created and run `go mod init <ModuleName>`. The ModuleName could just be the folder name at this point.
+
+The `go mod init` command creates a go.mod file to track your code's dependencies. So far, the file includes only the name of your module and the Go version your code supports. But as you add dependencies, the go.mod file will list the versions your code depends on.
+
+Create a file called main.go. We will be doing most of our coding here.
 
 ```golang
 
@@ -319,7 +325,7 @@ After you're satisfied with you websockets app, you can deploy to app service us
 To deploy your app, run the following Azure CLI command:
 
 ```bash
-az webapp up --sku B1 --name <app-name> --resource-group <resource-group-name> --subscription <subscription-name>
+az webapp up --runtime GO:1.18 --sku B1 --name <app-name> --resource-group <resource-group-name> --subscription <subscription-name>
 ```
 
 This command will create a Basic pricing tier webapp with your specified name in the resource group and subscription of your choice.
