@@ -58,7 +58,7 @@ az login
 Create the webapp and other resources, then deploy your code to Azure using [az webapp up](https://learn.microsoft.com/en-us/cli/azure/webapp#az-webapp-up).
 
 ```azurecli
-az webapp up --runtime GO:1.18 --sku B1 --logs
+az webapp up --runtime GO:1.18 --sku B1 --os Linux --logs
 ```
 
 * The `--runtime` parameter specifies what version of Go your app is running. This example uses Go 1.18. To list all available runtimes, use the command `az webapp list-runtimes --os linux --output table`.
