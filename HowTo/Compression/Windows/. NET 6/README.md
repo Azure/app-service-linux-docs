@@ -15,15 +15,24 @@ First, create a Windows App Service Plan & App. Using the Azure Portal, supply t
 7. App Service Plan Name
 8. SKU
 
-## 2. Install IIS Compression Extension
+## 2. Install IIS Compression Extension OR Set WEBSITE_ENABLE_BROTLI_ENCODING App Setting to true
 
-After creating the app, we'll need to add the IIS Compression Extension. The [IIS Compression Extension](https://learn.microsoft.com/en-us/iis/extensions/iis-compression/iis-compression-overview) is required from Brotli Compression with IIS and optional for GZIP Compression.
+After creating the app, we'll need to add the IIS Compression Extension or set the `WEBSITE_ENABLE_BROTLI_ENCODING` application setting to true. The [IIS Compression Extension](https://learn.microsoft.com/en-us/iis/extensions/iis-compression/iis-compression-overview) is required for Brotli Compression with IIS and optional for GZIP Compression.
 
-To add this extension:
+To add the IIS.Compression Site Extension:
 
 1. Navigate to **Extensions** under **Development Tools** in the left pane of your web app
 2. At the top left of the Extensions page, click **Add**
 3. Search for and install the **IIS.Compression Site Extension**
+
+**OR**
+
+To set the **WEBSITE_ENABLE_BROTLI_ENCODING** App Setting to true:
+
+1. Navigate to **Configuration** under **Settings** in the left pane of your web app
+2. Under Application settings, click **New application setting**
+3. Set the name to **WEBSITE_ENABLE_BROTLI_ENCODING** and value to **true**
+
 
 ## 3. Create a .NET Web App
 
