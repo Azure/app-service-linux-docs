@@ -1,3 +1,3 @@
 # gRPC on App Service
 
-gRPC is currently available everywhere on App Service for Linux workloads.
+gRPC (Public Preview) is currently available everywhere on App Service for Linux workloads.
