@@ -22,7 +22,7 @@ Now that your web app is created, you'll need to do the following before deployi
 
 >NOTE: If you are deploying to App Service with Visual Studio, you can skip the first two steps.  Visual Studio will set those for you.
 
-#### 1. Enable HTTP version
+#### 1. Enable HTTP version (skip this step if deploying from Visual Studio)
 The first setting you'll need to configure is the HTTP version
 1. Navigate to **Configuration** under **Settings** in the left pane of your web app
 2. Click on the **General Settings** tab and scroll down to **Platform settings**
@@ -31,7 +31,7 @@ The first setting you'll need to configure is the HTTP version
 
 This will restart your application and configure the front end to allow clients to make HTTP/2 calls.
 
-#### 2. Enable HTTP 2.0 Proxy
+#### 2. Enable HTTP 2.0 Proxy (skip this step if deploying from Visual Studio)
 Next, you'll need to configure the HTTP 2.0 Proxy:
 1. Under the same **Platform settings** section, find the **HTTP 2.0 Proxy** setting and switch it to **On**.
 2. Click **save**
