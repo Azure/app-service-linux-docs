@@ -26,8 +26,7 @@ App Service requires an application setting that specifically listens for HTTP/2
 2. Under **Application Settings**, click on **New application setting**
 3. Add the following app setting to your application.  The value for the port used here is found in the `launchSettings.json` file as the `"applicationUrl"` value.
 	1. **Name =** HTTP20_ONLY_PORT 
-	2. **Value =** 5243 
-4
+	2. **Value =** 5243
 
 This setting will communicate to your web app which port is specified to listen over HTTP/2 only.
 
@@ -37,7 +36,7 @@ When deploying to App Service using .NET 7 the following configuration settings 
 1. **HTTP version** is set to **2.0**.  This setting configures the front end to allow clients to make HTTP/2 calls.
 2. **HTTP 2.0 Proxy** is set to **On**.  This setting enables the front end to forward HTTP/2 traffic to the worker.
 
-These settings are required to enable gRPC.
+Be aware that these settings are set for you and no actio is needed.  However, these settings are required to enable gRPC.
 
 
 
