@@ -20,7 +20,7 @@ Create your web app as you normally would.  Choose **Code** as your Publish opti
 
 Now that your web app is created, you'll need to do the following before deploying your application:
 
->NOTE: If you are deploying to App Service with Visual Studio, skip the first two steps.  Visual Studio will set those for you.
+>NOTE: If you are deploying to App Service with Visual Studio, you can skip the first two steps.  Visual Studio will set those for you.
 
 #### 1. Enable HTTP version
 The first setting you'll need to configure is the HTTP version
