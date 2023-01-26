@@ -12,6 +12,8 @@ In this tutorial, we'll be deploying a gRPC server to App Service and making a g
 
 The following tutorial builds from the created gRPC client and server in that documentation.  If you already have a gRPC client and server, you may use these steps to add to existing .NET apps as well.  If you would like to view .NET 6 and .NET Core 3.1 samples, please visit [here](https://github.com/Azure/app-service-linux-docs/tree/master/HowTo/gRPC).
 
+### Setup the gRPC Server app
+If you haven't already done so when testing your gRPC server application locally, set the `launchBrowser` property to `true` in your `launchSettings.json` file.  This will ensure your browser doesn't show an error when visiting the URL.
 
 ### Deploy to App Service
 Before deploying to App Service, note that gRPC is currently only supported on Linux so be sure to choose this option when creating your web app.

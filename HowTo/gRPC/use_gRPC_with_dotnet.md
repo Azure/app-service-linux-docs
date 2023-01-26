@@ -13,53 +13,18 @@ In this tutorial, we'll be deploying a gRPC server to App Service and making a g
 The following tutorial builds from the created gRPC client and server in that documentation.  If you already have a gRPC client and server, you may use these steps to add to existing .NET apps as well.  If you would like to view .NET 6 and .NET Core 3.1 samples, please visit [here](https://github.com/Azure/app-service-linux-docs/tree/master/HowTo/gRPC).
 
 ### Setup the gRPC Server app
-In order to prepare our gRPC server application to deploy to App Service, we will need to configure Kestrel to listen to an additional port that only listens for plain-text HTTP/2.
-
-In your **Program.cs** add the following code to configure Kestrel.  In this example we're listening to port 8585, but you can use another number.
-
-```C#
-// Configure Kestrel to listen on a specific HTTP port 
-builder.WebHost.ConfigureKestrel(options => 
-{ 
-    options.ListenAnyIP(8080); 
-    options.ListenAnyIP(8585, listenOptions => 
-    { 
-        listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2; 
-    }); 
-});
-
-```
-
-Once configured this will ensure that your application is listening to a specific HTTP/2 only port, which will be needed when we deploy to App Service. 
-
-If you are using the templated code from the ASP.NET tutorial we will need to remove the EndpointDefaults configuration in the appsettings.json file.  In the **appsettings.json** file, remove the commented code below.
-
-```jsonc
-{ 
-  "Logging": { 
-    "LogLevel": { 
-      "Default": "Information", 
-      "Microsoft.AspNetCore": "Warning" 
-    } 
-  }, 
-  "AllowedHosts": "*", 
-  //  "EndpointDefaults": { 
-  //    "Protocols": "Http2" 
-  //  } 
-  //} 
-}
-
-```
-We no longer need this code since we have configured the protocol options in our Program.cs file and it will cause an error if deployed.  Once this is done your application is now ready to deploy to App Service.
+If you haven't already done so when testing your gRPC server application locally, set the `launchBrowser` property to `true` in your `launchSettings.json` file.  This will ensure your browser doesn't show an error when visiting the URL.
 
 ### Deploy to App Service
-Now that you have your server application setup and running locally, you can go to the portal and create your web app.  One thing to note is that gRPC is currently only supported on Linux so be sure to choose this option when creating your web app.
+Before deploying to App Service, note that gRPC is currently only supported on Linux so be sure to choose this option when creating your web app.
 
-Create your web app as you normally would.  Choose **Code** as your Publish option.  Choose **.NET 6 (LTS)** as your Runtime stack and **Linux** as your Operating System.  
+Create your web app as you normally would.  Choose **Code** as your Publish option.  Choose **.NET 7 (STS)** as your Runtime stack and **Linux** as your Operating System.  
 
 Now that your web app is created, you'll need to do the following before deploying your application:
 
-#### 1. Enable HTTP version
+>NOTE: If you are deploying to App Service with Visual Studio, you can skip the first two steps.  Visual Studio will set those for you.
+
+#### 1. Enable HTTP version - (skip this step if deploying from Visual Studio)
 The first setting you'll need to configure is the HTTP version
 1. Navigate to **Configuration** under **Settings** in the left pane of your web app
 2. Click on the **General Settings** tab and scroll down to **Platform settings**
@@ -68,7 +33,7 @@ The first setting you'll need to configure is the HTTP version
 
 This will restart your application and configure the front end to allow clients to make HTTP/2 calls.
 
-#### 2. Enable HTTP 2.0 Proxy
+#### 2. Enable HTTP 2.0 Proxy - (skip this step if deploying from Visual Studio)
 Next, you'll need to configure the HTTP 2.0 Proxy:
 1. Under the same **Platform settings** section, find the **HTTP 2.0 Proxy** setting and switch it to **On**.
 2. Click **save**
@@ -76,12 +41,12 @@ Next, you'll need to configure the HTTP 2.0 Proxy:
 Once turned on, this setting will configure your site to be forwarded HTTP/2 requests.
 
 #### 3. Add HTTP20_ONLY_PORT application setting
-Earlier, we configured the application to listen to a specific HTTP/2 only port.  Here we'll add an app setting HTTP20_ONLY_PORT and put the value as the port number we used earlier.
+App Service requires an application setting that specifically listens for HTTP/2 traffic.  Here we'll add an app setting HTTP20_ONLY_PORT and put the value from the launchSettings.json file as the port number.
 1. Navigate to the **Configuration** under **Settings** on the left pane of your web app.  
 2. Under **Application Settings**, click on **New application setting**
-3. Add the following app setting to your application
+3. Add the following app setting to your application.  The value for the port used here is found in the `launchSettings.json` file as the `"applicationUrl"` value.
 	1. **Name =** HTTP20_ONLY_PORT 
-	2. **Value =** 8585
+	2. **Value =** 5243
 
 This setting will communicate to your web app which port is specified to listen over HTTP/2 only.
 
