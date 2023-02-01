@@ -1,7 +1,7 @@
 # How-to deploy a Go gRPC app on App Service
 
 > [!WARNING]
-> gRPC is currently available to try as a Public Preview feature.
+> gRPC is currently available to try as a Public Preview feature. Go is available as Expermental Release.
 
 gRPC is a Remote Procedure Call framework that is used to streamline messages between your client and server over HTTP/2.  Using gRPC protocol over HTTP/2 enables the use of features like multiplexing to send multiple parallel requests over the same connection and bi-directional streaming for sending requests and responses simultaneously.  
 
@@ -13,7 +13,7 @@ In this tutorial, we'll be deploying a gRPC server to App Service and making a g
 The following tutorial builds from the created gRPC client and server in that documentation.  If you already have a gRPC client and server, you may use these steps to add to existing Go apps as well.  This tutorial will work for both Go 1.18 and Go 1.19.
 
 ### Setup the gRPC Server app
-In order to prepare our gRPC server application to deploy to App Service, we will need to configure the Go app with an additional port that so that the system can ping the application for Healthcheck requests.
+In order to prepare our gRPC server application to deploy to App Service, we will need to configure the Go app with an additional port so that the system can ping the application for Healthcheck requests.
 
 In your **main.go** add the following code to configure the extra port.  
 
@@ -121,7 +121,7 @@ Create your web app as you normally would.  Choose **Code** as your Publish opti
 
 Now that your web app is created, you'll need to do the following before deploying your application:
 
-#### 1. Enable HTTP version
+#### 1. Set HTTP version
 The first setting you'll need to configure is the HTTP version
 1. Navigate to **Configuration** under **Settings** in the left pane of your web app
 2. Click on the **General Settings** tab and scroll down to **Platform settings**
