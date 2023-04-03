@@ -93,7 +93,7 @@ Image="myapp:latest"
 FX_Version="Docker|"$ACR_URL"/"$Image
 
 #Configure the ACR, Image and Tag to pull
-az resource update --ids $Webapp_Config --set properties.linuxFxVersion=$FX_Version -o none --force-string
+az webapp config set --resource-group $RG_Name --name $Web_Name --generic-configurations '{"linuxFxVersion": $FX_Version}' -o none
 
 ```
 
