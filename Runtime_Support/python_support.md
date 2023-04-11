@@ -24,17 +24,17 @@ Once a version of Python has reached it's end of support no new critical or secu
 
 On June 27th, 2023 Python 3.7 will no longer be offered as an option in the create process for App Service. Existing apps targeting Python 3.7 will not be affected.  We recommend migrating your application to Python 3.8.  See our guidance [below](#how-to-update-your-app-to-target-a-different-version-of-python) to target a new version.
 
-
 ## Support Timeline
 
-|  Version   |  Support Status  |  End of Official Support |    OS Support   |
-|------------| ---------------- |:------------------------:|:---------------:|
-| Python 3.9 | Early Access     |    October 05, 2025      | Linux           |
-| Python 3.8 | Official Support |    October 14, 2024      | Linux           |
-| Python 3.7 | Official Support |    June 27, 2023         | Linux           |
-| Python 3.6 | Official Support |    December 23, 2021     | Windows & Linux |
-| Python 2.x | Official Support |    January 01, 2020      | Windows & Linux |
-
+|  Version    |  Support Status  |  End of Official Support |    OS Support   |
+|-------------| ---------------- |:------------------------:|:---------------:|
+| Python 3.11 | Official Support |    October 24, 2027      | Linux           |
+| Python 3.10 | Official Support |    October 04, 2026      | Linux           |
+| Python 3.9  | Official Support |    October 05, 2025      | Linux           |
+| Python 3.8  | Official Support |    October 14, 2024      | Linux           |
+| Python 3.7  | Official Support |    June 27, 2023         | Linux           |
+| Python 3.6  | EOL              |    December 23, 2021     | Windows & Linux |
+| Python 2.x  | EOL              |    January 01, 2020      | Windows & Linux |
 
 [Python Official Support timeline](https://devguide.python.org/#status-of-python-branches)
 
@@ -46,6 +46,7 @@ On June 27th, 2023 Python 3.7 will no longer be offered as an option in the crea
 >Changing the stack settings of your app will trigger a re-start of your application.
 
 Update your App Service apps to use a supported version of Python in the Azure portal:
+
 1. In the Azure portal, click the **App Service** blade. Select the app you want to update. 
 2. In the Configuration panel, click the **General settings** tab.
 3. Under Stack Settings, click the drop-down menu under **Minor version** and select the Python version you want (we recommend choosing the most recent version).
