@@ -1,4 +1,4 @@
-# How-to create a custom error page on App Service
+# How-to configure a custom error page on App Service
 
 App Service now enables the use of custom error pages for 403, 502, and 503 error codes so you can customize your users experience.  It's available for both Linux and Windows workloads using at least a Premium SKU.  The following is a tutorial on how to upload a custom error page to your Web App.
 
