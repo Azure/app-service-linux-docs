@@ -4,4 +4,4 @@ gRPC (Public Preview) is currently available everywhere on App Service (Linux) u
 
 Node, Python, and Java on App Service (Linux) are planned to have gRPC support in 2023.
 
->NOTE: gRPC is not a supported feature on ASEv2 SKUs
+>NOTE: gRPC is not a supported feature on ASEv2 SKUs.  If you would like to use this feature with an Isolated SKU, you must use ASEv3.
