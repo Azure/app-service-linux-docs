@@ -12,7 +12,7 @@ In this tutorial, we'll be adding a custom error page to our web app hosted on A
 
 Once you have your html file prepared you can upload it to your web app. In the configuration blade, you should see an **Error pages (preview)** tab. Click on this tab to view the error page options. If the options are greyed out, you'll need to upgrade to at least a Premium SKU to use this feature.
 
-![cep1](/media/cep/cep1.png)
+![cep1](./media/cep/cep1.png)
  
 You'll see that there are 3 options for uploading a custom error page. Choose the 403 error code by clicking the **Edit** button in the 403 row.
 
