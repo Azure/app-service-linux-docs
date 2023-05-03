@@ -4,10 +4,10 @@ App Service now enables the use of custom error pages for 403, 502, and 503 erro
 
 | Note: Custom error pages is not a supported feature on ASEv2 SKUs.  If you would like to use this feature with an Isolated SKU, you must use ASEv3.
 
-#### Prerequisite
+### Prerequisite
 In this tutorial, we'll be adding a custom error page to our web app hosted on App Service.  In order to accomplish this, you'll first need an html file that will serve as your error page that doesn't exceed a file size of 10kb.
 
-#### Upload a custom error page
+### Upload a custom error page
 Once you have your html file prepared you can upload it to your web app.  In the configuration blade, you should see an **Error pages (preview) tab**.  Click on this tab to view the error page options.  If the options are greyed out, you'll need to upgrade to at least a Premium SKU to use this feature.
 
 ![image](images/cep1.png)
@@ -21,7 +21,7 @@ Next, click on the **folder icon** to select your html file.  Remember the file 
  Once the .html file is selected, click Upload.  You'll notice the status of the row changes from Not configured to Configured. Then click **Save**.
 
 
-#### Set an IP restriction
+### Set an IP restriction
 Now that your 403 error page is uploaded, we should be able to trigger and view the error page.  Since this is a 403 access restriction error code, this can be triggered by setting an IP restriction.
 
 To set an IP restriction, go to the **Networking blade** and click Access restriction under the **Inbound Traffic** card.
