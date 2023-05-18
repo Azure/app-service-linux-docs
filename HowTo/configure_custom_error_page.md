@@ -2,7 +2,7 @@
 
 App Service now enables the use of custom error pages for 403, 502, and 503 error codes so you can customize your users experience.  It's available for both Linux and Windows workloads using at least a Premium SKU.  The following is a tutorial on how to upload a custom error page to your Web App.
 
-| Note: Custom error pages is not a supported feature on ASEv2 SKUs.  If you would like to use this feature with an Isolated SKU, you must use ASEv3.
+> Custom error pages is not a supported feature on ASEv2 SKUs.  If you would like to use this feature with an Isolated SKU, you must use ASEv3.
 
 ### Prerequisite
 In this tutorial, we'll be adding a custom error page to our web app hosted on App Service.  In order to accomplish this, you'll first need an html file that will serve as your error page that doesn't exceed a file size of 10kb.
