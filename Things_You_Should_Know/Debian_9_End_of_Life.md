@@ -15,7 +15,7 @@ On June 30th 2022 Debian 9 (also known as "Stretch") will reach End-of-Life (EOL
 
 First, validate that the new platform update which contains Debian 11 has reached your site.
 
-1. In the azure portal, navigate to you app and select SSH 
+1. In the azure portal, navigate to your app and select SSH 
 1. From the SSH promt validate the platform version using the following command:  `printenv | grep PLATFORM_VERSION`
 1. If the value of `PLATFORM_VERSION` starts with "99" or greater, then your site is on the latest platform update and you can continue to the section below. If the value does **not** show "99" or greater, then your site has not yet received the latest platform update--please check again at a later date.
 
@@ -32,6 +32,14 @@ Next, create a deployment slot to test that your application works properly with
 1. [Swap your production and staging slots](deploy-staging-slots.md#swap-two-slots). This will apply the `WEBSITE_LINUX_OS_VERSION=DEBIAN|BULLSEYE` app setting to production.
 1. Delete the deployment slot if you are no longer using it.
 
+## Opt-out of the Debian 11 upgrade
+
+To opt out of the automatic upgrade to Debian 11, you can set `WEBSITE_LINUX_OS_VERSION` to a value of `DEBIAN|STRETCH`.
+
+```bash
+    az webapp config appsettings set -g MyResourceGroup -n MyUniqueApp --settings WEBSITE_LINUX_OS_VERSION="DEBIAN|STRETCH"
+```
+**Note: Opting out of the upgrade will increase the startup time for your SCM site. You should do the above step only as a temporary measure while you upgrade your application to work with Debian 11**
 ## Resources
 
 - [Debian Long Term Support schedule](https://wiki.debian.org/LTS)
