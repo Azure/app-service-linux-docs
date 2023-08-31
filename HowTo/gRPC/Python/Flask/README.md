@@ -68,15 +68,7 @@ Earlier, we configured the application to listen to a specific HTTP/2 only port.
 
 This setting will communicate to your web app which port is specified to listen over HTTP/2 only.
 
-#### 5. Add WEBSITES_PORT application setting
-We'll need to set the `WEBSITES_PORT` application setting to tell App Service which port HTTP 1.1 is running on. This is especially important for an app running both HTTP 1.1 and HTTP 2 servers.
-1. Navigate to the **Configuration** under **Settings** on the left pane of your web app.
-2. Under **Application Settings**, click on **New application setting**
-3. Add the following app setting to your application
-	1. **Name =** WEBSITES_PORT
-	2. **Value =** 8000
-
-#### 6. Add SCM_DO_BUILD_DURING_DEPLOYMENT application setting
+#### 5. Add SCM_DO_BUILD_DURING_DEPLOYMENT application setting
 To ensure our application runs a `pip install` to resolve all our dependencies named in `requirements.txt`, we'll need to set the following application setting.
 1. Navigate to the **Configuration** under **Settings** on the left pane of your web app.  
 2. Under **Application Settings**, click on **New application setting**
@@ -84,19 +76,19 @@ To ensure our application runs a `pip install` to resolve all our dependencies n
 	1. **Name =** SCM_DO_BUILD_DURING_DEPLOYMENT 
 	2. **Value =** true
 
-#### 7. Add a custom startup command
+#### 6. Add a custom startup command
 To ensure your application starts up properly, we'll need to set a custom startup command to kick off our grpc and flask server.
 1. Navigate to the **Configuration** under **Settings** on the left pane of your web app.
 2. Under **General Settings**, add the following **Startup Command** `python app.py`
 
-#### 8. Save your app configuration
+#### 7. Save your app configuration
 Click the `Save` button at the top of the Configuration page. This will restart your application and apply all updated application settings.
 
-#### 9. Deploy the application 
+#### 8. Deploy the application 
 Run the following command to deploy your grpc app to App Service.
 `az webapp up --name <app-name>`
 
-#### 10. Test the application
+#### 9. Test the application
 Once deployed, replace the listening port in the local client application with the azurewebsites.net url of your app to test the deployed grpc server. This is found on line 34 of `greeter_client.py`.
 
 Also, don't forget to change your `insecure channel` to a `secure channel` on line 34 of `greeter_client.py`. Replace the current line with: 
