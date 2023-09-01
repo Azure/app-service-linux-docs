@@ -1,0 +1,5 @@
+flask==2.2.2
+grpcio==1.56.0
+grpcio-tools==1.56.0
+langchain
+openai

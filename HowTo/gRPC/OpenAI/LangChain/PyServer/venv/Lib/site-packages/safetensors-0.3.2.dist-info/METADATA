@@ -1,0 +1,142 @@
+Metadata-Version: 2.1
+Name: safetensors
+Version: 0.3.2
+Summary: Fast and Safe Tensor serialization
+Home-page: https://github.com/huggingface/safetensors
+Author: 
+Author-email: 
+License: Apache License 2.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Description-Content-Type: text/markdown
+Provides-Extra: all
+Requires-Dist: torch >=1.10 ; extra == 'all'
+Requires-Dist: numpy >=1.21.6 ; extra == 'all'
+Requires-Dist: tensorflow ==2.11.0 ; extra == 'all'
+Requires-Dist: jax >=0.3.25 ; extra == 'all'
+Requires-Dist: flax >=0.6.3 ; extra == 'all'
+Requires-Dist: jaxlib >=0.3.25 ; extra == 'all'
+Requires-Dist: paddlepaddle >=2.4.1 ; extra == 'all'
+Requires-Dist: black ==22.3 ; extra == 'all'
+Requires-Dist: isort >=5.5.4 ; extra == 'all'
+Requires-Dist: flake8 >=3.8.3 ; extra == 'all'
+Requires-Dist: click ==8.0.4 ; extra == 'all'
+Requires-Dist: setuptools-rust >=1.5.2 ; extra == 'all'
+Requires-Dist: huggingface-hub >=0.12.1 ; extra == 'all'
+Requires-Dist: pytest >=7.2.0 ; extra == 'all'
+Requires-Dist: pytest-benchmark >=4.0.0 ; extra == 'all'
+Requires-Dist: h5py >=3.7.0 ; extra == 'all'
+Provides-Extra: dev
+Requires-Dist: torch >=1.10 ; extra == 'dev'
+Requires-Dist: numpy >=1.21.6 ; extra == 'dev'
+Requires-Dist: tensorflow ==2.11.0 ; extra == 'dev'
+Requires-Dist: jax >=0.3.25 ; extra == 'dev'
+Requires-Dist: flax >=0.6.3 ; extra == 'dev'
+Requires-Dist: jaxlib >=0.3.25 ; extra == 'dev'
+Requires-Dist: paddlepaddle >=2.4.1 ; extra == 'dev'
+Requires-Dist: black ==22.3 ; extra == 'dev'
+Requires-Dist: isort >=5.5.4 ; extra == 'dev'
+Requires-Dist: flake8 >=3.8.3 ; extra == 'dev'
+Requires-Dist: click ==8.0.4 ; extra == 'dev'
+Requires-Dist: setuptools-rust >=1.5.2 ; extra == 'dev'
+Requires-Dist: huggingface-hub >=0.12.1 ; extra == 'dev'
+Requires-Dist: pytest >=7.2.0 ; extra == 'dev'
+Requires-Dist: pytest-benchmark >=4.0.0 ; extra == 'dev'
+Requires-Dist: h5py >=3.7.0 ; extra == 'dev'
+Provides-Extra: jax
+Requires-Dist: jax >=0.3.25 ; extra == 'jax'
+Requires-Dist: flax >=0.6.3 ; extra == 'jax'
+Requires-Dist: jaxlib >=0.3.25 ; extra == 'jax'
+Provides-Extra: numpy
+Requires-Dist: numpy >=1.21.6 ; extra == 'numpy'
+Provides-Extra: paddlepaddle
+Requires-Dist: paddlepaddle >=2.4.1 ; extra == 'paddlepaddle'
+Provides-Extra: pinned-tf
+Requires-Dist: tensorflow ==2.11.0 ; extra == 'pinned-tf'
+Provides-Extra: quality
+Requires-Dist: black ==22.3 ; extra == 'quality'
+Requires-Dist: isort >=5.5.4 ; extra == 'quality'
+Requires-Dist: flake8 >=3.8.3 ; extra == 'quality'
+Requires-Dist: click ==8.0.4 ; extra == 'quality'
+Provides-Extra: tensorflow
+Requires-Dist: tensorflow >=2.11.0 ; extra == 'tensorflow'
+Provides-Extra: testing
+Requires-Dist: setuptools-rust >=1.5.2 ; extra == 'testing'
+Requires-Dist: huggingface-hub >=0.12.1 ; extra == 'testing'
+Requires-Dist: pytest >=7.2.0 ; extra == 'testing'
+Requires-Dist: pytest-benchmark >=4.0.0 ; extra == 'testing'
+Requires-Dist: h5py >=3.7.0 ; extra == 'testing'
+Requires-Dist: numpy >=1.21.6 ; extra == 'testing'
+Provides-Extra: torch
+Requires-Dist: torch >=1.10 ; extra == 'torch'
+
+## Installation
+
+```
+pip install safetensors
+```
+
+
+## Usage
+
+### Numpy
+
+```python
+from safetensors.numpy import save_file, load_file
+import numpy as np
+
+tensors = {
+   "a": np.zeros((2, 2)),
+   "b": np.zeros((2, 3), dtype=np.uint8)
+}
+
+save_file(tensors, "./model.safetensors")
+
+
+# Now loading
+loaded = load_file("./model.safetensors")
+```
+
+### Torch
+
+```python
+from safetensors.torch import save_file, load_file
+import torch
+
+tensors = {
+   "a": torch.zeros((2, 2)),
+   "b": torch.zeros((2, 3), dtype=torch.uint8)
+}
+
+save_file(tensors, "./model.safetensors")
+
+
+# Now loading
+loaded = load_file("./model.safetensors")
+```
+
+### Developing
+
+```
+# inside ./safetensors/bindings/python
+pip install .[dev]
+```
+Should be enough to install this library locally.
+
+### Testing
+
+```
+# inside ./safetensors/bindings/python
+pip install .[dev]
+pytest -sv tests/
+```
