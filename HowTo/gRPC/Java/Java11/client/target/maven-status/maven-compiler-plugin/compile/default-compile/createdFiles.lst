@@ -1,0 +1,11 @@
+com\example\grpc\GreetingServiceGrpc$GreetingServiceStub.class
+com\example\grpc\GreetingServiceGrpc$GreetingServiceFutureStub.class
+com\example\grpc\GreetingServiceGrpc$GreetingServiceBaseDescriptorSupplier.class
+com\example\grpc\GreetingServiceGrpc$MethodHandlers.class
+com\example\grpc\GreetingServiceGrpc$GreetingServiceFileDescriptorSupplier.class
+com\example\grpc\GreetingServiceGrpc$GreetingServiceImplBase.class
+com\example\grpc\GreetingServiceGrpc$1.class
+com\example\grpc\GreetingServiceGrpc.class
+com\example\grpc\GreetingServiceOuterClass$1.class
+com\example\grpc\GreetingServiceGrpc$GreetingServiceMethodDescriptorSupplier.class
+com\example\grpc\GreetingServiceGrpc$GreetingServiceBlockingStub.class
