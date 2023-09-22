@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "express-grpc", "express-grpc\express-grpc.esproj", "{060C224E-A246-4D2C-A2E4-C928395AF2C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{060C224E-A246-4D2C-A2E4-C928395AF2C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{060C224E-A246-4D2C-A2E4-C928395AF2C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{060C224E-A246-4D2C-A2E4-C928395AF2C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{060C224E-A246-4D2C-A2E4-C928395AF2C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{060C224E-A246-4D2C-A2E4-C928395AF2C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{060C224E-A246-4D2C-A2E4-C928395AF2C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC36B0D0-D5E0-4DA0-9748-A39196385EA6}
+	EndGlobalSection
+EndGlobal
