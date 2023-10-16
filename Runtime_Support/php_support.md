@@ -45,7 +45,7 @@ The next version of PHP is expected to be [PHP 8.0](https://wiki.php.net/todo/ph
 
 ## Support Timeline
 
-| Version |  Support Status  |  End of Official Support | End of Extended Support | OS Support |
+| Version |  Support Status  |  End of Active Support | End of Security Support | OS Support |
 |---------| ---------------- |:------------------------:|:-----------------------:| ---------- |
 | PHP 5.6 | End of Life      |    December 31, 2018     |    January 01, 2019    | Windows & Linux |
 | PHP 7.0 | End of Life      |    December 03, 2018     |    February 01, 2020    | Windows & Linux |
@@ -53,8 +53,9 @@ The next version of PHP is expected to be [PHP 8.0](https://wiki.php.net/todo/ph
 | PHP 7.2 | End of Life      |    November 30, 2020     |    February 01, 2021    | Windows & Linux |
 | PHP 7.3 | End of Life      |    December 06, 2020     |    December 06, 2021    | Windows & Linux |
 | PHP 7.4 | End of Life |    November 28, 2021     |    November 28, 2022    | Windows & Linux |
-| PHP 8.0 | Official Support |    November 22, 2022     |    November 26, 2023    | Linux only |
+| PHP 8.0 | Official Support |    November 26, 2022     |    November 26, 2023    | Linux only |
 | PHP 8.1 | Official Support |    November 25, 2023     |    November 25, 2024    | Linux only |
+| PHP 8.2 | Official Support |    December 08, 2024     |    December 08, 2025    | Linux only |
 
 
 [PHP Official Support timeline](https://www.php.net/supported-versions.php)
