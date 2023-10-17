@@ -20,7 +20,7 @@ If you haven't already done so when testing your gRPC server application locally
 ### Deploy to App Service
 Before deploying to App Service, note that gRPC is currently only supported on Linux so be sure to choose this option when creating your web app.
 
-Create your web app as you normally would.  Choose **Code** as your Publish option.  Choose **.NET 7 (STS)** as your Runtime stack and **Linux** as your Operating System.  
+Create your web app as you normally would.  Choose **Code** as your Publish option.  Choose **.NET 6 (LTS)** as your Runtime stack and **Linux** as your Operating System.  
 
 Now that your web app is created, you'll need to do the following before deploying your application:
 
