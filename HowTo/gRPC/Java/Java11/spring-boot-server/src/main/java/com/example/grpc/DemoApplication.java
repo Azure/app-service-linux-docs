@@ -1,5 +1,3 @@
-// package com.example.demo;
-
 package com.example.grpc;
 
 import io.grpc.*;
@@ -25,12 +23,10 @@ public class DemoApplication {
 		.addService(new GreetingServiceImpl())
 		.build();
 	
-		// Start the server
 		server.start();
 	
-		// Server threads are running in the background.
 		System.out.println("gRPC server started");
-		// Don't exit the main thread. Wait until server is terminated.
+
 		server.awaitTermination();
 	}
 
