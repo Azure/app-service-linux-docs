@@ -1,7 +1,4 @@
 #### Deploying to App Service
-After testing locally, you can deploy the application to App Service.  Create a linux web app and follow the **Deployment Steps** below to enable gRPC calls on your application.
-
-### Deployment Steps
 
 #### 1. Enable HTTP version
 The first setting you'll need to configure is the HTTP version
