@@ -27,12 +27,9 @@ def run():
     # used in circumstances in which the with statement does not fit the needs
     # of the code.
     creds = grpc.ssl_channel_credentials()
-    # replace localhost:8282 with [APP_NAME].azurewebsites.net
     # DO NOT include a port number with your app service URL (.azurewebsites.net by default)
-    # DON'T FORGET to change the insecure channel to a secure channel before deploying to App Service
- 
+    # To use with App Service, REPLACE below line with the following: with grpc.secure_channel('[APP_NAME].azurewebsites.net', creds) as channel:
     with grpc.insecure_channel('localhost:8282') as channel:   
-        # To use with App Service, REPLACE above line with the following:     with grpc.secure_channel('[APP_NAME].azurewebsites.net', creds) as channel:
         print("created channel")
         stub = helloworld_pb2_grpc.GreeterStub(channel)
         print("created stub")

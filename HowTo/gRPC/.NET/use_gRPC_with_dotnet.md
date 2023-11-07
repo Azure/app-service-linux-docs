@@ -1,9 +1,7 @@
 # How-to deploy a .NET 6 gRPC app on App Service
 
 > [!WARNING]
-> gRPC is currently available to try as a Public Preview feature.
-
-> gRPC is not a supported feature on ASEv2 SKUs.  If you would like to use this feature with an Isolated SKU, you must use ASEv3.
+> gRPC is not a supported feature on ASEv2 SKUs.  Please use an ASEv3 SKU.
 
 gRPC is a Remote Procedure Call framework that is used to streamline messages between your client and server over HTTP/2.  Using gRPC protocol over HTTP/2 enables the use of features like multiplexing to send multiple parallel requests over the same connection and bi-directional streaming for sending requests and responses simultaneously.  
 

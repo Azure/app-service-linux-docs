@@ -53,7 +53,7 @@ This will restart your application and configure the front end to allow clients 
 
 #### 2. Enable HTTP 2.0 Proxy
 Next, you'll need to configure the HTTP 2.0 Proxy:
-1. Under the same **Platform settings** section, find the **HTTP 2.0 Proxy** setting and switch it to **On**.
+1. Under the same **Platform settings** section, find the **HTTP 2.0 Proxy** setting and select **gRPC Only**.
 2. Click **save**
 
 Once turned on, this setting will configure your site to be forwarded HTTP/2 requests.
