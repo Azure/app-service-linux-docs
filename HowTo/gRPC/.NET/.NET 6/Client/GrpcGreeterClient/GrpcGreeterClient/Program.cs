@@ -4,8 +4,9 @@ using GrpcGreeterClient;
 
 
 // The port number must match the port of the gRPC server.
-//using var channel = GrpcChannel.ForAddress("http://localhost:8585");
-using var channel = GrpcChannel.ForAddress("https://<your-app-name>.azurewebsites.net/");
+using var channel = GrpcChannel.ForAddress("http://localhost:8585");
+// Deployed address
+//using var channel = GrpcChannel.ForAddress("https://<your-app-name>.azurewebsites.net/");
 var client = new Greeter.GreeterClient(channel);
 var reply = await client.SayHelloAsync(
                   new HelloRequest { Name = "GreeterClient" });
