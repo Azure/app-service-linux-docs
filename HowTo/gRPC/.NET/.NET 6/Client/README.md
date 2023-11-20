@@ -9,7 +9,7 @@ To run this app locally, first start the gRPC server app `GrpcGreeterServer` fir
 Use Ctrl+F5 to start the app and make a call to your local `GrpcGreeterServer`.
 
 #### 3. Point to deployed gRPC service
-If your `GrpcGreeterServer` is deployed on App Service, you can use this same client to make calls to it.  Simply replace `http://localhost:8181` with your deployed URL. 
+If your `GrpcGreeterServer` is deployed on App Service, you can use this same client to make calls to it.  Simply replace `http://localhost:8585` with your deployed URL. 
 
 ```
 using var channel = GrpcChannel.ForAddress("https://<your-app-name>.azurewebsites.net");
