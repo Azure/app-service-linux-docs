@@ -61,7 +61,7 @@ var packageDefinition = protoLoader.loadSync(
     });
 var hello_proto = grpc.loadPackageDefinition(packageDefinition).helloworld;
 
-var portgRPC = process.env.portHttp2 || 8585
+var portgRPC = process.env.HTTP20_ONLY_PORT || 8585
 
 /**
  * Implements the SayHello RPC method.
