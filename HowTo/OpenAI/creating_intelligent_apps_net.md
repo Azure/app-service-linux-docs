@@ -1,4 +1,4 @@
-# Creating Intelligent Apps on App Service
+# Creating Intelligent Apps on App Service (.NET)
 
 You can use Azure App Service to work with popular AI frameworks like LangChain and Semantic Kernel connected to OpenAI for creating intelligent apps.  In the following tutorial we will be adding an Azure OpenAI service using Semantic Kernel to a .NET 8 Blazor web application.  
 
