@@ -1,14 +1,11 @@
 ﻿# How to deploy a .NET 8 application using gRPC on Windows App Service (preview)
 
-<aside>
-💡 gRPC on Windows App Service is a **Preview** feature for .NET workloads only.
+> [!NOTE]
+> gRPC on Windows App Service is a **Preview** feature for .NET workloads only.
 
-</aside>
 
-<aside>
-💡 gRPC on Windows App Service currently does not work with Windows containers
-
-</aside>
+> [!NOTE]
+> gRPC on Windows App Service currently does not work with Windows containers
 
 The following is a tutorial on how to deploy a .NET 8 gRPC application on Windows App Service.
 
