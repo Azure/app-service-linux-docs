@@ -19,7 +19,7 @@ gRPC is a Remote Procedure Call framework that can streamline messages between y
 
 To use gRPC with your web app, you need to configure your app by selecting the HTTP version, proxy, and enabling end to end encryption.
 
-For a gRPC client and server sample and walkthrough, please see the [documentation on GitHub](https://github.com/Azure/app-service-linux-docs/tree/master/HowTo/gRPC).
+For a gRPC client and server sample and walkthrough, please see the [documentation on GitHub](https://github.com/Azure/app-service-linux-docs/tree/master/HowTo/gRPC/Windows/.NET%208).
 
 ### Prerequisite
 
