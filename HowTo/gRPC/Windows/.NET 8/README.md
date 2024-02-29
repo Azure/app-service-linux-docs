@@ -9,7 +9,7 @@
 
 The following is a tutorial on how to deploy a .NET 8 gRPC application on Windows App Service.
 
-**Prerequisite**
+#### **Prerequisite**
 
 In this tutorial, we'll be deploying a gRPC server to App Service and making a gRPC request to the deployed server from a local gRPC client. If you have not created a gRPC client and server yet, please follow this [ASP.NET Core tutorial](https://docs.microsoft.com/aspnet/core/tutorials/grpc/grpc-start?view=aspnetcore-6.0&tabs=visual-studio#create-a-grpc-service) to do so.
 
@@ -19,7 +19,7 @@ The following tutorial builds from the created gRPC client and server in that do
 
 If you haven't already done so when testing your gRPC server application locally in the previous tutorial, set the `launchBrowser` property to `true` in your `launchSettings.json` file. This will launch the browser in local development and show the expected web page we will see when deployed to App Service
 
-**Deploy to App Service**
+#### **Deploy to App Service**
 
 Create your web app as you normally would. Choose **Code** as your Publish option. Choose **.NET 8 (LTS)** as your Runtime stack and **Windows** as your Operating System.
 

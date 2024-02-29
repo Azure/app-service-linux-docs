@@ -19,9 +19,7 @@ To use gRPC with your web app, you need to configure your app by selecting the H
 
 For a gRPC client and server sample and walkthrough, please see the [documentation on GitHub](https://github.com/Azure/app-service-linux-docs/tree/master/HowTo/gRPC/Windows/.NET%208).
 
-### Prerequisite
-
----
+#### Prerequisite
 
 Create your [web app](https://learn.microsoft.com/en-us/azure/app-service/getting-started) as you normally would. Choose your preferred runtime stack, and choose Windows as your operating system.
 
