@@ -1,14 +1,12 @@
 ﻿# Configure gRPC on Windows App Service (preview)
 
-<aside>
-💡 gRPC on Windows App Service is a **Preview** feature for .NET workloads only.
+> [!NOTE]
+> gRPC on Windows App Service is a **Preview** feature for .NET workloads only.
 
-</aside>
 
-<aside>
-💡 gRPC on Windows App Service currently does not work with Windows containers
+> [!NOTE]
+> gRPC on Windows App Service currently does not work with Windows containers
 
-</aside>
 
 This article explains how to configure your web app for gRPC on Windows.
 
