@@ -30,7 +30,7 @@ If you start seeing a surge of user traffic hitting your site, you should consid
 * WordPress on Windows
 	* [IIS output caching](https://www.iis.net/learn/manage/managing-performance-settings/walkthrough-iis-output-caching): It’s easy to configure and setup. It significantly improves site throughput but may prevent confirmation messages from showing up when submitting comments. To learn more about IIS output caching, click here.
 	* [WP Super cache](https://wordpress.org/plugins/wp-super-cache/): It significantly improves site throughput and correctly handles comments submissions and other visitors’ actions. It slightly more complex to setup and configure than compared to IIS output caching. To learn more about Super cache configuration on IIS click here.
-	* [App Service Dynamic Cache](https://learn.microsoft.com/en-us/azure/app-service/reference-app-settings?tabs=kudu%2Cdotnet#caching): turn on the Dynamic cache to improve file system performance. 
+	* [App Service Dynamic Cache](https://learn.microsoft.com/en-us/azure/app-service/reference-app-settings?tabs=kudu%2Cdotnet#caching): turn on the Dynamic Cache to improve file system performance. 
 	* [Wincache](https://www.php.net/manual/en/book.wincache.php): Create a .user.ini under wwwroot of your web application to add additional PHP settings.  Enable wincache settings in a .user.ini [wincache.fcenabled](http://php.net/manual/en/wincache.configuration.php#ini.wincache.fcenabled) = 1 and [wincache.reroute_enabled](http://php.net/manual/en/wincache.configuration.php#ini.wincache.reroute_enabled) = 1
 	* [Redis cache](https://azure.microsoft.com/en-us/services/cache/): Azure redis cache can also be integrated with WordPress with the help of WP redis plugin to get better performance. 
 
