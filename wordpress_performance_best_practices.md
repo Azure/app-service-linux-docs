@@ -30,13 +30,13 @@ If you start seeing a surge of user traffic hitting your site, you should consid
 * WordPress on Windows
 	* [IIS output caching](https://www.iis.net/learn/manage/managing-performance-settings/walkthrough-iis-output-caching): It’s easy to configure and setup. It significantly improves site throughput but may prevent confirmation messages from showing up when submitting comments. To learn more about IIS output caching, click here.
 	* [WP Super cache](https://wordpress.org/plugins/wp-super-cache/): It significantly improves site throughput and correctly handles comments submissions and other visitors’ actions. It slightly more complex to setup and configure than compared to IIS output caching. To learn more about Super cache configuration on IIS click here.
-	* [App Service Dynamic Cache](https://learn.microsoft.com/en-us/azure/app-service/reference-app-settings?tabs=kudu%2Cdotnet#caching): turn on the Dynamic Cache to improve file system performance. 
+	* [App Service Dynamic Cache](https://learn.microsoft.com/azure/app-service/reference-app-settings?tabs=kudu%2Cdotnet#caching): turn on the Dynamic Cache to improve file system performance. 
 	* [Wincache](https://www.php.net/manual/en/book.wincache.php): Create a .user.ini under wwwroot of your web application to add additional PHP settings.  Enable wincache settings in a .user.ini [wincache.fcenabled](http://php.net/manual/en/wincache.configuration.php#ini.wincache.fcenabled) = 1 and [wincache.reroute_enabled](http://php.net/manual/en/wincache.configuration.php#ini.wincache.reroute_enabled) = 1
 	* [Redis cache](https://azure.microsoft.com/en-us/services/cache/): Azure redis cache can also be integrated with WordPress with the help of WP redis plugin to get better performance. 
 
 * WordPress on Linux
 	* [Redis Object Cache](https://wordpress.org/plugins/redis-cache/): the redis cache plugin is installed by default, you can activate the plugin and connect it to database to improve the site performance. 
-	* [App Service Dynamic Cache](https://learn.microsoft.com/en-us/azure/app-service/reference-app-settings?tabs=kudu%2Cdotnet#caching): turn on the Dynamic Cache to improve file system performance. This feature is enabled by default for Wordpress apps.
+	* [App Service Dynamic Cache](https://learn.microsoft.com/azure/app-service/reference-app-settings?tabs=kudu%2Cdotnet#caching): turn on the Dynamic Cache to improve file system performance. This feature is enabled by default for Wordpress apps.
 
 #### [Always-on](https://docs.microsoft.com/en-us/azure/app-service/web-sites-configure)
 For low traffic web site,  you can enable AlwaysOn to keep your web app always loaded, as by default, apps are unloaded if they are idle for some period of time.
