@@ -3,6 +3,8 @@
 > [!NOTE]
 > gRPC on Windows App Service is a **Preview** feature for .NET workloads only.
 
+> [!NOTE]
+> gRPC on Windows App Service is currently compatible with in-process hosting only.
 
 > [!NOTE]
 > gRPC on Windows App Service currently does not work with Windows containers
