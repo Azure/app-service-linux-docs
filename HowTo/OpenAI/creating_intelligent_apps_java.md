@@ -227,7 +227,7 @@ If you completed the steps above you can deploy to App Service as you normally w
 
 Once deployed, you can visit your site URL and you will be greeted with the text that contains the response from your chat message prompt.  
 
-![Untitled](Creating%20Intelligent%20Apps%20on%20App%20Service%20(Java)%2098df0589b65f446d80b85881d5f9e23f/Untitled.png)
+![blazor](/media/blazor_openai.png)
 
 **Authentication**
 
