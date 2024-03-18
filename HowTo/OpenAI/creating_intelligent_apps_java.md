@@ -227,7 +227,7 @@ If you completed the steps above you can deploy to App Service as you normally w
 
 Once deployed, you can visit your site URL and you will be greeted with the text that contains the response from your chat message prompt.  
 
-![blazor](/media/blazor_openai.png)
+![blazor](/images/blazor_openai.png)
 
 **Authentication**
 
