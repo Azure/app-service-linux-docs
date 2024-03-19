@@ -11,7 +11,7 @@ You can use Azure App Service to work with popular AI frameworks like LangChain 
 
 ---
 
-For this Blazor web application, weíll be building off the Blazor [template](https://dotnet.microsoft.com/en-us/learn/aspnet/blazor-tutorial/intro) and creating a new razor page that can send and receive requests to an Azure OpenAI OR OpenAI service using Semantic Kernel.
+For this Blazor web application, we‚Äôll be building off the Blazor [template](https://dotnet.microsoft.com/en-us/learn/aspnet/blazor-tutorial/intro) and creating a new razor page that can send and receive requests to an Azure OpenAI OR OpenAI service using Semantic Kernel.
 
 1. Right click on the **Pages** folder found under the **Components** folder and add a new item named *OpenAI.razor*
 2. Add the following code to the *****OpenAI.razor* file and click **Save**
@@ -39,7 +39,7 @@ For this Blazor web application, weíll be building off the Blazor [template](htt
 }
 ```
 
-Next, weíll need to add the new page to the navigation so we can navigate to the service.
+Next, we‚Äôll need to add the new page to the navigation so we can navigate to the service.
 
 1. Go to the *NavMenu.razor* file under the **Layout** folder and add the following div in the nav class.  Click **Save**
 
@@ -70,7 +70,7 @@ For OpenAI, see this [documentation](https://platform.openai.com/docs/api-refere
 1. apiKey
 2. modelId
 
-Since weíll be deploying to App Service we can secure these secrets in **Azure Key Vault** for protection.  Follow the [Quickstart](https://learn.microsoft.com/azure/key-vault/secrets/quick-create-cli#create-a-key-vault) to setup your Key Vault and add the secrets you saved from earlier.
+Since we‚Äôll be deploying to App Service we can secure these secrets in **Azure Key Vault** for protection.  Follow the [Quickstart](https://learn.microsoft.com/azure/key-vault/secrets/quick-create-cli#create-a-key-vault) to setup your Key Vault and add the secrets you saved from earlier.
 
 Next, we can use Key Vault references as app settings in our App Service resource to reference in our application.  Follow the instructions in the [documentation](https://learn.microsoft.com/azure/app-service/app-service-key-vault-references?source=recommendations&tabs=azure-cli) to grant your app access to your Key Vault and to setup Key Vault references.
 
@@ -112,7 +112,7 @@ Once your app settings are saved, you can bring them into the code by injecting 
 
 Semantic Kernel is an open-source SDK that enables you to easily develop AI agents to work with your existing code.  You can use Semantic Kernel with Azure OpenAI and OpenAI models.
 
-To create the OpenAI client, weíll first start by installing Semantic Kernel.   
+To create the OpenAI client, we‚Äôll first start by installing Semantic Kernel.   
 
 1. To install Semantic Kernel, browse the NuGet package manager in Visual Studio and install the **Microsoft.SemanticKernel** package.  For NuGet Package Manager instructions, see [here](https://learn.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#find-and-install-a-package).  For CLI instructions, see [here](https://learn.microsoft.com/nuget/consume-packages/install-use-packages-dotnet-cli).
 
@@ -173,7 +173,7 @@ var kernel = builder.Build();
 
 Now that our chosen OpenAI service client is created with the correct keys we can add a function to handle the prompt.  With Semantic Kernel you can handle prompts by the use of a semantic functions, which turn the prompt and the prompt configuration settings into a function the Kernel can execute.  Learn more on configuring prompts [here](https://learn.microsoft.com/en-us/semantic-kernel/prompts/configure-prompts?tabs=Csharp).
 
-First, weíll create a variable that will hold the users prompt. Then add a function with execution settings to handle and configure the prompt.  Add the following code to the *OpenAI.razor* file:
+First, we‚Äôll create a variable that will hold the users prompt. Then add a function with execution settings to handle and configure the prompt.  Add the following code to the *OpenAI.razor* file:
 
 ```csharp
 
@@ -198,7 +198,7 @@ private async Task SemanticKernelClient()
 
 ```
 
-Lastly, weíll need to invoke the function and return the response.  Add the following to the *OpenAI.razor* file:
+Lastly, we‚Äôll need to invoke the function and return the response.  Add the following to the *OpenAI.razor* file:
 
 ```csharp
 
@@ -225,7 +225,7 @@ private async Task SemanticKernelClient()
  }
 ```
 
-Here is the example in itís completed form.  In this example, use the Azure OpenAI chat completion service OR the OpenAI chat completion service, not both.  
+Here is the example in it‚Äôs completed form.  In this example, use the Azure OpenAI chat completion service OR the OpenAI chat completion service, not both.  
 
 ```csharp
 @page "/openai"
@@ -291,13 +291,15 @@ Here is the example in itís completed form.  In this example, use the Azure Open
 }
 ```
 
-Now save the application and follow the next steps to deploy it to App Service.  If you would like to test it locally first at this step, you can swap out the config values at with the literal string values of your OpenAI service.  For example: string modelId = ìgpt-4-turboî;
+Now save the application and follow the next steps to deploy it to App Service.  If you would like to test it locally first at this step, you can swap out the config values at with the literal string values of your OpenAI service.  For example: string modelId = ‚Äúgpt-4-turbo‚Äù;
 
 ### Deploy to App Service
 
 ---
 
-If you have followed the steps above, you are ready to deploy to App Service.  If you run into any issues remember that you need to have done the following: grant your app access to your Key Vault, add the app settings with key vault references as your values.  App Service will resolve the app settings in your application that match what youíve added in the portal.
+If you have followed the steps above, you are ready to deploy to App Service.  If you run into any issues remember that you need to have done the following: grant your app access to your Key Vault, add the app settings with key vault references as your values.  App Service will resolve the app settings in your application that match what you‚Äôve added in the portal.
+
+[blazor openai](/images/blazor_openai.png)
 
 **Authentication**
 
