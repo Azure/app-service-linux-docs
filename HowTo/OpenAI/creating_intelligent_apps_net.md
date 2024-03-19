@@ -299,7 +299,7 @@ Now save the application and follow the next steps to deploy it to App Service. 
 
 If you have followed the steps above, you are ready to deploy to App Service.  If you run into any issues remember that you need to have done the following: grant your app access to your Key Vault, add the app settings with key vault references as your values.  App Service will resolve the app settings in your application that match what you’ve added in the portal.
 
-[blazor openai](HowTo/images/blazor_openai.png)
+[blazor openai](../images/blazor_openai.png)
 
 **Authentication**
 
