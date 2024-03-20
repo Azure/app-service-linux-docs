@@ -24,7 +24,7 @@ On April 30th, 2022 Node 12 will no longer be offered as an option in the create
 |  Node 9.x     | End of Life    | June 30 2019      | Windows & Linux |
 |  Node 8.x     | End of Life    | December 31 2019  | Windows & Linux |
 
-[Node.js support timeline](https://nodejs.org/about/releases/)
+[Node.js support timeline](https://nodejs.org/en/about/releases/)
 
 ## How to update your app to target a different version of Node
 
