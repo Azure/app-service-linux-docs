@@ -1,31 +1,28 @@
-﻿# Configure gRPC on Windows App Service (preview)
+﻿# How to deploy a .NET 8 application using gRPC on Windows App Service (preview)
+
+
 
 > [!NOTE]
-> gRPC on Windows App Service is a **Preview** feature for .NET workloads only.
+> ## Support Status
+> gRPC on Windows App Service is currently a **preview** feature that is enabled using in-process hosting only with ASP.NET.  Additional support for out-of-proc scenarios, Windows container, and Java support is being worked on and planned for this calendar year.  Site activation through gRPC is also not yet supported and must have Always On turned on in the configuration settings.  
 
-> [!NOTE]
-> gRPC on Windows App Service is currently compatible with in-process hosting only.
-
-> [!NOTE]
-> gRPC on Windows App Service currently does not work with Windows containers
-
-
-This article explains how to configure your web app for gRPC on Windows.
-
-gRPC is a Remote Procedure Call framework that can streamline messages between your client and server over HTTP/2. Using the gRPC protocol over HTTP/2 enables the use of features like:
-
-- Multiplexing to send multiple parallel requests over the same connection.
-- Bidirectional streaming to send requests and responses simultaneously.
-
-To use gRPC with your web app, you need to configure your app by selecting the HTTP version, proxy, and enabling end to end encryption.
-
-For a gRPC client and server sample and walkthrough, please see the [documentation on GitHub](https://github.com/Azure/app-service-linux-docs/tree/master/HowTo/gRPC/Windows/.NET%208).
+The following is a tutorial on how to deploy a .NET 8 gRPC application on Windows App Service.
 
 ### Prerequisite
 
-Create your [web app](https://learn.microsoft.com/en-us/azure/app-service/getting-started) as you normally would. Choose your preferred runtime stack, and choose Windows as your operating system.
+In this tutorial, we'll be deploying a gRPC server to App Service and making a gRPC request to the deployed server from a local gRPC client. If you have not created a gRPC client and server yet, please follow this [ASP.NET Core tutorial](https://docs.microsoft.com/aspnet/core/tutorials/grpc/grpc-start?view=aspnetcore-6.0&tabs=visual-studio#create-a-grpc-service) to do so.
 
-After you create your web app, configure the following details to enable gRPC before you deploy your application.
+The following tutorial builds from the created gRPC client and server in that documentation. If you already have a gRPC client and server, you may use these steps to add to existing .NET apps as well.
+
+**Setup the gRPC Server app**
+
+If you haven't already done so when testing your gRPC server application locally in the previous tutorial, set the `launchBrowser` property to `true` in your `launchSettings.json` file. This will launch the browser in local development and show the expected web page we will see when deployed to App Service
+
+### Deploy to App Service
+
+Create your web app as you normally would. Choose **Code** as your Publish option. Choose **.NET 8 (LTS)** as your Runtime stack and **Windows** as your Operating System.
+
+Now that your web app is created, you'll need to do the following before deploying your application:
 
 1. **Configure the HTTP version**
 
@@ -61,3 +58,34 @@ Lastly, App Service requires End to End encryption to be enabled.
 2. Click on **Edit**
 3. Find the **“endToEndEncryptionEnabled”** property and updated the value to **true**
 4. Click the **PUT** button to save the new value
+
+Now that the app is created and configurations are set, we can publish from Visual Studio. 
+
+1. Right click on the project and select **Publish** 
+2. Choose **Azure App Service (Windows)** as the target
+3. Navigate to your application, click **Finish** and **Close**
+
+Then, click the **Publish** button to publish to your Web App.  Once published your app is now ready to accept gRPC requests at the provided URL endpoint.
+
+**Confirm a gRPC request call from your local client**
+
+Now that the gRPC service is deployed and we have a URL from our deployed Web App, we can make a call from our local client to test that our channel connects to the server and that our client can receive a response.
+
+Navigate back to the **Program.cs** file and swap out the localhost address for the App Service URL.
+
+> Note: gRPC calls must be over https. Insecure calls are not possible.
+> 
+
+```csharp
+// replace the localhost address with your App Service URL
+using var channel = GrpcChannel.ForAddress("https://you-app-name.azurewebsites.net/");
+```
+
+Now save your application and run the local client (Ctrl+F5). Your console application should receive and display the message from your gRPC service. If you used the server from the ASP.NET tutorial, it will read the same message:
+
+```bash
+Greeting: Hello GreeterClient
+Press any key to exit...
+```
+
+The response from your deployed server will be shown using the updated channel. If this is shown you have successfully deployed your gRPC server application to App Service.
