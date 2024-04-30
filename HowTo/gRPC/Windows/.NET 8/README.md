@@ -37,25 +37,16 @@ This setting restarts your application and configures the front end to allow cli
 
 Next, you need to configure the HTTP 2.0 proxy:
 
-1. Navigate to the [resource explorer](https://resources.azure.com/) and find your application
-    1. Find your application through the following path (click on the **+** signs):
-        1. **+ subscriptions > + your-subscription-name > + resourceGroups > + your-resource-group-name > + Providers > + Microsoft.Web > + sites > your-site-name > + config > web**
-2. Click on **Edit**
-3. Find the **“http20ProxyFlag”** property and updated the value to **1**
-4. Click the **PUT** button to save the new value
+1. In the same **Platform settings** section, find the **HTTP 2.0 Proxy** setting and select **gRPC Only**.
+2. Select **Save**.
 
-This setting will configure your site to receive HTTP/2 requests.
+This setting configures your site to receive HTTP/2 requests.
 
 1. **Enable End to End Encryption**
 
-Lastly, App Service requires End to End encryption to be enabled.  
+Lastly, End to End encryption is required for gRPC to run on Windows.  
 
-1. Navigate to the [resource explorer](https://resources.azure.com/) and find your application
-    1. Find your application through the following path (click on the **+** signs):
-        1. **+ subscriptions > + your-subscription-name > + resourceGroups > + your-resource-group-name > + Providers > + Microsoft.Web > + sites > your-site-name**
-2. Click on **Edit**
-3. Find the **“endToEndEncryptionEnabled”** property and updated the value to **true**
-4. Click the **PUT** button to save the new value
+1. In the same **Platform settings** section, find the **End-to-end TLS encryption** setting and select On.
 
 Now that the app is created and configurations are set, we can publish from Visual Studio. 
 
