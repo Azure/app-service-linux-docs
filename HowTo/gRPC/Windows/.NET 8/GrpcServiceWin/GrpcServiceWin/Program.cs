@@ -1,4 +1,4 @@
-using GrpcService.Services;
+using GrpcServiceWin.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
