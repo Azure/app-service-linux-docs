@@ -22,7 +22,7 @@ Create your web app as you normally would. Choose **Code** as your Publish opt
 
 Now that your web app is created, you'll need to do the following before deploying your application:
 
-1. **Configure the HTTP version**
+#### 1. **Configure the HTTP version**
 
 The first setting that you need to configure is the HTTP version:
 
@@ -33,7 +33,7 @@ The first setting that you need to configure is the HTTP version:
 
 This setting restarts your application and configures the front end to allow clients to make HTTP/2 calls.
 
-1. **Configure the HTTP 2.0 proxy**
+#### 2. **Configure the HTTP 2.0 proxy**
 
 Next, you need to configure the HTTP 2.0 proxy:
 
@@ -42,7 +42,7 @@ Next, you need to configure the HTTP 2.0 proxy:
 
 This setting configures your site to receive HTTP/2 requests.
 
-1. **Enable End to End Encryption**
+#### 3. **Enable End to End Encryption**
 
 Lastly, End to End encryption is required for gRPC to run on Windows.  
 
@@ -56,7 +56,7 @@ Now that the app is created and configurations are set, we can publish from Visu
 
 Then, click the **Publish** button to publish to your Web App.  Once published your app is now ready to accept gRPC requests at the provided URL endpoint.
 
-**Confirm a gRPC request call from your local client**
+##### **Confirm a gRPC request call from your local client**
 
 Now that the gRPC service is deployed and we have a URL from our deployed Web App, we can make a call from our local client to test that our channel connects to the server and that our client can receive a response.
 
@@ -67,7 +67,7 @@ Navigate back to the **Program.cs** file and swap out the localhost address fo
 
 ```csharp
 // replace the localhost address with your App Service URL
-using var channel = GrpcChannel.ForAddress("https://you-app-name.azurewebsites.net/");
+using var channel = GrpcChannel.ForAddress("https://your-app-name.azurewebsites.net/");
 ```
 
 Now save your application and run the local client (Ctrl+F5). Your console application should receive and display the message from your gRPC service. If you used the server from the ASP.NET tutorial, it will read the same message:
