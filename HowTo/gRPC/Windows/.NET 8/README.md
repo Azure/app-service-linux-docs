@@ -56,7 +56,7 @@ Now that the app is created and configurations are set, we can publish from Visu
 
 Then, click the **Publish** button to publish to your Web App.  Once published your app is now ready to accept gRPC requests at the provided URL endpoint.
 
-##### **Confirm a gRPC request call from your local client**
+#### **Confirm a gRPC request call from your local client**
 
 Now that the gRPC service is deployed and we have a URL from our deployed Web App, we can make a call from our local client to test that our channel connects to the server and that our client can receive a response.
 
