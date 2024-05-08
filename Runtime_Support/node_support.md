@@ -16,15 +16,16 @@ On April 30th, 2022 Node 12 will no longer be offered as an option in the create
 
 |    Version    | Support Status |   End of Support  |   OS Support    |
 |---------------| -------------- | ----------------- |---------------- |
-|  Node 18 LTS  | Active LTS     | April 30 2025     | Windows & Linux |
-|  Node 16 LTS  | Maintenance LTS     | September 11 2023     | Windows & Linux |
-|  Node 14 LTS  | Maintenance LTS     | April 30 2023     | Windows & Linux |
-|  Node 12 LTS  | End of Life      | April 30 2022     | Windows & Linux |
+|  Node 20 LTS  | Active LTS     | April 30 2027     | Windows & Linux |
+|  Node 18 LTS  | Maintenance    | April 30 2025     | Windows & Linux |
+|  Node 16 LTS  | End of Life    | September 11 2023 | Windows & Linux |
+|  Node 14 LTS  | End of Life    | April 30 2023     | Windows & Linux |
+|  Node 12 LTS  | End of Life    | April 30 2022     | Windows & Linux |
 |  Node 10.x    | End of Life    | April 30 2021     | Windows & Linux |
 |  Node 9.x     | End of Life    | June 30 2019      | Windows & Linux |
 |  Node 8.x     | End of Life    | December 31 2019  | Windows & Linux |
 
-[Node.js support timeline](https://nodejs.org/about/releases/)
+[Node.js support timeline](https://nodejs.org/en/about/releases/)
 
 ## How to update your app to target a different version of Node
 

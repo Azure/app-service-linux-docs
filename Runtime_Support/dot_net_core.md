@@ -29,10 +29,11 @@ Publishing content to a .NET 5 app works as expected. There is a schedule update
 
 |    Version    | Support Status |   End of Support  |   OS Support    |
 |---------------| -------------- | ----------------- |---------------- |
-| .NET 7        | STS            | May 14, 2024    | Windows & Linux |
-| .NET 6        | LTS            | November 12, 2024    | Windows & Linux |
-| .NET 5        | End of Life       | May 10, 2022         | Windows & Linux |
-| .NET Core 3.1 | End of Life            | December 13, 2022  | Windows & Linux |
+| .NET 8        | LTS            | November 10, 2026 | Windows & Linux |
+| .NET 7        | STS            | May 14, 2024      | Windows & Linux |
+| .NET 6        | LTS            | November 12, 2024 | Windows & Linux |
+| .NET 5        | End of Life    | May 10, 2022      | Windows & Linux |
+| .NET Core 3.1 | End of Life    | December 13, 2022 | Windows & Linux |
 | .NET Core 3.0 | End of Life    | March 3, 2020     | Windows & Linux |
 | .NET Core 2.2 | End of Life    | December 23, 2019 | Windows & Linux |
 | .NET Core 2.1 | End of Life    | August 21, 2021   | Windows & Linux |

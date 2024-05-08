@@ -14,7 +14,7 @@ Existing applications configured to target a runtime version that has reached EO
 
 | Version  | Support Status  |   End of Support  |   OS Support    |
 |----------| --------------- | ----------------- |---------------- |
-| Ruby 2.7 | Current | April 12, 2023 | Linux |
+| Ruby 2.7 | EOL | April 12, 2023 | Linux |
 | Ruby 2.6 | EOL | March 31, 2022  | Linux |
 | Ruby 2.5 | EOL | March 31, 2021  | Linux |
 | Ruby 2.4 | EOL | April 5th, 2020 | Linux |
