@@ -1,10 +1,8 @@
 # How to: Avoid JBOSS clustering timeouts due to obsolete discovery files
 
-During the normal lifecycle of your JBOSS EAP app there can be multiple events that can trigger your app to move across different nodes on the App Service infrastucture, this can be caused by user opertations, such as deployments, scale operations, etc... or platform maintenance oeprations.
+During the normal lifecycle of your JBoss EAP web app multiple events that can trigger your app to move across different nodes on the App Service infrastructure. This can be caused by user operations (such as deployments), scale operations, and platform maintenance operations.
 
-Over time this will cause an acumulation of stale discovery files leading to potential timeouts for the cluster.
-
-To avoid this the best practice is to include the cleanup of this stale files as part of the application startup using the JBOSS CLI.
+Over time this will cause an accumulation of stale cluster discovery files leading to potential timeouts during startup. To avoid this scenario, the best practice is to include the cleanup of this stale files as part of the application configuration using the JBoss CLI.
 
 > [!NOTE]
 > Please note that this setting is now enabled by default in JBoss 7.4.7 and later in Azure App Service.
