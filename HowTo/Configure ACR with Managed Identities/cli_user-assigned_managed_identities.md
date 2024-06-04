@@ -63,8 +63,8 @@ ClientID=$(az identity show -g $RG_Name -n $ID_Name --query clientId --output ts
 az webapp identity assign -g $RG_Name -n $Web_Name --identities $Identity_ARMID -o none
 
 #Configure WebApp to use the Manage Identity Credentials to perform docker pull operations
-az resource update --ids $Webapp_Config --set properties.acrUseManagedIdentityCreds=True -o none
-az resource update --ids $Webapp_Config --set properties.AcrUserManagedIdentityID=$ClientID -o none
+az webapp config set --resource-group $RG_Name --name $Web_Name --generic-configurations '{"acrUseManagedIdentityCreds": true}' -o none
+az webapp config set --resource-group $RG_Name --name $Web_Name --generic-configurations '{"acrUserManagedIdentityID": "$ClientID"}' -o none
 
 ```
 
@@ -93,7 +93,7 @@ Image="myapp:latest"
 FX_Version="Docker|"$ACR_URL"/"$Image
 
 #Configure the ACR, Image and Tag to pull
-az resource update --ids $Webapp_Config --set properties.linuxFxVersion=$FX_Version -o none --force-string
+az webapp config set --resource-group $RG_Name --name $Web_Name --generic-configurations '{"linuxFxVersion": $FX_Version}' -o none
 
 ```
 
