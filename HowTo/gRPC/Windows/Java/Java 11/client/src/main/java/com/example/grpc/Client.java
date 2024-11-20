@@ -30,18 +30,14 @@ public class Client
     {
         
       // LOCAL DEVELOPMENT
-      // final ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8585")
-      //   .usePlaintext()
-      //   .build();
+      final ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8585")
+         .usePlaintext()
+         .build();
 
       // PRODUCTION
-      // final ManagedChannel channel = ManagedChannelBuilder.forTarget("https://jefmarti-java-grpc-stream-gxeeb8auddhsd5c7.canadacentral-01.azurewebsites.net")
-      //   .usePlaintext()
-      //   .build();
-
-      final ManagedChannel channel = ManagedChannelBuilder.forTarget("jefmarti-java-grpc-stream-gxeeb8auddhsd5c7.canadacentral-01.azurewebsites.net")
-        .usePlaintext()
-        .build();
+      // final ManagedChannel channel = ManagedChannelBuilder.forTarget("<your-app-name>.azurewebsites.net")
+      //  .usePlaintext()
+      //  .build();
 
       // Create gRPC stubs
       GreetingServiceGrpc.GreetingServiceBlockingStub blockingStub = GreetingServiceGrpc.newBlockingStub(channel);
