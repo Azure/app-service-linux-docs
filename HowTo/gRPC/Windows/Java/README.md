@@ -1,12 +1,8 @@
-﻿# How to deploy a Java application using gRPC on Windows App Service (preview)
-
-The following is a tutorial on how to deploy a Java gRPC application on Windows App Service.
-
-> ## Support Status
-> gRPC on Windows App Service is currently a **preview** feature that is enabled using in-process hosting only with ASP.NET.  Additional support for out-of-proc scenarios, Windows container, and Java support is being worked on and planned for this calendar year.  Site activation through gRPC is also not yet supported and must have Always On turned on in the configuration settings.  
+﻿> ## Support Status
+> gRPC on Windows App Service is currently a **preview** feature that is enabled using in-process hosting only with ASP.NET.  Additional support for out-of-proc scenarios, Windows container, and Java support is being worked on and planned for 2025.  Site activation through gRPC is also not yet supported and must have Always On turned on in the configuration settings.  
 
 
-### Run the app locally
+## Run the app locally
 
 Before deploying your application, test the application locally to ensure it works as expected. Clone the repository and follow the steps below.
 
@@ -26,4 +22,4 @@ Once started, you will see `gRPC client started` in the terminal. Your client is
 
 
 ### Deploy the app to Windows App Service
-TBD!
+TBD!!
