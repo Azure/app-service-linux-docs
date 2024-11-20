@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.example.grpc;
+
+service GreetingService {
+  // Define a RPC operation
+  rpc sayHello(HelloRequest) returns (HelloReply);
+  rpc sayHelloStream(HelloRequest) returns (stream HelloReply);
+  rpc SayHelloStreamClient (stream HelloRequest) returns (HelloReply);
+  rpc SayHelloBidirectional (stream HelloRequest) returns (stream HelloRequest);
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
