@@ -200,7 +200,6 @@ public class Client
         for(HelloRequest request : requestsBidi) {
           System.out.println("Sending: " + request.getName());
           requestObserverBidi.onNext(request);
-          Thread.sleep(1000);
         }
       } catch (RuntimeException e) {
         // Cancel RPC
