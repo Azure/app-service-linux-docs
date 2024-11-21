@@ -1,7 +1,7 @@
 # How-to deploy a .NET 7 gRPC app on App Service
 
-> [!WARNING]
-> gRPC is currently available to try as a Public Preview feature.
+> [!NOTE]
+> For the latest information on gRPC support, please visit our learn [documentation](https://learn.microsoft.com/en-us/azure/app-service/configure-grpc).
 
 gRPC is a Remote Procedure Call framework that is used to streamline messages between your client and server over HTTP/2.  Using gRPC protocol over HTTP/2 enables the use of features like multiplexing to send multiple parallel requests over the same connection and bi-directional streaming for sending requests and responses simultaneously.  
 
@@ -24,7 +24,7 @@ Now that your web app is created, you'll need to do the following before deployi
 
 >NOTE: If you are deploying to App Service with Visual Studio, you can skip the first two steps.  Visual Studio will set those for you.
 
-#### 1. Enable HTTP version - (skip this step if deploying from Visual Studio)
+#### Enable HTTP version - (skip this step if deploying from Visual Studio)
 The first setting you'll need to configure is the HTTP version
 1. Navigate to **Configuration** under **Settings** in the left pane of your web app
 2. Click on the **General Settings** tab and scroll down to **Platform settings**
@@ -33,14 +33,14 @@ The first setting you'll need to configure is the HTTP version
 
 This will restart your application and configure the front end to allow clients to make HTTP/2 calls.
 
-#### 2. Enable HTTP 2.0 Proxy - (skip this step if deploying from Visual Studio)
+#### Enable HTTP 2.0 Proxy - (skip this step if deploying from Visual Studio)
 Next, you'll need to configure the HTTP 2.0 Proxy:
 1. Under the same **Platform settings** section, find the **HTTP 2.0 Proxy** setting and switch it to **On**.
 2. Click **save**
 
 Once turned on, this setting will configure your site to be forwarded HTTP/2 requests.
 
-#### 3. Add HTTP20_ONLY_PORT application setting
+#### Add HTTP20_ONLY_PORT application setting
 App Service requires an application setting that specifically listens for HTTP/2 traffic.  Here we'll add an app setting HTTP20_ONLY_PORT and put the value from the launchSettings.json file as the port number.
 1. Navigate to the **Configuration** under **Settings** on the left pane of your web app.  
 2. Under **Application Settings**, click on **New application setting**
@@ -59,7 +59,7 @@ Navigate back to the **Program.cs** file and swap out the localhost address for 
 
 ```C#
 // replace the localhost address with your App Service URL
-using var channel = GrpcChannel.ForAddress($"https://mygrpcapp.azurewebsites.net/");
+using var channel = GrpcChannel.ForAddress($"https://<your-app-name>.azurewebsites.net/");
 ```
 
 Now save your application and run the local client (Ctrl+F5).  Your console application should receive and display the message from your gRPC service.  If you used the server from the ASP.NET tutorial, it will read the same message:
@@ -73,5 +73,5 @@ The response from your deployed server will be shown using the updated channel. 
 
 #### Resources
 1. [Create a .NET Core gRPC client and server in ASP.NET Core | Microsoft Docs](https://docs.microsoft.com/aspnet/core/tutorials/grpc/grpc-start?view=aspnetcore-6.0&tabs=visual-studio)
-2. [Troubleshoot gRPC on .NET Core | Microsoft Docs](https://docs.microsoft.com/aspnet/core/grpc/troubleshoot?view=aspnetcore-6.0#call-a-grpc-service-with-an-untrustedinvalid-certificate)
+1. [Troubleshoot gRPC on .NET Core | Microsoft Docs](https://docs.microsoft.com/aspnet/core/grpc/troubleshoot?view=aspnetcore-6.0#call-a-grpc-service-with-an-untrustedinvalid-certificate) 
 
