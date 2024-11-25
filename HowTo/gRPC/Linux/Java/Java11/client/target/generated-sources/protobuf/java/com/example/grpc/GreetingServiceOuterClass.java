@@ -19,67 +19,16 @@ public final class GreetingServiceOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * Each message attribute is strongly typed.
-     * You also must assign a "tag" number.
-     * Each tag number is unique within the message.
-     * </pre>
-     *
      * <code>string name = 1;</code>
      */
     java.lang.String getName();
     /**
-     * <pre>
-     * Each message attribute is strongly typed.
-     * You also must assign a "tag" number.
-     * Each tag number is unique within the message.
-     * </pre>
-     *
      * <code>string name = 1;</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
-
-    /**
-     * <pre>
-     * This defines a strongly typed list of String
-     * </pre>
-     *
-     * <code>repeated string hobbies = 2;</code>
-     */
-    java.util.List<java.lang.String>
-        getHobbiesList();
-    /**
-     * <pre>
-     * This defines a strongly typed list of String
-     * </pre>
-     *
-     * <code>repeated string hobbies = 2;</code>
-     */
-    int getHobbiesCount();
-    /**
-     * <pre>
-     * This defines a strongly typed list of String
-     * </pre>
-     *
-     * <code>repeated string hobbies = 2;</code>
-     */
-    java.lang.String getHobbies(int index);
-    /**
-     * <pre>
-     * This defines a strongly typed list of String
-     * </pre>
-     *
-     * <code>repeated string hobbies = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getHobbiesBytes(int index);
   }
   /**
-   * <pre>
-   * Request payload
-   * </pre>
-   *
    * Protobuf type {@code com.example.grpc.HelloRequest}
    */
   public  static final class HelloRequest extends
@@ -93,7 +42,6 @@ public final class GreetingServiceOuterClass {
     }
     private HelloRequest() {
       name_ = "";
-      hobbies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -116,7 +64,6 @@ public final class GreetingServiceOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -131,15 +78,6 @@ public final class GreetingServiceOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                hobbies_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              hobbies_.add(s);
               break;
             }
             default: {
@@ -157,9 +95,6 @@ public final class GreetingServiceOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          hobbies_ = hobbies_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -180,12 +115,6 @@ public final class GreetingServiceOuterClass {
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
-     * <pre>
-     * Each message attribute is strongly typed.
-     * You also must assign a "tag" number.
-     * Each tag number is unique within the message.
-     * </pre>
-     *
      * <code>string name = 1;</code>
      */
     public java.lang.String getName() {
@@ -201,12 +130,6 @@ public final class GreetingServiceOuterClass {
       }
     }
     /**
-     * <pre>
-     * Each message attribute is strongly typed.
-     * You also must assign a "tag" number.
-     * Each tag number is unique within the message.
-     * </pre>
-     *
      * <code>string name = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -221,51 +144,6 @@ public final class GreetingServiceOuterClass {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int HOBBIES_FIELD_NUMBER = 2;
-    private com.google.protobuf.LazyStringList hobbies_;
-    /**
-     * <pre>
-     * This defines a strongly typed list of String
-     * </pre>
-     *
-     * <code>repeated string hobbies = 2;</code>
-     */
-    public com.google.protobuf.ProtocolStringList
-        getHobbiesList() {
-      return hobbies_;
-    }
-    /**
-     * <pre>
-     * This defines a strongly typed list of String
-     * </pre>
-     *
-     * <code>repeated string hobbies = 2;</code>
-     */
-    public int getHobbiesCount() {
-      return hobbies_.size();
-    }
-    /**
-     * <pre>
-     * This defines a strongly typed list of String
-     * </pre>
-     *
-     * <code>repeated string hobbies = 2;</code>
-     */
-    public java.lang.String getHobbies(int index) {
-      return hobbies_.get(index);
-    }
-    /**
-     * <pre>
-     * This defines a strongly typed list of String
-     * </pre>
-     *
-     * <code>repeated string hobbies = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getHobbiesBytes(int index) {
-      return hobbies_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -285,9 +163,6 @@ public final class GreetingServiceOuterClass {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      for (int i = 0; i < hobbies_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, hobbies_.getRaw(i));
-      }
       unknownFields.writeTo(output);
     }
 
@@ -299,14 +174,6 @@ public final class GreetingServiceOuterClass {
       size = 0;
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < hobbies_.size(); i++) {
-          dataSize += computeStringSizeNoTag(hobbies_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getHobbiesList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -325,8 +192,6 @@ public final class GreetingServiceOuterClass {
 
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getHobbiesList()
-          .equals(other.getHobbiesList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -340,10 +205,6 @@ public final class GreetingServiceOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      if (getHobbiesCount() > 0) {
-        hash = (37 * hash) + HOBBIES_FIELD_NUMBER;
-        hash = (53 * hash) + getHobbiesList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -440,10 +301,6 @@ public final class GreetingServiceOuterClass {
       return builder;
     }
     /**
-     * <pre>
-     * Request payload
-     * </pre>
-     *
      * Protobuf type {@code com.example.grpc.HelloRequest}
      */
     public static final class Builder extends
@@ -483,8 +340,6 @@ public final class GreetingServiceOuterClass {
         super.clear();
         name_ = "";
 
-        hobbies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -511,13 +366,7 @@ public final class GreetingServiceOuterClass {
       @java.lang.Override
       public com.example.grpc.GreetingServiceOuterClass.HelloRequest buildPartial() {
         com.example.grpc.GreetingServiceOuterClass.HelloRequest result = new com.example.grpc.GreetingServiceOuterClass.HelloRequest(this);
-        int from_bitField0_ = bitField0_;
         result.name_ = name_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          hobbies_ = hobbies_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.hobbies_ = hobbies_;
         onBuilt();
         return result;
       }
@@ -570,16 +419,6 @@ public final class GreetingServiceOuterClass {
           name_ = other.name_;
           onChanged();
         }
-        if (!other.hobbies_.isEmpty()) {
-          if (hobbies_.isEmpty()) {
-            hobbies_ = other.hobbies_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureHobbiesIsMutable();
-            hobbies_.addAll(other.hobbies_);
-          }
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -608,16 +447,9 @@ public final class GreetingServiceOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
-       * <pre>
-       * Each message attribute is strongly typed.
-       * You also must assign a "tag" number.
-       * Each tag number is unique within the message.
-       * </pre>
-       *
        * <code>string name = 1;</code>
        */
       public java.lang.String getName() {
@@ -633,12 +465,6 @@ public final class GreetingServiceOuterClass {
         }
       }
       /**
-       * <pre>
-       * Each message attribute is strongly typed.
-       * You also must assign a "tag" number.
-       * Each tag number is unique within the message.
-       * </pre>
-       *
        * <code>string name = 1;</code>
        */
       public com.google.protobuf.ByteString
@@ -655,12 +481,6 @@ public final class GreetingServiceOuterClass {
         }
       }
       /**
-       * <pre>
-       * Each message attribute is strongly typed.
-       * You also must assign a "tag" number.
-       * Each tag number is unique within the message.
-       * </pre>
-       *
        * <code>string name = 1;</code>
        */
       public Builder setName(
@@ -674,12 +494,6 @@ public final class GreetingServiceOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * Each message attribute is strongly typed.
-       * You also must assign a "tag" number.
-       * Each tag number is unique within the message.
-       * </pre>
-       *
        * <code>string name = 1;</code>
        */
       public Builder clearName() {
@@ -689,12 +503,6 @@ public final class GreetingServiceOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * Each message attribute is strongly typed.
-       * You also must assign a "tag" number.
-       * Each tag number is unique within the message.
-       * </pre>
-       *
        * <code>string name = 1;</code>
        */
       public Builder setNameBytes(
@@ -705,136 +513,6 @@ public final class GreetingServiceOuterClass {
   checkByteStringIsUtf8(value);
         
         name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList hobbies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureHobbiesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          hobbies_ = new com.google.protobuf.LazyStringArrayList(hobbies_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <pre>
-       * This defines a strongly typed list of String
-       * </pre>
-       *
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public com.google.protobuf.ProtocolStringList
-          getHobbiesList() {
-        return hobbies_.getUnmodifiableView();
-      }
-      /**
-       * <pre>
-       * This defines a strongly typed list of String
-       * </pre>
-       *
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public int getHobbiesCount() {
-        return hobbies_.size();
-      }
-      /**
-       * <pre>
-       * This defines a strongly typed list of String
-       * </pre>
-       *
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public java.lang.String getHobbies(int index) {
-        return hobbies_.get(index);
-      }
-      /**
-       * <pre>
-       * This defines a strongly typed list of String
-       * </pre>
-       *
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getHobbiesBytes(int index) {
-        return hobbies_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * This defines a strongly typed list of String
-       * </pre>
-       *
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public Builder setHobbies(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureHobbiesIsMutable();
-        hobbies_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * This defines a strongly typed list of String
-       * </pre>
-       *
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public Builder addHobbies(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureHobbiesIsMutable();
-        hobbies_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * This defines a strongly typed list of String
-       * </pre>
-       *
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public Builder addAllHobbies(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureHobbiesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, hobbies_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * This defines a strongly typed list of String
-       * </pre>
-       *
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public Builder clearHobbies() {
-        hobbies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * This defines a strongly typed list of String
-       * </pre>
-       *
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public Builder addHobbiesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureHobbiesIsMutable();
-        hobbies_.add(value);
         onChanged();
         return this;
       }
@@ -891,41 +569,41 @@ public final class GreetingServiceOuterClass {
 
   }
 
-  public interface HelloResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.example.grpc.HelloResponse)
+  public interface HelloReplyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.example.grpc.HelloReply)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string greeting = 1;</code>
+     * <code>string message = 1;</code>
      */
-    java.lang.String getGreeting();
+    java.lang.String getMessage();
     /**
-     * <code>string greeting = 1;</code>
+     * <code>string message = 1;</code>
      */
     com.google.protobuf.ByteString
-        getGreetingBytes();
+        getMessageBytes();
   }
   /**
-   * Protobuf type {@code com.example.grpc.HelloResponse}
+   * Protobuf type {@code com.example.grpc.HelloReply}
    */
-  public  static final class HelloResponse extends
+  public  static final class HelloReply extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.example.grpc.HelloResponse)
-      HelloResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:com.example.grpc.HelloReply)
+      HelloReplyOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use HelloResponse.newBuilder() to construct.
-    private HelloResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use HelloReply.newBuilder() to construct.
+    private HelloReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private HelloResponse() {
-      greeting_ = "";
+    private HelloReply() {
+      message_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new HelloResponse();
+      return new HelloReply();
     }
 
     @java.lang.Override
@@ -933,7 +611,7 @@ public final class GreetingServiceOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HelloResponse(
+    private HelloReply(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -954,7 +632,7 @@ public final class GreetingServiceOuterClass {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              greeting_ = s;
+              message_ = s;
               break;
             }
             default: {
@@ -978,45 +656,45 @@ public final class GreetingServiceOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_HelloResponse_descriptor;
+      return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_HelloReply_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_HelloResponse_fieldAccessorTable
+      return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_HelloReply_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.grpc.GreetingServiceOuterClass.HelloResponse.class, com.example.grpc.GreetingServiceOuterClass.HelloResponse.Builder.class);
+              com.example.grpc.GreetingServiceOuterClass.HelloReply.class, com.example.grpc.GreetingServiceOuterClass.HelloReply.Builder.class);
     }
 
-    public static final int GREETING_FIELD_NUMBER = 1;
-    private volatile java.lang.Object greeting_;
+    public static final int MESSAGE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object message_;
     /**
-     * <code>string greeting = 1;</code>
+     * <code>string message = 1;</code>
      */
-    public java.lang.String getGreeting() {
-      java.lang.Object ref = greeting_;
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        greeting_ = s;
+        message_ = s;
         return s;
       }
     }
     /**
-     * <code>string greeting = 1;</code>
+     * <code>string message = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getGreetingBytes() {
-      java.lang.Object ref = greeting_;
+        getMessageBytes() {
+      java.lang.Object ref = message_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        greeting_ = b;
+        message_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1037,8 +715,8 @@ public final class GreetingServiceOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getGreetingBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, greeting_);
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
       }
       unknownFields.writeTo(output);
     }
@@ -1049,8 +727,8 @@ public final class GreetingServiceOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getGreetingBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, greeting_);
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1062,13 +740,13 @@ public final class GreetingServiceOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.example.grpc.GreetingServiceOuterClass.HelloResponse)) {
+      if (!(obj instanceof com.example.grpc.GreetingServiceOuterClass.HelloReply)) {
         return super.equals(obj);
       }
-      com.example.grpc.GreetingServiceOuterClass.HelloResponse other = (com.example.grpc.GreetingServiceOuterClass.HelloResponse) obj;
+      com.example.grpc.GreetingServiceOuterClass.HelloReply other = (com.example.grpc.GreetingServiceOuterClass.HelloReply) obj;
 
-      if (!getGreeting()
-          .equals(other.getGreeting())) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1080,76 +758,76 @@ public final class GreetingServiceOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GREETING_FIELD_NUMBER;
-      hash = (53 * hash) + getGreeting().hashCode();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse parseFrom(
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse parseFrom(
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse parseFrom(
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse parseFrom(
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse parseFrom(byte[] data)
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse parseFrom(
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse parseFrom(java.io.InputStream input)
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse parseFrom(
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse parseDelimitedFrom(
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse parseFrom(
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse parseFrom(
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1162,7 +840,7 @@ public final class GreetingServiceOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.example.grpc.GreetingServiceOuterClass.HelloResponse prototype) {
+    public static Builder newBuilder(com.example.grpc.GreetingServiceOuterClass.HelloReply prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1178,26 +856,26 @@ public final class GreetingServiceOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code com.example.grpc.HelloResponse}
+     * Protobuf type {@code com.example.grpc.HelloReply}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.example.grpc.HelloResponse)
-        com.example.grpc.GreetingServiceOuterClass.HelloResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.example.grpc.HelloReply)
+        com.example.grpc.GreetingServiceOuterClass.HelloReplyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_HelloResponse_descriptor;
+        return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_HelloReply_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_HelloResponse_fieldAccessorTable
+        return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_HelloReply_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.example.grpc.GreetingServiceOuterClass.HelloResponse.class, com.example.grpc.GreetingServiceOuterClass.HelloResponse.Builder.class);
+                com.example.grpc.GreetingServiceOuterClass.HelloReply.class, com.example.grpc.GreetingServiceOuterClass.HelloReply.Builder.class);
       }
 
-      // Construct using com.example.grpc.GreetingServiceOuterClass.HelloResponse.newBuilder()
+      // Construct using com.example.grpc.GreetingServiceOuterClass.HelloReply.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1215,7 +893,7 @@ public final class GreetingServiceOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        greeting_ = "";
+        message_ = "";
 
         return this;
       }
@@ -1223,17 +901,17 @@ public final class GreetingServiceOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_HelloResponse_descriptor;
+        return com.example.grpc.GreetingServiceOuterClass.internal_static_com_example_grpc_HelloReply_descriptor;
       }
 
       @java.lang.Override
-      public com.example.grpc.GreetingServiceOuterClass.HelloResponse getDefaultInstanceForType() {
-        return com.example.grpc.GreetingServiceOuterClass.HelloResponse.getDefaultInstance();
+      public com.example.grpc.GreetingServiceOuterClass.HelloReply getDefaultInstanceForType() {
+        return com.example.grpc.GreetingServiceOuterClass.HelloReply.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.example.grpc.GreetingServiceOuterClass.HelloResponse build() {
-        com.example.grpc.GreetingServiceOuterClass.HelloResponse result = buildPartial();
+      public com.example.grpc.GreetingServiceOuterClass.HelloReply build() {
+        com.example.grpc.GreetingServiceOuterClass.HelloReply result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1241,9 +919,9 @@ public final class GreetingServiceOuterClass {
       }
 
       @java.lang.Override
-      public com.example.grpc.GreetingServiceOuterClass.HelloResponse buildPartial() {
-        com.example.grpc.GreetingServiceOuterClass.HelloResponse result = new com.example.grpc.GreetingServiceOuterClass.HelloResponse(this);
-        result.greeting_ = greeting_;
+      public com.example.grpc.GreetingServiceOuterClass.HelloReply buildPartial() {
+        com.example.grpc.GreetingServiceOuterClass.HelloReply result = new com.example.grpc.GreetingServiceOuterClass.HelloReply(this);
+        result.message_ = message_;
         onBuilt();
         return result;
       }
@@ -1282,18 +960,18 @@ public final class GreetingServiceOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.example.grpc.GreetingServiceOuterClass.HelloResponse) {
-          return mergeFrom((com.example.grpc.GreetingServiceOuterClass.HelloResponse)other);
+        if (other instanceof com.example.grpc.GreetingServiceOuterClass.HelloReply) {
+          return mergeFrom((com.example.grpc.GreetingServiceOuterClass.HelloReply)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.example.grpc.GreetingServiceOuterClass.HelloResponse other) {
-        if (other == com.example.grpc.GreetingServiceOuterClass.HelloResponse.getDefaultInstance()) return this;
-        if (!other.getGreeting().isEmpty()) {
-          greeting_ = other.greeting_;
+      public Builder mergeFrom(com.example.grpc.GreetingServiceOuterClass.HelloReply other) {
+        if (other == com.example.grpc.GreetingServiceOuterClass.HelloReply.getDefaultInstance()) return this;
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1311,11 +989,11 @@ public final class GreetingServiceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.example.grpc.GreetingServiceOuterClass.HelloResponse parsedMessage = null;
+        com.example.grpc.GreetingServiceOuterClass.HelloReply parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.example.grpc.GreetingServiceOuterClass.HelloResponse) e.getUnfinishedMessage();
+          parsedMessage = (com.example.grpc.GreetingServiceOuterClass.HelloReply) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1325,71 +1003,71 @@ public final class GreetingServiceOuterClass {
         return this;
       }
 
-      private java.lang.Object greeting_ = "";
+      private java.lang.Object message_ = "";
       /**
-       * <code>string greeting = 1;</code>
+       * <code>string message = 1;</code>
        */
-      public java.lang.String getGreeting() {
-        java.lang.Object ref = greeting_;
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          greeting_ = s;
+          message_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string greeting = 1;</code>
+       * <code>string message = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getGreetingBytes() {
-        java.lang.Object ref = greeting_;
+          getMessageBytes() {
+        java.lang.Object ref = message_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          greeting_ = b;
+          message_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string greeting = 1;</code>
+       * <code>string message = 1;</code>
        */
-      public Builder setGreeting(
+      public Builder setMessage(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        greeting_ = value;
+        message_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string greeting = 1;</code>
+       * <code>string message = 1;</code>
        */
-      public Builder clearGreeting() {
+      public Builder clearMessage() {
         
-        greeting_ = getDefaultInstance().getGreeting();
+        message_ = getDefaultInstance().getMessage();
         onChanged();
         return this;
       }
       /**
-       * <code>string greeting = 1;</code>
+       * <code>string message = 1;</code>
        */
-      public Builder setGreetingBytes(
+      public Builder setMessageBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        greeting_ = value;
+        message_ = value;
         onChanged();
         return this;
       }
@@ -1406,41 +1084,41 @@ public final class GreetingServiceOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.example.grpc.HelloResponse)
+      // @@protoc_insertion_point(builder_scope:com.example.grpc.HelloReply)
     }
 
-    // @@protoc_insertion_point(class_scope:com.example.grpc.HelloResponse)
-    private static final com.example.grpc.GreetingServiceOuterClass.HelloResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.example.grpc.HelloReply)
+    private static final com.example.grpc.GreetingServiceOuterClass.HelloReply DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.example.grpc.GreetingServiceOuterClass.HelloResponse();
+      DEFAULT_INSTANCE = new com.example.grpc.GreetingServiceOuterClass.HelloReply();
     }
 
-    public static com.example.grpc.GreetingServiceOuterClass.HelloResponse getDefaultInstance() {
+    public static com.example.grpc.GreetingServiceOuterClass.HelloReply getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<HelloResponse>
-        PARSER = new com.google.protobuf.AbstractParser<HelloResponse>() {
+    private static final com.google.protobuf.Parser<HelloReply>
+        PARSER = new com.google.protobuf.AbstractParser<HelloReply>() {
       @java.lang.Override
-      public HelloResponse parsePartialFrom(
+      public HelloReply parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HelloResponse(input, extensionRegistry);
+        return new HelloReply(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<HelloResponse> parser() {
+    public static com.google.protobuf.Parser<HelloReply> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<HelloResponse> getParserForType() {
+    public com.google.protobuf.Parser<HelloReply> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.example.grpc.GreetingServiceOuterClass.HelloResponse getDefaultInstanceForType() {
+    public com.example.grpc.GreetingServiceOuterClass.HelloReply getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1452,10 +1130,10 @@ public final class GreetingServiceOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_example_grpc_HelloRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_example_grpc_HelloResponse_descriptor;
+    internal_static_com_example_grpc_HelloReply_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_example_grpc_HelloResponse_fieldAccessorTable;
+      internal_static_com_example_grpc_HelloReply_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1466,11 +1144,17 @@ public final class GreetingServiceOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025GreetingService.proto\022\020com.example.grp" +
-      "c\"-\n\014HelloRequest\022\014\n\004name\030\001 \001(\t\022\017\n\007hobbi" +
-      "es\030\002 \003(\t\"!\n\rHelloResponse\022\020\n\010greeting\030\001 " +
-      "\001(\t2^\n\017GreetingService\022K\n\010greeting\022\036.com" +
-      ".example.grpc.HelloRequest\032\037.com.example" +
-      ".grpc.HelloResponseb\006proto3"
+      "c\"\034\n\014HelloRequest\022\014\n\004name\030\001 \001(\t\"\035\n\nHello" +
+      "Reply\022\017\n\007message\030\001 \001(\t2\342\002\n\017GreetingServi" +
+      "ce\022H\n\010sayHello\022\036.com.example.grpc.HelloR" +
+      "equest\032\034.com.example.grpc.HelloReply\022P\n\016" +
+      "sayHelloStream\022\036.com.example.grpc.HelloR" +
+      "equest\032\034.com.example.grpc.HelloReply0\001\022V" +
+      "\n\024SayHelloStreamClient\022\036.com.example.grp" +
+      "c.HelloRequest\032\034.com.example.grpc.HelloR" +
+      "eply(\001\022[\n\025SayHelloBidirectional\022\036.com.ex" +
+      "ample.grpc.HelloRequest\032\036.com.example.gr" +
+      "pc.HelloRequest(\0010\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1481,13 +1165,13 @@ public final class GreetingServiceOuterClass {
     internal_static_com_example_grpc_HelloRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_example_grpc_HelloRequest_descriptor,
-        new java.lang.String[] { "Name", "Hobbies", });
-    internal_static_com_example_grpc_HelloResponse_descriptor =
+        new java.lang.String[] { "Name", });
+    internal_static_com_example_grpc_HelloReply_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_com_example_grpc_HelloResponse_fieldAccessorTable = new
+    internal_static_com_example_grpc_HelloReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_example_grpc_HelloResponse_descriptor,
-        new java.lang.String[] { "Greeting", });
+        internal_static_com_example_grpc_HelloReply_descriptor,
+        new java.lang.String[] { "Message", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

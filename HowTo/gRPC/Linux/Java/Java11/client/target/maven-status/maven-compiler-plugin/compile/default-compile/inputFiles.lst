@@ -1,3 +1,3 @@
-C:\Users\jefmarti\source\repos\gRPC\Java\grpc-hello-client\target\generated-sources\protobuf\grpc-java\com\example\grpc\GreetingServiceGrpc.java
-C:\Users\jefmarti\source\repos\gRPC\Java\grpc-hello-client\target\generated-sources\protobuf\java\com\example\grpc\GreetingServiceOuterClass.java
-C:\Users\jefmarti\source\repos\gRPC\Java\grpc-hello-client\src\main\java\com\example\grpc\Client.java
+C:\Users\jefmarti\source\repos\gRPC\Windows\Java\Java11\client\src\main\java\com\example\grpc\Client.java
+C:\Users\jefmarti\source\repos\gRPC\Windows\Java\Java11\client\target\generated-sources\protobuf\java\com\example\grpc\GreetingServiceOuterClass.java
+C:\Users\jefmarti\source\repos\gRPC\Windows\Java\Java11\client\target\generated-sources\protobuf\grpc-java\com\example\grpc\GreetingServiceGrpc.java
