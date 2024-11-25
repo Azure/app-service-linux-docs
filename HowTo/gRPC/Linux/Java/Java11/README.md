@@ -34,3 +34,4 @@ Update the following line in the `Client.java` file to target your web app:
 ```
 
 After updating the target address in your client, you can run the client locally to test the connection.
+
