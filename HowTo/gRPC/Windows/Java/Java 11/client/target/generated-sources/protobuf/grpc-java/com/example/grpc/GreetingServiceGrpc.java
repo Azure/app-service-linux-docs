@@ -1,18 +1,30 @@
 package com.example.grpc;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.68.1)",
+    value = "by gRPC proto compiler (version 1.24.0)",
     comments = "Source: GreetingService.proto")
-@io.grpc.stub.annotations.GrpcGenerated
 public final class GreetingServiceGrpc {
 
   private GreetingServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "com.example.grpc.GreetingService";
+  public static final String SERVICE_NAME = "com.example.grpc.GreetingService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.example.grpc.GreetingServiceOuterClass.HelloRequest,
@@ -143,14 +155,7 @@ public final class GreetingServiceGrpc {
    * Creates a new async stub that supports all call types for the service
    */
   public static GreetingServiceStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<GreetingServiceStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<GreetingServiceStub>() {
-        @java.lang.Override
-        public GreetingServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new GreetingServiceStub(channel, callOptions);
-        }
-      };
-    return GreetingServiceStub.newStub(factory, channel);
+    return new GreetingServiceStub(channel);
   }
 
   /**
@@ -158,14 +163,7 @@ public final class GreetingServiceGrpc {
    */
   public static GreetingServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<GreetingServiceBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<GreetingServiceBlockingStub>() {
-        @java.lang.Override
-        public GreetingServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new GreetingServiceBlockingStub(channel, callOptions);
-        }
-      };
-    return GreetingServiceBlockingStub.newStub(factory, channel);
+    return new GreetingServiceBlockingStub(channel);
   }
 
   /**
@@ -173,76 +171,93 @@ public final class GreetingServiceGrpc {
    */
   public static GreetingServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<GreetingServiceFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<GreetingServiceFutureStub>() {
-        @java.lang.Override
-        public GreetingServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new GreetingServiceFutureStub(channel, callOptions);
-        }
-      };
-    return GreetingServiceFutureStub.newStub(factory, channel);
+    return new GreetingServiceFutureStub(channel);
   }
 
   /**
    */
-  public interface AsyncService {
+  public static abstract class GreetingServiceImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
      * Define a RPC operation
      * </pre>
      */
-    default void sayHello(com.example.grpc.GreetingServiceOuterClass.HelloRequest request,
+    public void sayHello(com.example.grpc.GreetingServiceOuterClass.HelloRequest request,
         io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloReply> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSayHelloMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getSayHelloMethod(), responseObserver);
     }
 
     /**
      */
-    default void sayHelloStream(com.example.grpc.GreetingServiceOuterClass.HelloRequest request,
+    public void sayHelloStream(com.example.grpc.GreetingServiceOuterClass.HelloRequest request,
         io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloReply> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSayHelloStreamMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getSayHelloStreamMethod(), responseObserver);
     }
 
     /**
      */
-    default io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloRequest> sayHelloStreamClient(
+    public io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloRequest> sayHelloStreamClient(
         io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloReply> responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getSayHelloStreamClientMethod(), responseObserver);
+      return asyncUnimplementedStreamingCall(getSayHelloStreamClientMethod(), responseObserver);
     }
 
     /**
      */
-    default io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloRequest> sayHelloBidirectional(
+    public io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloRequest> sayHelloBidirectional(
         io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloRequest> responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getSayHelloBidirectionalMethod(), responseObserver);
+      return asyncUnimplementedStreamingCall(getSayHelloBidirectionalMethod(), responseObserver);
     }
-  }
-
-  /**
-   * Base class for the server implementation of the service GreetingService.
-   */
-  public static abstract class GreetingServiceImplBase
-      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return GreetingServiceGrpc.bindService(this);
+      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getSayHelloMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.example.grpc.GreetingServiceOuterClass.HelloRequest,
+                com.example.grpc.GreetingServiceOuterClass.HelloReply>(
+                  this, METHODID_SAY_HELLO)))
+          .addMethod(
+            getSayHelloStreamMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.example.grpc.GreetingServiceOuterClass.HelloRequest,
+                com.example.grpc.GreetingServiceOuterClass.HelloReply>(
+                  this, METHODID_SAY_HELLO_STREAM)))
+          .addMethod(
+            getSayHelloStreamClientMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                com.example.grpc.GreetingServiceOuterClass.HelloRequest,
+                com.example.grpc.GreetingServiceOuterClass.HelloReply>(
+                  this, METHODID_SAY_HELLO_STREAM_CLIENT)))
+          .addMethod(
+            getSayHelloBidirectionalMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                com.example.grpc.GreetingServiceOuterClass.HelloRequest,
+                com.example.grpc.GreetingServiceOuterClass.HelloRequest>(
+                  this, METHODID_SAY_HELLO_BIDIRECTIONAL)))
+          .build();
     }
   }
 
   /**
-   * A stub to allow clients to do asynchronous rpc calls to service GreetingService.
    */
-  public static final class GreetingServiceStub
-      extends io.grpc.stub.AbstractAsyncStub<GreetingServiceStub> {
-    private GreetingServiceStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class GreetingServiceStub extends io.grpc.stub.AbstractStub<GreetingServiceStub> {
+    private GreetingServiceStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private GreetingServiceStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected GreetingServiceStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected GreetingServiceStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new GreetingServiceStub(channel, callOptions);
     }
 
@@ -253,7 +268,7 @@ public final class GreetingServiceGrpc {
      */
     public void sayHello(com.example.grpc.GreetingServiceOuterClass.HelloRequest request,
         io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloReply> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      asyncUnaryCall(
           getChannel().newCall(getSayHelloMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -261,7 +276,7 @@ public final class GreetingServiceGrpc {
      */
     public void sayHelloStream(com.example.grpc.GreetingServiceOuterClass.HelloRequest request,
         io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloReply> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+      asyncServerStreamingCall(
           getChannel().newCall(getSayHelloStreamMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -269,7 +284,7 @@ public final class GreetingServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloRequest> sayHelloStreamClient(
         io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloReply> responseObserver) {
-      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
+      return asyncClientStreamingCall(
           getChannel().newCall(getSayHelloStreamClientMethod(), getCallOptions()), responseObserver);
     }
 
@@ -277,24 +292,26 @@ public final class GreetingServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloRequest> sayHelloBidirectional(
         io.grpc.stub.StreamObserver<com.example.grpc.GreetingServiceOuterClass.HelloRequest> responseObserver) {
-      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+      return asyncBidiStreamingCall(
           getChannel().newCall(getSayHelloBidirectionalMethod(), getCallOptions()), responseObserver);
     }
   }
 
   /**
-   * A stub to allow clients to do synchronous rpc calls to service GreetingService.
    */
-  public static final class GreetingServiceBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<GreetingServiceBlockingStub> {
-    private GreetingServiceBlockingStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class GreetingServiceBlockingStub extends io.grpc.stub.AbstractStub<GreetingServiceBlockingStub> {
+    private GreetingServiceBlockingStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private GreetingServiceBlockingStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected GreetingServiceBlockingStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected GreetingServiceBlockingStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new GreetingServiceBlockingStub(channel, callOptions);
     }
 
@@ -304,7 +321,7 @@ public final class GreetingServiceGrpc {
      * </pre>
      */
     public com.example.grpc.GreetingServiceOuterClass.HelloReply sayHello(com.example.grpc.GreetingServiceOuterClass.HelloRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+      return blockingUnaryCall(
           getChannel(), getSayHelloMethod(), getCallOptions(), request);
     }
 
@@ -312,24 +329,26 @@ public final class GreetingServiceGrpc {
      */
     public java.util.Iterator<com.example.grpc.GreetingServiceOuterClass.HelloReply> sayHelloStream(
         com.example.grpc.GreetingServiceOuterClass.HelloRequest request) {
-      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+      return blockingServerStreamingCall(
           getChannel(), getSayHelloStreamMethod(), getCallOptions(), request);
     }
   }
 
   /**
-   * A stub to allow clients to do ListenableFuture-style rpc calls to service GreetingService.
    */
-  public static final class GreetingServiceFutureStub
-      extends io.grpc.stub.AbstractFutureStub<GreetingServiceFutureStub> {
-    private GreetingServiceFutureStub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class GreetingServiceFutureStub extends io.grpc.stub.AbstractStub<GreetingServiceFutureStub> {
+    private GreetingServiceFutureStub(io.grpc.Channel channel) {
+      super(channel);
+    }
+
+    private GreetingServiceFutureStub(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected GreetingServiceFutureStub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+    protected GreetingServiceFutureStub build(io.grpc.Channel channel,
+        io.grpc.CallOptions callOptions) {
       return new GreetingServiceFutureStub(channel, callOptions);
     }
 
@@ -340,7 +359,7 @@ public final class GreetingServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<com.example.grpc.GreetingServiceOuterClass.HelloReply> sayHello(
         com.example.grpc.GreetingServiceOuterClass.HelloRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
+      return futureUnaryCall(
           getChannel().newCall(getSayHelloMethod(), getCallOptions()), request);
     }
   }
@@ -355,10 +374,10 @@ public final class GreetingServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AsyncService serviceImpl;
+    private final GreetingServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AsyncService serviceImpl, int methodId) {
+    MethodHandlers(GreetingServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -397,39 +416,6 @@ public final class GreetingServiceGrpc {
     }
   }
 
-  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
-    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-        .addMethod(
-          getSayHelloMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.example.grpc.GreetingServiceOuterClass.HelloRequest,
-              com.example.grpc.GreetingServiceOuterClass.HelloReply>(
-                service, METHODID_SAY_HELLO)))
-        .addMethod(
-          getSayHelloStreamMethod(),
-          io.grpc.stub.ServerCalls.asyncServerStreamingCall(
-            new MethodHandlers<
-              com.example.grpc.GreetingServiceOuterClass.HelloRequest,
-              com.example.grpc.GreetingServiceOuterClass.HelloReply>(
-                service, METHODID_SAY_HELLO_STREAM)))
-        .addMethod(
-          getSayHelloStreamClientMethod(),
-          io.grpc.stub.ServerCalls.asyncClientStreamingCall(
-            new MethodHandlers<
-              com.example.grpc.GreetingServiceOuterClass.HelloRequest,
-              com.example.grpc.GreetingServiceOuterClass.HelloReply>(
-                service, METHODID_SAY_HELLO_STREAM_CLIENT)))
-        .addMethod(
-          getSayHelloBidirectionalMethod(),
-          io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-            new MethodHandlers<
-              com.example.grpc.GreetingServiceOuterClass.HelloRequest,
-              com.example.grpc.GreetingServiceOuterClass.HelloRequest>(
-                service, METHODID_SAY_HELLO_BIDIRECTIONAL)))
-        .build();
-  }
-
   private static abstract class GreetingServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     GreetingServiceBaseDescriptorSupplier() {}
@@ -453,9 +439,9 @@ public final class GreetingServiceGrpc {
   private static final class GreetingServiceMethodDescriptorSupplier
       extends GreetingServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final java.lang.String methodName;
+    private final String methodName;
 
-    GreetingServiceMethodDescriptorSupplier(java.lang.String methodName) {
+    GreetingServiceMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
