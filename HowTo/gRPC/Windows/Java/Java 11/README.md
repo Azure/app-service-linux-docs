@@ -22,5 +22,6 @@ Once started, you will see `gRPC server started` in the terminal. Your server is
 Once started, you will see `gRPC client started` in the terminal. Your client is now running and ready to make requests to the server. Press `Enter` to make a request to the server and follow the instructions in the terminal.
 
 
-### Deploy the app to Windows App Service
-TBD!!
+### Deploy the app to App Service
+gRPC support for Java on Windows App Service is not yet supported.
+

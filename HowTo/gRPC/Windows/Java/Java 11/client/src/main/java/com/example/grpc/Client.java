@@ -7,7 +7,6 @@ import com.example.grpc.GreetingServiceOuterClass.HelloRequest;
 import com.example.grpc.GreetingServiceOuterClass.HelloReply;
 
 import java.util.logging.Logger;
-import io.grpc.NameResolverProvider;
 import java.sql.Time;
 import java.util.Iterator;
 import java.util.List;
@@ -29,15 +28,14 @@ public class Client
     public static void main( String[] args ) throws Exception
     {
         
-      // LOCAL DEVELOPMENT
+      // Local Development
       final ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8585")
-         .usePlaintext()
-         .build();
+        .usePlaintext()
+        .build();
 
-      // PRODUCTION
+      // Prod Environment
       // final ManagedChannel channel = ManagedChannelBuilder.forTarget("<your-app-name>.azurewebsites.net")
-      //  .usePlaintext()
-      //  .build();
+      //   .build();
 
       // Create gRPC stubs
       GreetingServiceGrpc.GreetingServiceBlockingStub blockingStub = GreetingServiceGrpc.newBlockingStub(channel);
@@ -200,6 +198,7 @@ public class Client
         for(HelloRequest request : requestsBidi) {
           System.out.println("Sending: " + request.getName());
           requestObserverBidi.onNext(request);
+          Thread.sleep(1000);
         }
       } catch (RuntimeException e) {
         // Cancel RPC
