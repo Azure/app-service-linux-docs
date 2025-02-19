@@ -35,11 +35,12 @@ See the available options to migrate your Python apps below:
 
 |  Version    |  Support Status  |  End of Official Support |    OS Support   |
 |-------------| ---------------- |:------------------------:|:---------------:|
+| Python 3.13 | Active Support   |    October 31, 2029      | Linux           |
 | Python 3.12 | Active Support   |    October 31, 2028      | Linux           |
 | Python 3.11 | Security Support |    October 31, 2027      | Linux           |
 | Python 3.10 | Security Support |    October 31, 2026      | Linux           |
 | Python 3.9  | Security Support |    October 31, 2025      | Linux           |
-| Python 3.8  | Security Support |    October 31, 2024      | Linux           |
+| Python 3.8  | EOL              |    October 31, 2024      | Linux           |
 | Python 3.7  | EOL              |    June 27, 2023         | Linux           |
 | Python 3.6  | EOL              |    December 23, 2021     | Windows & Linux |
 | Python 2.x  | EOL              |    January 01, 2020      | Windows & Linux |
