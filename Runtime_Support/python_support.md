@@ -21,7 +21,14 @@ See the available options to migrate your Python apps below:
 
 ## Support Timeline
 
-App Service updates existing stacks after they become available from each community. Please reffer to the official [Python support timeline](https://devguide.python.org/#status-of-python-branches) for the most up to date version support information
+App Service updates existing stacks after they become available from each community. Please reffer to the official [Python support timeline](https://devguide.python.org/#status-of-python-branches) for the most up to date version support information.
+
+You can find the list of supported versions using the [list-runtimes](https://learn.microsoft.com/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes) command from the Azure CLI. `az webapp list-runtimes` will list all the versions that are currently supported (not EOL) for a given runtime.
+
+``` bash
+# Available runtimes on Linux
+az webapp list-runtimes --os-type linux
+```
 
 ## How to update your app to target a different version of Python
 
