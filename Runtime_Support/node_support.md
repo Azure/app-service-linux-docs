@@ -10,28 +10,14 @@ Once a version of Node.js has reached it's end of life (EOL) it will no longer b
 
 Existing applications configured to target a runtime version that has reached EOL should not be affected.
 
-On April 30th, 2022 Node 12 will no longer be offered as an option in the create process for App Service. Existing apps targeting Node 12 will not be affected.  We recommend migrating your application to Node 14 LTS.  See our guidance [below](#how-to-update-your-app-to-target-a-different-version-of-node) to target a new version.
-
 ## Support Timeline
 
-|    Version    | Support Status |   End of Support  |   OS Support    |
-|---------------| -------------- | ----------------- |---------------- |
-|  Node 22 LTS  | Active LTS     | April 30 2027     | Windows & Linux |
-|  Node 20 LTS  | Active LTS     | April 30 2026     | Windows & Linux |
-|  Node 18 LTS  | Maintenance    | April 30 2025     | Windows & Linux |
-|  Node 16 LTS  | End of Life    | September 11 2023 | Windows & Linux |
-|  Node 14 LTS  | End of Life    | April 30 2023     | Windows & Linux |
-|  Node 12 LTS  | End of Life    | April 30 2022     | Windows & Linux |
-|  Node 10.x    | End of Life    | April 30 2021     | Windows & Linux |
-|  Node 9.x     | End of Life    | June 30 2019      | Windows & Linux |
-|  Node 8.x     | End of Life    | December 31 2019  | Windows & Linux |
-
-[Node.js support timeline](https://nodejs.org/en/about/releases/)
+App Service updates existing stacks after they become available from each community. Please reffer to the official [Node.js support timeline](https://nodejs.org/en/about/releases/) for the most up to date version support information
 
 ## How to update your app to target a different version of Node
 
->**NOTE**:
->Changing the stack settings of your app will trigger a re-start of your application.
+> **NOTE**:
+> Changing the stack settings of your app will trigger a re-start of your application.
 
 ### Node on Windows App Service
 
@@ -56,9 +42,9 @@ You can change the target runtime through Azure CLI:
 az webapp config set --resource-group <resource-group-name> --name <app-name> --linux-fx-version "NODE|14-lts"
 ```
 
-You can also change the runtime throgh the Azure portal: 
+You can also change the runtime throgh the Azure portal:
 
-1. In the Azure portal, click the **App Service** blade. Select the app you want to update. 
+1. In the Azure portal, click the **App Service** blade. Select the app you want to update.
 2. In the Configuration panel, click the **General settings** tab.
 3. Under Stack Settings, click the drop-down menu under **Major version** and select the Node version you want (we recommend choosing the most recent version).
 4. Click **Save**.
