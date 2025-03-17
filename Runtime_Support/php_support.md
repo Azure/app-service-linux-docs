@@ -12,7 +12,7 @@ Existing applications configured to target a runtime version that has reached EO
 
 ## Support Timeline
 
-App Service updates existing stacks after they become available from each community. Please reffer to the official [PHP Official Support timeline](https://www.php.net/supported-versions.php) for the most up to date version support information.
+App Service updates existing stacks after they become available from each community. Please reffer to the official [PHP support timeline](https://www.php.net/supported-versions.php) for the most up to date version support information.
 
 You can find the list of supported versions using the [list-runtimes](https://learn.microsoft.com/cli/azure/webapp?view=azure-cli-latest#az-webapp-list-runtimes) command from the Azure CLI. `az webapp list-runtimes` will list all the versions that are currently supported (not EOL) for a given runtime.
 
