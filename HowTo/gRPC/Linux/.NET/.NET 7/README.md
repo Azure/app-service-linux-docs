@@ -50,6 +50,16 @@ App Service requires an application setting that specifically listens for HTTP/2
 
 This setting will communicate to your web app which port is specified to listen over HTTP/2 only.
 
+#### 4. Enable End to End Encryption
+Lastly, App Service requires End to End encryption to be enabled.
+
+Navigate to the [resource explorer](https://resources.azure.com/) and find your application
+Find your application through the following path (click on the + signs):
++ subscriptions > + your-subscription-name > + resourceGroups > + your-resource-group-name > + Providers > + Microsoft.Web > + sites > your-site-name
+Click on Edit
+Find the “endToEndEncryptionEnabled” property and updated the value to true
+Click the PUT button to save the new value
+
 ### Confirm a gRPC request call from your local client
 Now that the gRPC service is deployed and we have a URL, we can make a call from our local client to test that our channel connects to the server and that our client can receive a response.
 
