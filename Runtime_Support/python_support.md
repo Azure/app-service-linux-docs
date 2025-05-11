@@ -6,7 +6,7 @@ App Service upgrades the underlying Python runtime of your application as part o
 
 ### End of Life
 
-Once a version of .NET Core has reached it's end of life (EOL) it will no longer be available from Runtime Stack selection dropdown.
+Once a version of Python has reached it's end of life (EOL) it will no longer be available from Runtime Stack selection dropdown.
 
 Existing applications configured to target a runtime version that has reached EOL should not be affected.
 
