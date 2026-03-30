@@ -18,7 +18,8 @@
 
 ## Bicep
 
-> **TODO**:Examples on how to set this up through ARM
+- [How to use the Bicep Templates to configure your webapp to pull images from ACR using a System Assigned managed identity](bicep_system-assigned_managed_identity.md)
+
 
 ## Notes
 
