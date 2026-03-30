@@ -25,8 +25,8 @@ The following table contains a list of valid values for Kind property:
 |`app,container,windows`                  | Windows Container Web App      |
 |`app,linux,kubernetes`                   | Linux Web App on ARC           |
 |`app,linux,container,kubernetes`         | Linux Container Web App on ARC |
-|`functionapp`                            | Function Code App              |
-|`functionapp,linux`                      | Linux Consumption Function app |
+|`functionapp`                            | Windows Function Code App      |
+|`functionapp,linux`                      | Linux Function app             |
 |`functionapp,linux,container,kubernetes` | Function Container App on ARC  |
 |`functionapp,linux,kubernetes`           | Function Code App on ARC       |
 
